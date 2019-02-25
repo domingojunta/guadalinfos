@@ -211,7 +211,7 @@ public class ConvocatoriaCrearViewModel2 {
 		this.aliasOrden = aliasOrden;
 	}
 	
-	
+	//Esto es una aclaración.
 
 	
 }
