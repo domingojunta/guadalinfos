@@ -1,7 +1,9 @@
 package es.domingojunta.models.convocatoria;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import javax.money.MonetaryAmount;
 import javax.persistence.Column;
 import javax.validation.constraints.Size;
 
@@ -11,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 import es.domingojunta.entities.Convocatoria;
 
-public class ConvocatoriaCrearViewModel2 {
+public class ConvocatoriaCrearViewModel {
 	
 	
 	private String nombreConvocatoria;
@@ -21,25 +23,25 @@ public class ConvocatoriaCrearViewModel2 {
 	private String aliasOrden;
 	private LocalDate fechaInicio;
 	private LocalDate fechaFin;
-	private long importeAyuntamientoA;
-	private long importeAyuntamientoB;
-	private long importeAyuntamientoC;
-	private long importeELAA;
-	private long importeELAB;
+	private BigDecimal importeAyuntamientoA;
+	private BigDecimal importeAyuntamientoB;
+	private BigDecimal importeAyuntamientoC;
+	private BigDecimal importeELAA;
+	private BigDecimal importeELAB;
 	private LocalDate fechaJustificacion;
 	private String SUBAG;
 	private String SUBCO;
-	private long importeGuadalinfoCorriente;
-	private long importeGuadalinfoFuturo;
-	private long importeELACorriente;
-	private long importeELAFuturo;
+	private BigDecimal importeGuadalinfoCorriente;
+	private BigDecimal importeGuadalinfoFuturo;
+	private BigDecimal importeELACorriente;
+	private BigDecimal importeELAFuturo;
 	private int numeroDias;
 	private String aplicacionPresupuestariaCorriente;
 	private String aplicacionPresupuestariaFutura;
 	private String resuelvePago;
 	private String resuelveJustificacion;
 	
-	public ConvocatoriaCrearViewModel2() {
+	public ConvocatoriaCrearViewModel() {
 		super();
 		}
 	
@@ -98,34 +100,34 @@ public class ConvocatoriaCrearViewModel2 {
 	public void setFechaFin(LocalDate fechaFin) {
 		this.fechaFin = fechaFin;
 	}
-	public long getImporteAyuntamientoA() {
-		return importeAyuntamientoA;
+	public Double getImporteAyuntamientoA() {
+		return importeAyuntamientoA.doubleValue();
 	}
-	public void setImporteAyuntamientoA(long importeAyuntamientoA) {
+	public void setImporteAyuntamientoA(BigDecimal importeAyuntamientoA) {
 		this.importeAyuntamientoA = importeAyuntamientoA;
 	}
-	public long getImporteAyuntamientoB() {
-		return importeAyuntamientoB;
+	public Double getImporteAyuntamientoB() {
+		return importeAyuntamientoB.doubleValue();
 	}
-	public void setImporteAyuntamientoB(long importeAyuntamientoB) {
+	public void setImporteAyuntamientoB(BigDecimal importeAyuntamientoB) {
 		this.importeAyuntamientoB = importeAyuntamientoB;
 	}
-	public long getImporteAyuntamientoC() {
-		return importeAyuntamientoC;
+	public Double getImporteAyuntamientoC() {
+		return importeAyuntamientoC.doubleValue();
 	}
-	public void setImporteAyuntamientoC(long importeAyuntamientoC) {
+	public void setImporteAyuntamientoC(BigDecimal importeAyuntamientoC) {
 		this.importeAyuntamientoC = importeAyuntamientoC;
 	}
-	public long getImporteELAA() {
-		return importeELAA;
+	public Double getImporteELAA() {
+		return importeELAA.doubleValue();
 	}
-	public void setImporteELAA(long importeELAA) {
+	public void setImporteELAA(BigDecimal importeELAA) {
 		this.importeELAA = importeELAA;
 	}
-	public long getImporteELAB() {
-		return importeELAB;
+	public Double getImporteELAB() {
+		return importeELAB.doubleValue();
 	}
-	public void setImporteELAB(long importeELAB) {
+	public void setImporteELAB(BigDecimal importeELAB) {
 		this.importeELAB = importeELAB;
 	}
 	@JsonFormat(pattern="dd-MM-yyyy")
@@ -148,28 +150,28 @@ public class ConvocatoriaCrearViewModel2 {
 	public void setSUBCO(String sUBCO) {
 		SUBCO = sUBCO;
 	}
-	public long getImporteGuadalinfoCorriente() {
-		return importeGuadalinfoCorriente;
+	public Double getImporteGuadalinfoCorriente() {
+		return importeGuadalinfoCorriente.doubleValue();
 	}
-	public void setImporteGuadalinfoCorriente(long importeGuadalinfoCorriente) {
+	public void setImporteGuadalinfoCorriente(BigDecimal importeGuadalinfoCorriente) {
 		this.importeGuadalinfoCorriente = importeGuadalinfoCorriente;
 	}
-	public long getImporteGuadalinfoFuturo() {
-		return importeGuadalinfoFuturo;
+	public Double getImporteGuadalinfoFuturo() {
+		return importeGuadalinfoFuturo.doubleValue();
 	}
-	public void setImporteGuadalinfoFuturo(long importeGuadalinfoFuturo) {
+	public void setImporteGuadalinfoFuturo(BigDecimal importeGuadalinfoFuturo) {
 		this.importeGuadalinfoFuturo = importeGuadalinfoFuturo;
 	}
-	public long getImporteELACorriente() {
-		return importeELACorriente;
+	public Double getImporteELACorriente() {
+		return importeELACorriente.doubleValue();
 	}
-	public void setImporteELACorriente(long importeELACorriente) {
+	public void setImporteELACorriente(BigDecimal importeELACorriente) {
 		this.importeELACorriente = importeELACorriente;
 	}
-	public long getImporteELAFuturo() {
-		return importeELAFuturo;
+	public Double getImporteELAFuturo() {
+		return importeELAFuturo.doubleValue();
 	}
-	public void setImporteELAFuturo(long importeELAFuturo) {
+	public void setImporteELAFuturo(BigDecimal importeELAFuturo) {
 		this.importeELAFuturo = importeELAFuturo;
 	}
 	public int getNumeroDias() {
@@ -211,7 +213,7 @@ public class ConvocatoriaCrearViewModel2 {
 		this.aliasOrden = aliasOrden;
 	}
 	
-	//Esto es una aclaración.
+
 
 	
 }

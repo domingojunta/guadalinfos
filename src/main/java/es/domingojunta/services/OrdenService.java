@@ -36,20 +36,25 @@ public class OrdenService {
 	
 public List<OrdenListarViewModel> ordenesListar(){
 		
-		List<Orden> ordenes = null;
-		List<OrdenListarViewModel> ordenesListarViewModel = new ArrayList<OrdenListarViewModel>();
-		
-		ordenes = repository.findAll();
-		if (ordenes==null) {
+		try {
+			List<Orden> ordenes = null;
+			List<OrdenListarViewModel> ordenesListarViewModel = new ArrayList<OrdenListarViewModel>();
+			
+			ordenes = repository.findAll();
+			if (ordenes==null) {
+				return ordenesListarViewModel;
+			}
+			for (Orden item : ordenes) {
+				
+				OrdenListarViewModel viewModel = new OrdenListarViewModel(item);
+				ordenesListarViewModel.add(viewModel);
+				
+			}
 			return ordenesListarViewModel;
+		} catch (Exception e) {
+			return null;
 		}
-		for (Orden item : ordenes) {
-			
-			OrdenListarViewModel viewModel = new OrdenListarViewModel(item);
-			ordenesListarViewModel.add(viewModel);
-			
-		}
-		return ordenesListarViewModel;
+		
 		
 	}
 	
@@ -72,37 +77,52 @@ public List<OrdenListarViewModel> ordenesListar(){
 	}
 
 	public OrdenListarViewModel mostrar(int id) {
-		Optional<Orden> optional = repository.findById(id);
-		//System.out.println(optional.get().getNombre());
-		OrdenListarViewModel viewModel = null;
-		if (optional.isPresent()) {
-			viewModel = new OrdenListarViewModel(optional.get());
-			//System.out.println(viewModel.getNombreOrden());
+		
+		try {
+			Optional<Orden> optional = repository.findById(id);
+			//System.out.println(optional.get().getNombre());
+			OrdenListarViewModel viewModel = null;
+			if (optional.isPresent()) {
+				viewModel = new OrdenListarViewModel(optional.get());
+				//System.out.println(viewModel.getNombreOrden());
+			}
+			return viewModel;
+		} catch (Exception e) {
+			return null;
 		}
-		return viewModel;
+		
 		
 	}
 
 	public Boolean actualizar(OrdenListarViewModel viewModel) {
 		
-		Orden orden = getOrdenById(viewModel.getIdOrden());
-		if (orden!=null) {
-			orden = converter.OrdenListarViewModel2Orden(orden, viewModel);
-			repository.save(orden);
-			return true;
+		try {
+			Orden orden = getOrdenById(viewModel.getIdOrden());
+			
+			if (orden!=null) {
+				orden = converter.OrdenListarViewModel2Orden(orden, viewModel);
+				repository.save(orden);
+				return true;
+			}
+			
+			return false;
+		} catch (Exception e) {
+			return false;
 		}
-		
-		return false;
 		
 	}
 	
 	public Boolean crear(OrdenCrearViewModel viewModel) {
 			
-			Orden orden = new Orden();
-			orden = converter.OrdenCrearViewModel2Orden(orden, viewModel);
 			try {
-				repository.save(orden);
-				return true;
+				Orden orden = new Orden();
+				orden = converter.OrdenCrearViewModel2Orden(orden, viewModel);
+				try {
+					repository.save(orden);
+					return true;
+				} catch (Exception e) {
+					return false;
+				}
 			} catch (Exception e) {
 				return false;
 			}

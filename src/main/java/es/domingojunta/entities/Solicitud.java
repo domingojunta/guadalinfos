@@ -1,5 +1,6 @@
 package es.domingojunta.entities;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import javax.persistence.Column;
@@ -30,13 +31,13 @@ public class Solicitud {
 	@Column(name="subcc")
 	private String SUBCC;
 	@Column(name="coste_personal")
-	private Long costePersonal;
+	private BigDecimal costePersonal;
 	@Column(name="coste_dietas")
-	private Long costeDietas;
+	private BigDecimal costeDietas;
 	@Column(name="subvencion_personal")
-	private Long subvencionPersonal;
+	private BigDecimal subvencionPersonal;
 	@Column(name="subvencion_dietas")
-	private Long subvencionDietas;
+	private BigDecimal subvencionDietas;
 	@Column(name="fecha_comunicacion_entrada")
 	private LocalDate fechaComunicacionEntrada;
 	@Column(name="fecha_aeat")
@@ -65,7 +66,7 @@ public class Solicitud {
 	@Column(name="numero_documentooj")
 	private String numeroDocumentoOJ;
 	@Column(name="importeOJ")
-	private Long importeOJ;
+	private BigDecimal importeOJ;
 	@Column(name="fecha_pago_materialoj")
 	private LocalDate fechaPagoMaterialOJ;
 	@Column(name="numero_documentoom")
@@ -85,13 +86,13 @@ public class Solicitud {
 	@Column(name="numero_meses_alcanzado")
 	private int numeroMesesAlcanzado;
 	@Column(name="importe_justificado_personal")
-	private Long importeJustificadoPersonal;
+	private BigDecimal importeJustificadoPersonal;
 	@Column(name="importe_justificado_dietas")
-	private Long importeJustificadoDietas;
+	private BigDecimal importeJustificadoDietas;
 	@Column(name="importe_aceptado_personal")
-	private Long importeAceptadoPersonal;
+	private BigDecimal importeAceptadoPersonal;
 	@Column(name="importe_aceptado_dietas")
-	private Long importeAceptadoDietas;
+	private BigDecimal importeAceptadoDietas;
 	
 	
 	@Column(name="fecha_propuesta_liquidacion")
@@ -125,7 +126,7 @@ public class Solicitud {
 	@Column(name="numero_modelo022")
 	private String numeroModelo022;
 	@Column(name="importe_modelo022")
-	private Long importeModelo022;
+	private BigDecimal importeModelo022;
 	@Column(name="fecha_notificacion_resolucion_reintegro")
 	private LocalDate fechaNotificacionResolucionReintegro;
 	@Column(name="fecha_abono_reintegro")
@@ -220,42 +221,42 @@ public class Solicitud {
 	}
 
 
-	public Long getCostePersonal() {
+	public BigDecimal getCostePersonal() {
 		return costePersonal;
 	}
 
 
-	public void setCostePersonal(Long costePersonal) {
+	public void setCostePersonal(BigDecimal costePersonal) {
 		this.costePersonal = costePersonal;
 	}
 
 
-	public Long getCosteDietas() {
+	public BigDecimal getCosteDietas() {
 		return costeDietas;
 	}
 
 
-	public void setCosteDietas(Long costeDietas) {
+	public void setCosteDietas(BigDecimal costeDietas) {
 		this.costeDietas = costeDietas;
 	}
 
 
-	public Long getSubvencionPersonal() {
+	public BigDecimal getSubvencionPersonal() {
 		return subvencionPersonal;
 	}
 
 
-	public void setSubvencionPersonal(Long subvencionPersonal) {
+	public void setSubvencionPersonal(BigDecimal subvencionPersonal) {
 		this.subvencionPersonal = subvencionPersonal;
 	}
 
 
-	public Long getSubvencionDietas() {
+	public BigDecimal getSubvencionDietas() {
 		return subvencionDietas;
 	}
 
 
-	public void setSubvencionDietas(Long subvencionDietas) {
+	public void setSubvencionDietas(BigDecimal subvencionDietas) {
 		this.subvencionDietas = subvencionDietas;
 	}
 
@@ -370,12 +371,12 @@ public class Solicitud {
 	}
 
 
-	public Long getImporteOJ() {
+	public BigDecimal getImporteOJ() {
 		return importeOJ;
 	}
 
 
-	public void setImporteOJ(Long importeOJ) {
+	public void setImporteOJ(BigDecimal importeOJ) {
 		this.importeOJ = importeOJ;
 	}
 
@@ -606,12 +607,12 @@ public class Solicitud {
 	}
 
 
-	public Long getImporteModelo022() {
+	public BigDecimal getImporteModelo022() {
 		return importeModelo022;
 	}
 
 
-	public void setImporteModelo022(Long importeModelo022) {
+	public void setImporteModelo022(BigDecimal importeModelo022) {
 		this.importeModelo022 = importeModelo022;
 	}
 	@JsonFormat(pattern="dd-MM-yyyy")
@@ -648,42 +649,42 @@ public class Solicitud {
 	
 
 
-	public Long getImporteJustificadoPersonal() {
+	public BigDecimal getImporteJustificadoPersonal() {
 		return importeJustificadoPersonal;
 	}
 
 
-	public void setImporteJustificadoPersonal(Long importeJustificadoPersonal) {
+	public void setImporteJustificadoPersonal(BigDecimal importeJustificadoPersonal) {
 		this.importeJustificadoPersonal = importeJustificadoPersonal;
 	}
 
 
-	public Long getImporteJustificadoDietas() {
+	public BigDecimal getImporteJustificadoDietas() {
 		return importeJustificadoDietas;
 	}
 
 
-	public void setImporteJustificadoDietas(Long importeJustificadoDietas) {
+	public void setImporteJustificadoDietas(BigDecimal importeJustificadoDietas) {
 		this.importeJustificadoDietas = importeJustificadoDietas;
 	}
 
 
-	public Long getImporteAceptadoPersonal() {
+	public BigDecimal getImporteAceptadoPersonal() {
 		return importeAceptadoPersonal;
 	}
 
 
-	public void setImporteAceptadoPersonal(Long importeAceptadoPersonal) {
+	public void setImporteAceptadoPersonal(BigDecimal importeAceptadoPersonal) {
 		this.importeAceptadoPersonal = importeAceptadoPersonal;
 	}
 
 
-	public Long getImporteAceptadoDietas() {
+	public BigDecimal getImporteAceptadoDietas() {
 		return importeAceptadoDietas;
 	}
 
 
-	public void setImporteAceptadoDietas(Long importeAceptadoDietas) {
+	public void setImporteAceptadoDietas(BigDecimal importeAceptadoDietas) {
 		this.importeAceptadoDietas = importeAceptadoDietas;
 	}
 

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import es.domingojunta.entities.Convocatoria;
 import es.domingojunta.entities.Orden;
+import es.domingojunta.models.convocatoria.ConvocatoriaCrearViewModel;
 import es.domingojunta.models.convocatoria.ConvocatoriaListarViewModel;
 import es.domingojunta.repositories.ConvocatoriaRepository;
 import es.domingojunta.repositories.OrdenRepository;
@@ -24,21 +25,25 @@ public class ConvocatoriaService {
 	private Convertidor converter;
 	
 	public List<ConvocatoriaListarViewModel> convocatoriasListar(){
-		List<Convocatoria> convocatorias = null;
-		convocatorias = repository.findAll();
-		List<ConvocatoriaListarViewModel> convocatoriasListarViewModel = new ArrayList<ConvocatoriaListarViewModel>();
-		if (convocatorias==null) {
-			return convocatoriasListarViewModel;
-		}
-		
-		for (Convocatoria item : convocatorias) {
-			ConvocatoriaListarViewModel viewModel = new ConvocatoriaListarViewModel(item);
-			viewModel.setNombreOrden(ordenService.getNombreOrden(item.getIdOrden()));
-			viewModel.setAliasOrden(ordenService.getAliasOrden(item.getIdOrden()));
-			convocatoriasListarViewModel.add(viewModel);
+		try {
+			List<Convocatoria> convocatorias = null;
+			convocatorias = repository.findAll();
+			List<ConvocatoriaListarViewModel> convocatoriasListarViewModel = new ArrayList<ConvocatoriaListarViewModel>();
+			if (convocatorias==null) {
+				return convocatoriasListarViewModel;
+			}
 			
+			for (Convocatoria item : convocatorias) {
+				ConvocatoriaListarViewModel viewModel = new ConvocatoriaListarViewModel(item);
+				viewModel.setNombreOrden(ordenService.getNombreOrden(item.getIdOrden()));
+				viewModel.setAliasOrden(ordenService.getAliasOrden(item.getIdOrden()));
+				convocatoriasListarViewModel.add(viewModel);
+				
+			}
+			return convocatoriasListarViewModel;
+		} catch (Exception e) {
+			return null;
 		}
-		return convocatoriasListarViewModel;
 	}
 	
 	public List<Convocatoria> convocatorias(){
@@ -66,22 +71,61 @@ public class ConvocatoriaService {
 	}
 
 	public ConvocatoriaListarViewModel mostrar(int id) {
-		Convocatoria convocatoria = getConvocatoriaById(id);
-		//System.out.println("La convocatoria encontrada es: "+convocatoria.getYear());
-		ConvocatoriaListarViewModel viewModel = new ConvocatoriaListarViewModel(convocatoria);
-		//System.out.println("La convocatoria encontrada es la: "+viewModel.getYearConvocatoria());
-		return viewModel;
+		try {
+			Convocatoria convocatoria = getConvocatoriaById(id);
+			//System.out.println("La convocatoria encontrada es: "+convocatoria.getYear());
+			ConvocatoriaListarViewModel viewModel = new ConvocatoriaListarViewModel(convocatoria);
+			//System.out.println("La convocatoria encontrada es la: "+viewModel.getYearConvocatoria());
+			return viewModel;
+		} catch (Exception e) {
+			return null;
+		}
 	}
 
 	public Boolean actualizar(ConvocatoriaListarViewModel viewModel) {
-		Convocatoria convocatoria = getConvocatoriaById(viewModel.getIdConvocatoria());
-		if (convocatoria!=null) {
-			convocatoria = converter.ConvocatoriaListarViewModel2Convocatoria(convocatoria, viewModel);
-			repository.save(convocatoria);
-			return true;
+		try {
+			Convocatoria convocatoria = getConvocatoriaById(viewModel.getIdConvocatoria());
+			if (convocatoria!=null) {
+				convocatoria = converter.ConvocatoriaListarViewModel2Convocatoria(convocatoria, viewModel);
+				repository.save(convocatoria);
+				return true;
+			}
+			
+			return false;
+		} catch (Exception e) {
+			return false;
 		}
-		
-		return false;
+	}
+
+	public Boolean crear(ConvocatoriaCrearViewModel viewModel) {
+		try {
+			Convocatoria convocatoria = new Convocatoria();
+			convocatoria = converter.ConvocatoriaCrearViewModel2Convocatoria(convocatoria, viewModel);
+			try {
+				repository.save(convocatoria);
+				return true;
+			} catch (Exception e) {
+				return false;
+			}
+		} catch (Exception e) {
+			return false;
+		}
+	}
+
+	public Boolean borrar(int id) {
+		Convocatoria convocatoria = null;
+		try {
+			convocatoria=repository.getOne(id);
+			if (convocatoria!=null) {
+				repository.deleteById(id);
+				return true;
+			} else {
+				return false;
+			}
+			
+		} catch (Exception e) {
+			return false;
+		}
 	}
 	
 	

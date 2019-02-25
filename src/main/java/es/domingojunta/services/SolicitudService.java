@@ -11,8 +11,10 @@ import es.domingojunta.entities.Convocatoria;
 import es.domingojunta.entities.Entidad;
 import es.domingojunta.entities.Orden;
 import es.domingojunta.entities.Solicitud;
+import es.domingojunta.models.entidad.EntidadListarViewModel;
 import es.domingojunta.models.solicitud.SolicitudListarViewModel;
 import es.domingojunta.repositories.SolicitudRepository;
+import es.domingojunta.tools.Convertidor;
 
 
 
@@ -26,6 +28,12 @@ public class SolicitudService {
 	@Autowired
 	private ConvocatoriaService convocatoriaService;
 	
+	@Autowired
+	private EntidadService entidadService;
+	
+	@Autowired
+	private Convertidor converter;
+	
 	
 	
 	public List<Solicitud> solicitudes(){
@@ -37,17 +45,22 @@ public class SolicitudService {
 	}
 	
 	public List<SolicitudListarViewModel> solicitudesListar() {
-		List<Solicitud> solicitudes = solicitudes();
-		List<SolicitudListarViewModel> viewModels = new ArrayList<>();
-		for (Solicitud item : solicitudes) {
-			SolicitudListarViewModel viewModel = new SolicitudListarViewModel(item);
-			viewModel.setYearConvocatoria(convocatoriaService.getYearConvocatoria(item.getIdConvocatoria()));
-			viewModel.setNombreConvocatoria(convocatoriaService.getNombreConvocatoria(item.getIdConvocatoria()));
-			viewModels.add(viewModel);
+		try {
+			List<Solicitud> solicitudes = solicitudes();
+			List<SolicitudListarViewModel> viewModels = new ArrayList<>();
+			for (Solicitud item : solicitudes) {
+				SolicitudListarViewModel viewModel = new SolicitudListarViewModel(item);
+				viewModel.setYearConvocatoria(convocatoriaService.getYearConvocatoria(item.getIdConvocatoria()));
+				viewModel.setNombreConvocatoria(convocatoriaService.getNombreConvocatoria(item.getIdConvocatoria()));
+				viewModel.setNombreEntidad(entidadService.getNombreEntidad(item.getIdEntidad()));
+				viewModels.add(viewModel);
+				
+			}
 			
+			return viewModels;
+		} catch (Exception e) {
+			return null;
 		}
-		
-		return viewModels;
 		
 	}
 	
@@ -66,6 +79,40 @@ public class SolicitudService {
 			solicitud = solicitudOpt.get();
 		}
 		return solicitud;
+	}
+
+	public SolicitudListarViewModel mostrar(int id) {
+		try {
+			try {
+				Solicitud solicitud = repository.getOne(id);
+				SolicitudListarViewModel viewModel = new SolicitudListarViewModel(solicitud);
+				viewModel.setYearConvocatoria(convocatoriaService.getYearConvocatoria(viewModel.getIdConvocatoria()));
+				viewModel.setNombreConvocatoria(convocatoriaService.getNombreConvocatoria(viewModel.getIdConvocatoria()));
+				viewModel.setNombreEntidad(entidadService.getNombreEntidad(viewModel.getIdEntidad()));
+				return viewModel;
+			} catch (Exception e) {
+				return null;
+			}
+		} catch (Exception e) {
+			return null;
+		}
+	}
+
+	public Boolean actualizar(SolicitudListarViewModel viewModel) {
+		try {
+			Solicitud solicitud = repository.getOne(viewModel.getIdSolicitud());
+			if (solicitud!=null) {
+				solicitud = converter.SolicitudListarViewModel2Entidad(solicitud, viewModel);
+				repository.save(solicitud);
+				return true;
+			}
+			
+			return false;
+		} catch (Exception e) {
+			System.out.println("Ha habido un error");
+			System.out.println(e.getMessage());
+			return false;
+		}
 	}
 	
 	

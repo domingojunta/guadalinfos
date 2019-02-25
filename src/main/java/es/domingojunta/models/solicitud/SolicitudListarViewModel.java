@@ -1,8 +1,11 @@
 package es.domingojunta.models.solicitud;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import javax.persistence.Column;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -19,10 +22,10 @@ public class SolicitudListarViewModel {
 	private LocalDate fechaEntrada;
 	private String expediente;
 	private String SUBCC;
-	private long costePersonal;
-	private long costeDietas;
-	private long subvencionPersonal;
-	private long subvencionDietas;
+	private BigDecimal costePersonal;
+	private BigDecimal costeDietas;
+	private BigDecimal subvencionPersonal;
+	private BigDecimal subvencionDietas;
 	private LocalDate fechaComunicacionEntrada;
 	private LocalDate fechaAeat;
 	private LocalDate fechaAtrian;
@@ -89,9 +92,11 @@ public class SolicitudListarViewModel {
 	public void setNombreEntidad(String nombreEntidad) {
 		this.nombreEntidad = nombreEntidad;
 	}
+	@JsonFormat(pattern="dd-MM-yyyy")
 	public LocalDate getFechaEntrada() {
 		return fechaEntrada;
 	}
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	public void setFechaEntrada(LocalDate fechaEntrada) {
 		this.fechaEntrada = fechaEntrada;
 	}
@@ -107,63 +112,75 @@ public class SolicitudListarViewModel {
 	public void setSUBCC(String sUBCC) {
 		SUBCC = sUBCC;
 	}
-	public long getCostePersonal() {
-		return costePersonal;
+	public Double getCostePersonal() {
+		return costePersonal.doubleValue();
 	}
-	public void setCostePersonal(long costePersonal) {
+	public void setCostePersonal(BigDecimal costePersonal) {
 		this.costePersonal = costePersonal;
 	}
-	public long getCosteDietas() {
-		return costeDietas;
+	public Double getCosteDietas() {
+		return costeDietas.doubleValue();
 	}
-	public void setCosteDietas(long costeDietas) {
+	public void setCosteDietas(BigDecimal costeDietas) {
 		this.costeDietas = costeDietas;
 	}
-	public long getSubvencionPersonal() {
-		return subvencionPersonal;
+	public Double getSubvencionPersonal() {
+		return subvencionPersonal.doubleValue();
 	}
-	public void setSubvencionPersonal(long subvencionPersonal) {
+	public void setSubvencionPersonal(BigDecimal subvencionPersonal) {
 		this.subvencionPersonal = subvencionPersonal;
 	}
-	public long getSubvencionDietas() {
-		return subvencionDietas;
+	public Double getSubvencionDietas() {
+		return subvencionDietas.doubleValue();
 	}
-	public void setSubvencionDietas(long subvencionDietas) {
+	public void setSubvencionDietas(BigDecimal subvencionDietas) {
 		this.subvencionDietas = subvencionDietas;
 	}
+	@JsonFormat(pattern="dd-MM-yyyy")
 	public LocalDate getFechaComunicacionEntrada() {
 		return fechaComunicacionEntrada;
 	}
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	public void setFechaComunicacionEntrada(LocalDate fechaComunicacionEntrada) {
 		this.fechaComunicacionEntrada = fechaComunicacionEntrada;
 	}
+	@JsonFormat(pattern="dd-MM-yyyy")
 	public LocalDate getFechaAeat() {
 		return fechaAeat;
 	}
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	public void setFechaAeat(LocalDate fechaAeat) {
 		this.fechaAeat = fechaAeat;
 	}
+	@JsonFormat(pattern="dd-MM-yyyy")
 	public LocalDate getFechaAtrian() {
 		return fechaAtrian;
 	}
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	public void setFechaAtrian(LocalDate fechaAtrian) {
 		this.fechaAtrian = fechaAtrian;
 	}
+	@JsonFormat(pattern="dd-MM-yyyy")
 	public LocalDate getFechaSeguridadSocial() {
 		return fechaSeguridadSocial;
 	}
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	public void setFechaSeguridadSocial(LocalDate fechaSeguridadSocial) {
 		this.fechaSeguridadSocial = fechaSeguridadSocial;
 	}
+	@JsonFormat(pattern="dd-MM-yyyy")
 	public LocalDate getFechaRequerimientoSolicitud() {
 		return fechaRequerimientoSolicitud;
 	}
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	public void setFechaRequerimientoSolicitud(LocalDate fechaRequerimientoSolicitud) {
 		this.fechaRequerimientoSolicitud = fechaRequerimientoSolicitud;
 	}
+	@JsonFormat(pattern="dd-MM-yyyy")
 	public LocalDate getFechaPropuestaConcesion() {
 		return fechaPropuestaConcesion;
 	}
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	public void setFechaPropuestaConcesion(LocalDate fechaPropuestaConcesion) {
 		this.fechaPropuestaConcesion = fechaPropuestaConcesion;
 	}
@@ -179,18 +196,23 @@ public class SolicitudListarViewModel {
 	public void setNumeroDocumentoD(String numeroDocumentoD) {
 		this.numeroDocumentoD = numeroDocumentoD;
 	}
+	@JsonFormat(pattern="dd-MM-yyyy")
 	public LocalDate getFechaResolucionConcesion() {
 		return fechaResolucionConcesion;
 	}
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	public void setFechaResolucionConcesion(LocalDate fechaResolucionConcesion) {
 		this.fechaResolucionConcesion = fechaResolucionConcesion;
 	}
+	@JsonFormat(pattern="dd-MM-yyyy")
 	public LocalDate getFechaNotificacionResolucionConcesion() {
 		return fechaNotificacionResolucionConcesion;
 	}
+	@DateTimeFormat(pattern="yyyy-MM-dd")
 	public void setFechaNotificacionResolucionConcesion(LocalDate fechaNotificacionResolucionConcesion) {
 		this.fechaNotificacionResolucionConcesion = fechaNotificacionResolucionConcesion;
 	}
+	
 	public String getYearConvocatoria() {
 		return yearConvocatoria;
 	}

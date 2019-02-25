@@ -1,4 +1,5 @@
 package es.domingojunta.entities;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,15 +37,15 @@ public class Convocatoria {
 	@Column(name="fecha_fin")
 	private LocalDate fechaFin;
 	@Column(name="importe_ayuntamientoa")
-	private long importeAyuntamientoA;
+	private BigDecimal importeAyuntamientoA;
 	@Column(name="importe_ayuntamientob")
-	private long importeAyuntamientoB;
+	private BigDecimal importeAyuntamientoB;
 	@Column(name="importe_ayuntamientoc")
-	private long importeAyuntamientoC;
+	private BigDecimal importeAyuntamientoC;
 	@Column(name="importe_elaa")
-	private long importeELAA;
+	private BigDecimal importeELAA;
 	@Column(name="importe_elab")
-	private long importeELAB;
+	private BigDecimal importeELAB;
 	@Column(name="fecha_justificacion")
 	private LocalDate fechaJustificacion;
 	@Column(name="SUBAG")
@@ -52,13 +53,13 @@ public class Convocatoria {
 	@Column(name="SUBCO")
 	private String SUBCO;
 	@Column(name="importe_guadalinfo_corriente")
-	private long importeGuadalinfoCorriente;
+	private BigDecimal importeGuadalinfoCorriente;
 	@Column(name="importe_guadalinfo_futuro")
-	private long importeGuadalinfoFuturo;
+	private BigDecimal importeGuadalinfoFuturo;
 	@Column(name="importe_ela_corriente")
-	private long importeELACorriente;
+	private BigDecimal importeELACorriente;
 	@Column(name="importe_ela_futuro")
-	private long importeELAFuturo;
+	private BigDecimal importeELAFuturo;
 	@Column(name="numero_dias")
 	private int numeroDias;
 	@Column(name="aplicacion_presupuestaria_corriete")
@@ -141,53 +142,73 @@ public class Convocatoria {
 	}
 
 
-	public long getImporteAyuntamientoA() {
+	public BigDecimal getImporteAyuntamientoA() {
 		return importeAyuntamientoA;
 	}
 
 
-	public void setImporteAyuntamientoA(long importeAyuntamientoA) {
+	public void setImporteAyuntamientoA(BigDecimal importeAyuntamientoA) {
 		this.importeAyuntamientoA = importeAyuntamientoA;
+	}
+	
+	public void setImporteAyuntamientoA(String importeAyuntamientoA) {
+		this.importeAyuntamientoA = new BigDecimal(importeAyuntamientoA);
 	}
 
 
-	public long getImporteAyuntamientoB() {
+	public BigDecimal getImporteAyuntamientoB() {
 		return importeAyuntamientoB;
 	}
 
 
-	public void setImporteAyuntamientoB(long importeAyuntamientoB) {
+	public void setImporteAyuntamientoB(BigDecimal importeAyuntamientoB) {
 		this.importeAyuntamientoB = importeAyuntamientoB;
+	}
+	
+	public void setImporteAyuntamientoB(String importeAyuntamientoB) {
+		this.importeAyuntamientoB = new BigDecimal(importeAyuntamientoB);
 	}
 
 
-	public long getImporteAyuntamientoC() {
+	public BigDecimal getImporteAyuntamientoC() {
 		return importeAyuntamientoC;
 	}
 
 
-	public void setImporteAyuntamientoC(long importeAyuntamientoC) {
+	public void setImporteAyuntamientoC(BigDecimal importeAyuntamientoC) {
 		this.importeAyuntamientoC = importeAyuntamientoC;
+	}
+	
+	public void setImporteAyuntamientoC(String importeAyuntamientoC) {
+		this.importeAyuntamientoC = new BigDecimal(importeAyuntamientoC);
 	}
 
 
-	public long getImporteELAA() {
+	public BigDecimal getImporteELAA() {
 		return importeELAA;
 	}
 
 
-	public void setImporteELAA(long importeELAA) {
+	public void setImporteELAA(BigDecimal importeELAA) {
 		this.importeELAA = importeELAA;
+	}
+	
+	public void setImporteELAA(String importeELAA) {
+		this.importeELAA = new BigDecimal(importeELAA);
 	}
 
 
-	public long getImporteELAB() {
+	public BigDecimal getImporteELAB() {
 		return importeELAB;
 	}
 
 
-	public void setImporteELAB(long importeELAB) {
+	public void setImporteELAB(BigDecimal importeELAB) {
 		this.importeELAB = importeELAB;
+	}
+	
+	public void setImporteELAB(String importeELAB) {
+		this.importeELAB = new BigDecimal(importeELAB);
 	}
 
 	@JsonFormat(pattern="dd-MM-yyyy")
@@ -223,43 +244,59 @@ public class Convocatoria {
 	}
 
 
-	public long getImporteGuadalinfoCorriente() {
+	public BigDecimal getImporteGuadalinfoCorriente() {
 		return importeGuadalinfoCorriente;
 	}
 
 
-	public void setImporteGuadalinfoCorriente(long importeGuadalinfoCorriente) {
+	public void setImporteGuadalinfoCorriente(BigDecimal importeGuadalinfoCorriente) {
 		this.importeGuadalinfoCorriente = importeGuadalinfoCorriente;
+	}
+	
+	public void setImporteGuadalinfoCorriente(String importeGuadalinfoCorriente) {
+		this.importeGuadalinfoCorriente = new BigDecimal(importeGuadalinfoCorriente);
 	}
 
 
-	public long getImporteGuadalinfoFuturo() {
+	public BigDecimal getImporteGuadalinfoFuturo() {
 		return importeGuadalinfoFuturo;
 	}
 
 
-	public void setImporteGuadalinfoFuturo(long importeGuadalinfoFuturo) {
+	public void setImporteGuadalinfoFuturo(BigDecimal importeGuadalinfoFuturo) {
 		this.importeGuadalinfoFuturo = importeGuadalinfoFuturo;
+	}
+	
+	public void setImporteGuadalinfoFuturo(String importeGuadalinfoFuturo) {
+		this.importeGuadalinfoFuturo = new BigDecimal(importeGuadalinfoFuturo);
 	}
 
 
-	public long getImporteELACorriente() {
+	public BigDecimal getImporteELACorriente() {
 		return importeELACorriente;
 	}
 
 
-	public void setImporteELACorriente(long importeELACorriente) {
+	public void setImporteELACorriente(BigDecimal importeELACorriente) {
 		this.importeELACorriente = importeELACorriente;
+	}
+	
+	public void setImporteELACorriente(String importeELACorriente) {
+		this.importeELACorriente = new BigDecimal(importeELACorriente);
 	}
 
 
-	public long getImporteELAFuturo() {
+	public BigDecimal getImporteELAFuturo() {
 		return importeELAFuturo;
 	}
 
 
-	public void setImporteELAFuturo(long importeELAFuturo) {
+	public void setImporteELAFuturo(BigDecimal importeELAFuturo) {
 		this.importeELAFuturo = importeELAFuturo;
+	}
+	
+	public void setImporteELAFuturo(String importeELAFuturo) {
+		this.importeELAFuturo = new BigDecimal(importeELAFuturo);
 	}
 
 
