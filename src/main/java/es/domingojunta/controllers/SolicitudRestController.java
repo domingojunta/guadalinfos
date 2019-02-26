@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import es.domingojunta.entities.Solicitud;
 import es.domingojunta.models.entidad.EntidadCrearViewModel;
 import es.domingojunta.models.entidad.EntidadListarViewModel;
+import es.domingojunta.models.solicitud.SolicitudCrearViewModel;
 import es.domingojunta.models.solicitud.SolicitudListarViewModel;
 import es.domingojunta.services.SolicitudService;
 
@@ -63,7 +64,6 @@ public class SolicitudRestController {
 	
 	@PutMapping({"/solicitud_actualizar","/solicitud"})
 	public ResponseEntity<SolicitudListarViewModel> actualizar (@RequestBody SolicitudListarViewModel viewModel ){
-		
 		ResponseEntity respuesta = null;
 		Boolean actualizar = service.actualizar(viewModel);
 		if (actualizar) {
@@ -75,31 +75,31 @@ public class SolicitudRestController {
 		
 	}
 	
-//	@PostMapping({"/entidad_crear","/solicitud"})
-//	public ResponseEntity<EntidadCrearViewModel> crear (@RequestBody EntidadCrearViewModel viewModel ){
-//		
-//		ResponseEntity respuesta = null;
-//		Boolean actualizar = service.crear(viewModel);
-//		if (actualizar) {
-//			respuesta = new ResponseEntity(HttpStatus.OK);
-//		} else {
-//			respuesta = new ResponseEntity(HttpStatus.NOT_FOUND);
-//		}
-//		return respuesta;
-//		
-//	}
-//	
-//	@DeleteMapping({"/entidad_borrar/{id}","/solicitud/{id}"})
-//	public ResponseEntity borrar(@PathVariable("id") int id){
-//		
-//		ResponseEntity respuesta = null;
-//		Boolean actualizar = service.borrar(id);
-//		if (actualizar) {
-//			respuesta = new ResponseEntity(HttpStatus.OK);
-//		} else {
-//			respuesta = new ResponseEntity(HttpStatus.NOT_FOUND);
-//		}
-//		return respuesta;
-//	}
+	@PostMapping({"/solicitud_crear","/solicitud"})
+	public ResponseEntity<SolicitudCrearViewModel> crear (@RequestBody SolicitudCrearViewModel viewModel ){
+		
+		ResponseEntity respuesta = null;
+		Boolean crear = service.crear(viewModel);
+		if (crear) {
+			respuesta = new ResponseEntity(HttpStatus.OK);
+		} else {
+			respuesta = new ResponseEntity(HttpStatus.NOT_FOUND);
+		}
+		return respuesta;
+		
+	}
+	
+	@DeleteMapping({"/solicitud_borrar/{id}","/solicitud/{id}"})
+	public ResponseEntity borrar(@PathVariable("id") int id){
+		
+		ResponseEntity respuesta = null;
+		Boolean borrar = service.borrar(id);
+		if (borrar) {
+			respuesta = new ResponseEntity(HttpStatus.OK);
+		} else {
+			respuesta = new ResponseEntity(HttpStatus.NOT_FOUND);
+		}
+		return respuesta;
+	}
 
 }

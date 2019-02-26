@@ -2,6 +2,7 @@ package es.domingojunta.models.convocatoria;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.Date;
 
 import javax.money.CurrencyUnit;
 import javax.money.Monetary;
@@ -24,14 +25,14 @@ public class ConvocatoriaListarViewModel {
 	private int idOrden;
 	private String nombreOrden;
 	private String aliasOrden;
-	private LocalDate fechaInicio;
-	private LocalDate fechaFin;
+	private Date fechaInicio;
+	private Date fechaFin;
 	private BigDecimal importeAyuntamientoA;
 	private BigDecimal importeAyuntamientoB;
 	private BigDecimal importeAyuntamientoC;
 	private BigDecimal importeELAA;
 	private BigDecimal importeELAB;
-	private LocalDate fechaJustificacion;
+	private Date fechaJustificacion;
 	private String SUBAG;
 	private String SUBCO;
 	private BigDecimal importeGuadalinfoCorriente;
@@ -120,19 +121,19 @@ public class ConvocatoriaListarViewModel {
 	}
 
 	@JsonFormat(pattern="dd-MM-yyyy")
-	public LocalDate getFechaInicio() {
+	public Date getFechaInicio() {
 		return fechaInicio;
 	}
 	@DateTimeFormat(pattern="yyyy-MM-dd")
-	public void setFechaInicio(LocalDate fechaInicio) {
+	public void setFechaInicio(Date fechaInicio) {
 		this.fechaInicio = fechaInicio;
 	}
 	@JsonFormat(pattern="dd-MM-yyyy")
-	public LocalDate getFechaFin() {
+	public Date getFechaFin() {
 		return fechaFin;
 	}
 	@DateTimeFormat(pattern="yyyy-MM-dd")
-	public void setFechaFin(LocalDate fechaFin) {
+	public void setFechaFin(Date fechaFin) {
 		this.fechaFin = fechaFin;
 	}
 	public Double getImporteAyuntamientoA() {
@@ -166,11 +167,11 @@ public class ConvocatoriaListarViewModel {
 		this.importeELAB = importeELAB;
 	}
 	@JsonFormat(pattern="dd-MM-yyyy")
-	public LocalDate getFechaJustificacion() {
+	public Date getFechaJustificacion() {
 		return fechaJustificacion;
 	}
 	@DateTimeFormat(pattern="yyyy-MM-dd")
-	public void setFechaJustificacion(LocalDate fechaJustificacion) {
+	public void setFechaJustificacion(Date fechaJustificacion) {
 		this.fechaJustificacion = fechaJustificacion;
 	}
 	public String getSUBAG() {

@@ -6,12 +6,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import es.domingojunta.entities.Convocatoria;
 import es.domingojunta.entities.Entidad;
 import es.domingojunta.entities.Orden;
 import es.domingojunta.entities.Solicitud;
 import es.domingojunta.models.entidad.EntidadListarViewModel;
+import es.domingojunta.models.solicitud.SolicitudCrearViewModel;
 import es.domingojunta.models.solicitud.SolicitudListarViewModel;
 import es.domingojunta.repositories.SolicitudRepository;
 import es.domingojunta.tools.Convertidor;
@@ -49,7 +52,7 @@ public class SolicitudService {
 			List<Solicitud> solicitudes = solicitudes();
 			List<SolicitudListarViewModel> viewModels = new ArrayList<>();
 			for (Solicitud item : solicitudes) {
-				SolicitudListarViewModel viewModel = new SolicitudListarViewModel(item);
+				SolicitudListarViewModel viewModel = converter.Entidad2SolicitudListarViewModel(item);
 				viewModel.setYearConvocatoria(convocatoriaService.getYearConvocatoria(item.getIdConvocatoria()));
 				viewModel.setNombreConvocatoria(convocatoriaService.getNombreConvocatoria(item.getIdConvocatoria()));
 				viewModel.setNombreEntidad(entidadService.getNombreEntidad(item.getIdEntidad()));
@@ -85,7 +88,7 @@ public class SolicitudService {
 		try {
 			try {
 				Solicitud solicitud = repository.getOne(id);
-				SolicitudListarViewModel viewModel = new SolicitudListarViewModel(solicitud);
+				SolicitudListarViewModel viewModel = converter.Entidad2SolicitudListarViewModel(solicitud);
 				viewModel.setYearConvocatoria(convocatoriaService.getYearConvocatoria(viewModel.getIdConvocatoria()));
 				viewModel.setNombreConvocatoria(convocatoriaService.getNombreConvocatoria(viewModel.getIdConvocatoria()));
 				viewModel.setNombreEntidad(entidadService.getNombreEntidad(viewModel.getIdEntidad()));
@@ -99,18 +102,46 @@ public class SolicitudService {
 	}
 
 	public Boolean actualizar(SolicitudListarViewModel viewModel) {
+		
+		//System.out.println("La fecha aeat que entra al servicio es: "+viewModel.getFechaAeat());
 		try {
-			Solicitud solicitud = repository.getOne(viewModel.getIdSolicitud());
-			if (solicitud!=null) {
-				solicitud = converter.SolicitudListarViewModel2Entidad(solicitud, viewModel);
+				Solicitud solicitud = null;
+				solicitud = converter.SolicitudListarViewModel2Entidad(viewModel);
 				repository.save(solicitud);
 				return true;
-			}
+			
+		} catch (Exception e) {
 			
 			return false;
+		}
+	}
+
+	public Boolean crear(SolicitudCrearViewModel viewModel) {
+		
+		try {
+			Solicitud solicitud = null;
+			solicitud = converter.SolicitudCrearViewModel2Entidad(viewModel);
+			repository.save(solicitud);
+			return true;
+		
+	} catch (Exception e) {
+		
+		return false;
+	}
+	}
+
+	public Boolean borrar(int id) {
+		Solicitud solicitud = null;
+		try {
+			solicitud=repository.getOne(id);
+			if (solicitud!=null) {
+				repository.deleteById(id);
+				return true;
+			} else {
+				return false;
+			}
+			
 		} catch (Exception e) {
-			System.out.println("Ha habido un error");
-			System.out.println(e.getMessage());
 			return false;
 		}
 	}

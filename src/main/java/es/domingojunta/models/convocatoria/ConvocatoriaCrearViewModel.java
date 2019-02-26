@@ -2,11 +2,15 @@ package es.domingojunta.models.convocatoria;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.Date;
 
+import javax.money.CurrencyUnit;
+import javax.money.Monetary;
 import javax.money.MonetaryAmount;
 import javax.persistence.Column;
 import javax.validation.constraints.Size;
 
+import org.javamoney.moneta.Money;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -21,14 +25,14 @@ public class ConvocatoriaCrearViewModel {
 	private int idOrden;
 	private String nombreOrden;
 	private String aliasOrden;
-	private LocalDate fechaInicio;
-	private LocalDate fechaFin;
+	private Date fechaInicio;
+	private Date fechaFin;
 	private BigDecimal importeAyuntamientoA;
 	private BigDecimal importeAyuntamientoB;
 	private BigDecimal importeAyuntamientoC;
 	private BigDecimal importeELAA;
 	private BigDecimal importeELAB;
-	private LocalDate fechaJustificacion;
+	private Date fechaJustificacion;
 	private String SUBAG;
 	private String SUBCO;
 	private BigDecimal importeGuadalinfoCorriente;
@@ -41,11 +45,10 @@ public class ConvocatoriaCrearViewModel {
 	private String resuelvePago;
 	private String resuelveJustificacion;
 	
+	
 	public ConvocatoriaCrearViewModel() {
 		super();
 		}
-	
-	
 	
 	
 	
@@ -85,19 +88,19 @@ public class ConvocatoriaCrearViewModel {
 	}
 
 	@JsonFormat(pattern="dd-MM-yyyy")
-	public LocalDate getFechaInicio() {
+	public Date getFechaInicio() {
 		return fechaInicio;
 	}
 	@DateTimeFormat(pattern="yyyy-MM-dd")
-	public void setFechaInicio(LocalDate fechaInicio) {
+	public void setFechaInicio(Date fechaInicio) {
 		this.fechaInicio = fechaInicio;
 	}
 	@JsonFormat(pattern="dd-MM-yyyy")
-	public LocalDate getFechaFin() {
+	public Date getFechaFin() {
 		return fechaFin;
 	}
 	@DateTimeFormat(pattern="yyyy-MM-dd")
-	public void setFechaFin(LocalDate fechaFin) {
+	public void setFechaFin(Date fechaFin) {
 		this.fechaFin = fechaFin;
 	}
 	public Double getImporteAyuntamientoA() {
@@ -131,11 +134,11 @@ public class ConvocatoriaCrearViewModel {
 		this.importeELAB = importeELAB;
 	}
 	@JsonFormat(pattern="dd-MM-yyyy")
-	public LocalDate getFechaJustificacion() {
+	public Date getFechaJustificacion() {
 		return fechaJustificacion;
 	}
 	@DateTimeFormat(pattern="yyyy-MM-dd")
-	public void setFechaJustificacion(LocalDate fechaJustificacion) {
+	public void setFechaJustificacion(Date fechaJustificacion) {
 		this.fechaJustificacion = fechaJustificacion;
 	}
 	public String getSUBAG() {
@@ -213,7 +216,7 @@ public class ConvocatoriaCrearViewModel {
 		this.aliasOrden = aliasOrden;
 	}
 	
-
+	
 
 	
 }

@@ -2,6 +2,7 @@ package es.domingojunta.entities;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -33,9 +34,9 @@ public class Convocatoria {
 	@Column(name="id_orden")
 	private int idOrden;
 	@Column(name="fecha_inicio")
-	private LocalDate fechaInicio;
+	private Date fechaInicio;
 	@Column(name="fecha_fin")
-	private LocalDate fechaFin;
+	private Date fechaFin;
 	@Column(name="importe_ayuntamientoa")
 	private BigDecimal importeAyuntamientoA;
 	@Column(name="importe_ayuntamientob")
@@ -47,7 +48,7 @@ public class Convocatoria {
 	@Column(name="importe_elab")
 	private BigDecimal importeELAB;
 	@Column(name="fecha_justificacion")
-	private LocalDate fechaJustificacion;
+	private Date fechaJustificacion;
 	@Column(name="SUBAG")
 	private String SUBAG;
 	@Column(name="SUBCO")
@@ -122,22 +123,22 @@ public class Convocatoria {
 	}
 
 	@JsonFormat(pattern="dd-MM-yyyy")
-	public LocalDate getFechaInicio() {
+	public Date getFechaInicio() {
 		return fechaInicio;
 	}
 
 	@DateTimeFormat(pattern="yyyy-MM-dd")
-	public void setFechaInicio(LocalDate fechaInicio) {
+	public void setFechaInicio(Date fechaInicio) {
 		this.fechaInicio = fechaInicio;
 	}
 
 	@JsonFormat(pattern="dd-MM-yyyy")
-	public LocalDate getFechaFin() {
+	public Date getFechaFin() {
 		return fechaFin;
 	}
 
 	@DateTimeFormat(pattern="yyyy-MM-dd")
-	public void setFechaFin(LocalDate fechaFin) {
+	public void setFechaFin(Date fechaFin) {
 		this.fechaFin = fechaFin;
 	}
 
@@ -212,12 +213,12 @@ public class Convocatoria {
 	}
 
 	@JsonFormat(pattern="dd-MM-yyyy")
-	public LocalDate getFechaJustificacion() {
+	public Date getFechaJustificacion() {
 		return fechaJustificacion;
 	}
 
 	@DateTimeFormat(pattern="yyyy-MM-dd")
-	public void setFechaJustificacion(LocalDate fechaJustificacion) {
+	public void setFechaJustificacion(Date fechaJustificacion) {
 		this.fechaJustificacion = fechaJustificacion;
 	}
 
