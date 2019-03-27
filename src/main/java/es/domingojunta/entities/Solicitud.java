@@ -2,19 +2,21 @@ package es.domingojunta.entities;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.Date;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.xml.bind.annotation.XmlRootElement;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
+@XmlRootElement
 public class Solicitud {
 
 	@Id
@@ -26,11 +28,11 @@ public class Solicitud {
 	@Column(name="id_entidad")
 	private int idEntidad;
 	@Column(name="fecha_entrada")
-	private Date fechaEntrada;
+	private String fechaEntrada;
 	@Column(name="expediente")
 	private String expediente;
 	@Column(name="subcc")
-	private String SUBCC;
+	private String subcc;
 	@Column(name="coste_personal")
 	private BigDecimal costePersonal;
 	@Column(name="coste_dietas")
@@ -40,28 +42,28 @@ public class Solicitud {
 	@Column(name="subvencion_dietas")
 	private BigDecimal subvencionDietas;
 	@Column(name="fecha_comunicacion_entrada")
-	private Date fechaComunicacionEntrada;
+	private String fechaComunicacionEntrada;
 	@Column(name="fecha_aeat")
-	private Date fechaAeat;
+	private  String fechaAeat;
 	@Column(name="fecha_atrian")
-	private Date fechaAtrian;
+	private String fechaAtrian;
 	@Column(name="fecha_seguridad_social")
-	private Date fechaSeguridadSocial;
+	private String fechaSeguridadSocial;
 	@Column(name="fecha_requerimiento_solicitud")
-	private Date fechaRequerimientoSolicitud;
+	private String fechaRequerimientoSolicitud;
 	@Column(name="fecha_propuesta_concesion")
-	private Date fechaPropuestaConcesion;
+	private String fechaPropuestaConcesion;
 	@Column(name="expediente_contabled")
 	private String expedienteContableD;
 	@Column(name="numero_documentod")
 	private String numeroDocumentoD;
 	@Column(name="fecha_resolucion_concesion")
-	private Date fechaResolucionConcesion;
+	private String fechaResolucionConcesion;
 	@Column(name="fecha_notificacion_resolucion_concesion")
-	private Date fechaNotificacionResolucionConcesion;
+	private String fechaNotificacionResolucionConcesion;
 	
 	@Column(name="fecha_propuestaoj")
-	private Date fechaPropuestaOJ;
+	private String fechaPropuestaOJ;
 	@Column(name="expediente_contableoj")
 	private String expedienteContableOJ;
 	@Column(name="numero_documentooj")
@@ -69,7 +71,7 @@ public class Solicitud {
 	@Column(name="importeOJ")
 	private BigDecimal importeOJ;
 	@Column(name="fecha_pago_materialoj")
-	private Date fechaPagoMaterialOJ;
+	private String fechaPagoMaterialOJ;
 	@Column(name="numero_documentoom")
 	private String numeroDocumentoOM;
 	@Column(name="numero_dias_funcionamiento")
@@ -97,13 +99,13 @@ public class Solicitud {
 	
 	
 	@Column(name="fecha_propuesta_liquidacion")
-	private Date fechaPropuestaLiquidacion;
+	private String fechaPropuestaLiquidacion;
 	@Column(name="fecha_alegaciones_propuesta_liquidacion")
-	private Date fechaAlegacionesPropuestaLiquidacion;
+	private String fechaAlegacionesPropuestaLiquidacion;
 	@Column(name="fecha_liquidacion")
-	private Date fechaLiquidacion;
+	private String fechaLiquidacion;
 	@Column(name="fecha_notificacion_liquidacion")
-	private Date fechaNotificacionLiquidacion;
+	private String fechaNotificacionLiquidacion;
 	
 	@Column(name="expediente_contablej")
 	private String expedienteContableJ;
@@ -116,22 +118,22 @@ public class Solicitud {
 	@Column(name="numero_documentoo")
 	private String numeroDocumentoO;
 	@Column(name="fecha_pago_materialo")
-	private Date fechaPagoMaterialO;
+	private String fechaPagoMaterialO;
 	
 	@Column(name="fecha_acuerdo_inicio_reintegro")
-	private Date fechaAcuerdoInicioReintegro;
+	private String fechaAcuerdoInicioReintegro;
 	@Column(name="fecha_alegacionesair")
-	private Date fechaAlegacionesAIR;
+	private String fechaAlegacionesAIR;
 	@Column(name="fecha_resolucion_reintegro")
-	private Date fechaResolucionReintegro;
+	private String fechaResolucionReintegro;
 	@Column(name="numero_modelo022")
 	private String numeroModelo022;
 	@Column(name="importe_modelo022")
 	private BigDecimal importeModelo022;
 	@Column(name="fecha_notificacion_resolucion_reintegro")
-	private Date fechaNotificacionResolucionReintegro;
+	private String fechaNotificacionResolucionReintegro;
 	@Column(name="fecha_abono_reintegro")
-	private Date fechaAbonoReintegro;
+	private String fechaAbonoReintegro;
 	
 	
 	public Solicitud() {
@@ -140,9 +142,24 @@ public class Solicitud {
 	}
 
 
+	
+
+	@Override
+	public String toString() {
+		return "Solicitud [idSolicitud=" + idSolicitud + ", idConvocatoria=" + idConvocatoria + ", idEntidad="
+				+ idEntidad + ", fechaEntrada=" + fechaEntrada + ", expediente=" + expediente + ", SUBCC=" + subcc
+				+ ", costePersonal=" + costePersonal + ", costeDietas=" + costeDietas + ", subvencionPersonal="
+				+ subvencionPersonal + ", subvencionDietas=" + subvencionDietas + "]";
+	}
+
+
+
+
 	public int getIdSolicitud() {
 		return idSolicitud;
 	}
+
+
 
 
 	public void setIdSolicitud(int idSolicitud) {
@@ -150,25 +167,20 @@ public class Solicitud {
 	}
 
 
+
+
 	public int getIdConvocatoria() {
 		return idConvocatoria;
 	}
+
+
 
 
 	public void setIdConvocatoria(int idConvocatoria) {
 		this.idConvocatoria = idConvocatoria;
 	}
 
-	
 
-	public String getNumeroDocumentoD() {
-		return numeroDocumentoD;
-	}
-
-
-	public void setNumeroDocumentoD(String numeroDocumentoD) {
-		this.numeroDocumentoD = numeroDocumentoD;
-	}
 
 
 	public int getIdEntidad() {
@@ -176,30 +188,27 @@ public class Solicitud {
 	}
 
 
+
+
 	public void setIdEntidad(int idEntidad) {
 		this.idEntidad = idEntidad;
 	}
 
-	
-
-	public String getExpedienteContableOJ() {
-		return expedienteContableOJ;
-	}
 
 
-	public void setExpedienteContableOJ(String expedienteContableOJ) {
-		this.expedienteContableOJ = expedienteContableOJ;
-	}
 
-	@JsonFormat(pattern="dd-MM-yyyy")
-	public Date getFechaEntrada() {
+	public String getFechaEntrada() {
 		return fechaEntrada;
 	}
 
-	@DateTimeFormat(pattern="yyyy-MM-dd")
-	public void setFechaEntrada(Date fechaEntrada) {
+
+
+
+	public void setFechaEntrada(String fechaEntrada) {
 		this.fechaEntrada = fechaEntrada;
 	}
+
+
 
 
 	public String getExpediente() {
@@ -207,19 +216,32 @@ public class Solicitud {
 	}
 
 
+
+
 	public void setExpediente(String expediente) {
 		this.expediente = expediente;
 	}
 
 
-	public String getSUBCC() {
-		return SUBCC;
+
+
+	
+
+
+
+
+	public String getSubcc() {
+		return subcc;
 	}
 
 
-	public void setSUBCC(String sUBCC) {
-		SUBCC = sUBCC;
+
+
+	public void setSubcc(String subcc) {
+		this.subcc = subcc;
 	}
+
+
 
 
 	public BigDecimal getCostePersonal() {
@@ -227,9 +249,13 @@ public class Solicitud {
 	}
 
 
+
+
 	public void setCostePersonal(BigDecimal costePersonal) {
 		this.costePersonal = costePersonal;
 	}
+
+
 
 
 	public BigDecimal getCosteDietas() {
@@ -237,9 +263,13 @@ public class Solicitud {
 	}
 
 
+
+
 	public void setCosteDietas(BigDecimal costeDietas) {
 		this.costeDietas = costeDietas;
 	}
+
+
 
 
 	public BigDecimal getSubvencionPersonal() {
@@ -247,9 +277,13 @@ public class Solicitud {
 	}
 
 
+
+
 	public void setSubvencionPersonal(BigDecimal subvencionPersonal) {
 		this.subvencionPersonal = subvencionPersonal;
 	}
+
+
 
 
 	public BigDecimal getSubvencionDietas() {
@@ -257,69 +291,97 @@ public class Solicitud {
 	}
 
 
+
+
 	public void setSubvencionDietas(BigDecimal subvencionDietas) {
 		this.subvencionDietas = subvencionDietas;
 	}
 
-	@JsonFormat(pattern="dd-MM-yyyy")
-	public Date getFechaComunicacionEntrada() {
+
+
+
+	public String getFechaComunicacionEntrada() {
 		return fechaComunicacionEntrada;
 	}
 
-	@DateTimeFormat(pattern="yyyy-MM-dd")
-	public void setFechaComunicacionEntrada(Date fechaComunicacionEntrada) {
+
+
+
+	public void setFechaComunicacionEntrada(String fechaComunicacionEntrada) {
 		this.fechaComunicacionEntrada = fechaComunicacionEntrada;
 	}
 
-	@JsonFormat(pattern="dd-MM-yyyy")
-	public Date getFechaAeat() {
+
+
+
+	public String getFechaAeat() {
 		return fechaAeat;
 	}
 
-	@DateTimeFormat(pattern="yyyy-MM-dd")
-	public void setFechaAeat(Date fechaAeat) {
+
+
+
+	public void setFechaAeat(String fechaAeat) {
 		this.fechaAeat = fechaAeat;
 	}
 
-	@JsonFormat(pattern="dd-MM-yyyy")
-	public Date getFechaAtrian() {
+
+
+
+	public String getFechaAtrian() {
 		return fechaAtrian;
 	}
 
-	@DateTimeFormat(pattern="yyyy-MM-dd")
-	public void setFechaAtrian(Date fechaAtrian) {
+
+
+
+	public void setFechaAtrian(String fechaAtrian) {
 		this.fechaAtrian = fechaAtrian;
 	}
 
-	@JsonFormat(pattern="dd-MM-yyyy")
-	public Date getFechaSeguridadSocial() {
+
+
+
+	public String getFechaSeguridadSocial() {
 		return fechaSeguridadSocial;
 	}
 
-	@DateTimeFormat(pattern="yyyy-MM-dd")
-	public void setFechaSeguridadSocial(Date fechaSeguridadSocial) {
+
+
+
+	public void setFechaSeguridadSocial(String fechaSeguridadSocial) {
 		this.fechaSeguridadSocial = fechaSeguridadSocial;
 	}
 
-	@JsonFormat(pattern="dd-MM-yyyy")
-	public Date getFechaRequerimientoSolicitud() {
+
+
+
+	public String getFechaRequerimientoSolicitud() {
 		return fechaRequerimientoSolicitud;
 	}
 
-	@DateTimeFormat(pattern="yyyy-MM-dd")
-	public void setFechaRequerimientoSolicitud(Date fechaRequerimientoSolicitud) {
+
+
+
+	public void setFechaRequerimientoSolicitud(String fechaRequerimientoSolicitud) {
 		this.fechaRequerimientoSolicitud = fechaRequerimientoSolicitud;
 	}
 
-	@JsonFormat(pattern="dd-MM-yyyy")
-	public Date getFechaPropuestaConcesion() {
+
+
+
+	public String getFechaPropuestaConcesion() {
 		return fechaPropuestaConcesion;
 	}
 
-	@DateTimeFormat(pattern="yyyy-MM-dd")
-	public void setFechaPropuestaConcesion(Date fechaPropuestaConcesion) {
+
+
+
+	public void setFechaPropuestaConcesion(String fechaPropuestaConcesion) {
 		this.fechaPropuestaConcesion = fechaPropuestaConcesion;
 	}
+
+
 
 
 	public String getExpedienteContableD() {
@@ -327,39 +389,83 @@ public class Solicitud {
 	}
 
 
+
+
 	public void setExpedienteContableD(String expedienteContableD) {
 		this.expedienteContableD = expedienteContableD;
 	}
 
-	@JsonFormat(pattern="dd-MM-yyyy")
-	public Date getFechaResolucionConcesion() {
+
+
+
+	public String getNumeroDocumentoD() {
+		return numeroDocumentoD;
+	}
+
+
+
+
+	public void setNumeroDocumentoD(String numeroDocumentoD) {
+		this.numeroDocumentoD = numeroDocumentoD;
+	}
+
+
+
+
+	public String getFechaResolucionConcesion() {
 		return fechaResolucionConcesion;
 	}
 
-	@DateTimeFormat(pattern="yyyy-MM-dd")
-	public void setFechaResolucionConcesion(Date fechaResolucionConcesion) {
+
+
+
+	public void setFechaResolucionConcesion(String fechaResolucionConcesion) {
 		this.fechaResolucionConcesion = fechaResolucionConcesion;
 	}
 
-	@JsonFormat(pattern="dd-MM-yyyy")
-	public Date getFechaNotificacionResolucionConcesion() {
+
+
+
+	public String getFechaNotificacionResolucionConcesion() {
 		return fechaNotificacionResolucionConcesion;
 	}
 
-	@DateTimeFormat(pattern="yyyy-MM-dd")
-	public void setFechaNotificacionResolucionConcesion(Date fechaNotificacionResolucionConcesion) {
+
+
+
+	public void setFechaNotificacionResolucionConcesion(String fechaNotificacionResolucionConcesion) {
 		this.fechaNotificacionResolucionConcesion = fechaNotificacionResolucionConcesion;
 	}
 
-	@JsonFormat(pattern="dd-MM-yyyy")
-	public Date getFechaPropuestaOJ() {
+
+
+
+	public String getFechaPropuestaOJ() {
 		return fechaPropuestaOJ;
 	}
 
-	@DateTimeFormat(pattern="yyyy-MM-dd")
-	public void setFechaPropuestaOJ(Date fechaPropuestaOJ) {
+
+
+
+	public void setFechaPropuestaOJ(String fechaPropuestaOJ) {
 		this.fechaPropuestaOJ = fechaPropuestaOJ;
 	}
+
+
+
+
+	public String getExpedienteContableOJ() {
+		return expedienteContableOJ;
+	}
+
+
+
+
+	public void setExpedienteContableOJ(String expedienteContableOJ) {
+		this.expedienteContableOJ = expedienteContableOJ;
+	}
+
+
 
 
 	public String getNumeroDocumentoOJ() {
@@ -367,9 +473,13 @@ public class Solicitud {
 	}
 
 
+
+
 	public void setNumeroDocumentoOJ(String numeroDocumentoOJ) {
 		this.numeroDocumentoOJ = numeroDocumentoOJ;
 	}
+
+
 
 
 	public BigDecimal getImporteOJ() {
@@ -377,9 +487,27 @@ public class Solicitud {
 	}
 
 
+
+
 	public void setImporteOJ(BigDecimal importeOJ) {
 		this.importeOJ = importeOJ;
 	}
+
+
+
+
+	public String getFechaPagoMaterialOJ() {
+		return fechaPagoMaterialOJ;
+	}
+
+
+
+
+	public void setFechaPagoMaterialOJ(String fechaPagoMaterialOJ) {
+		this.fechaPagoMaterialOJ = fechaPagoMaterialOJ;
+	}
+
+
 
 
 	public String getNumeroDocumentoOM() {
@@ -387,19 +515,13 @@ public class Solicitud {
 	}
 
 
+
+
 	public void setNumeroDocumentoOM(String numeroDocumentoOM) {
 		this.numeroDocumentoOM = numeroDocumentoOM;
 	}
 
-	@JsonFormat(pattern="dd-MM-yyyy")
-	public Date getFechaPagoMaterialOJ() {
-		return fechaPagoMaterialOJ;
-	}
 
-	@DateTimeFormat(pattern="yyyy-MM-dd")
-	public void setFechaPagoMaterialOJ(Date fechaPagoMaterialOJ) {
-		this.fechaPagoMaterialOJ = fechaPagoMaterialOJ;
-	}
 
 
 	public int getNumeroDiasFuncionamiento() {
@@ -407,9 +529,13 @@ public class Solicitud {
 	}
 
 
+
+
 	public void setNumeroDiasFuncionamiento(int numeroDiasFuncionamiento) {
 		this.numeroDiasFuncionamiento = numeroDiasFuncionamiento;
 	}
+
+
 
 
 	public int getObjetivoNumeroActividades() {
@@ -417,9 +543,13 @@ public class Solicitud {
 	}
 
 
+
+
 	public void setObjetivoNumeroActividades(int objetivoNumeroActividades) {
 		this.objetivoNumeroActividades = objetivoNumeroActividades;
 	}
+
+
 
 
 	public int getObjetivoNumeroActividadesMarcadas() {
@@ -427,9 +557,13 @@ public class Solicitud {
 	}
 
 
+
+
 	public void setObjetivoNumeroActividadesMarcadas(int objetivoNumeroActividadesMarcadas) {
 		this.objetivoNumeroActividadesMarcadas = objetivoNumeroActividadesMarcadas;
 	}
+
+
 
 
 	public int getObjetivoNumeroMeses() {
@@ -437,9 +571,13 @@ public class Solicitud {
 	}
 
 
+
+
 	public void setObjetivoNumeroMeses(int objetivoNumeroMeses) {
 		this.objetivoNumeroMeses = objetivoNumeroMeses;
 	}
+
+
 
 
 	public int getNumeroActividadesAlcanzado() {
@@ -447,9 +585,13 @@ public class Solicitud {
 	}
 
 
+
+
 	public void setNumeroActividadesAlcanzado(int numeroActividadesAlcanzado) {
 		this.numeroActividadesAlcanzado = numeroActividadesAlcanzado;
 	}
+
+
 
 
 	public int getNumeroActividadesMarcadasAlcanzado() {
@@ -457,197 +599,27 @@ public class Solicitud {
 	}
 
 
+
+
 	public void setNumeroActividadesMarcadasAlcanzado(int numeroActividadesMarcadasAlcanzado) {
 		this.numeroActividadesMarcadasAlcanzado = numeroActividadesMarcadasAlcanzado;
 	}
 
-	@JsonFormat(pattern="dd-MM-yyyy")
-	public Date getFechaPropuestaLiquidacion() {
-		return fechaPropuestaLiquidacion;
-	}
-
-	@DateTimeFormat(pattern="yyyy-MM-dd")
-	public void setFechaPropuestaLiquidacion(Date fechaPropuestaLiquidacion) {
-		this.fechaPropuestaLiquidacion = fechaPropuestaLiquidacion;
-	}
-
-	@JsonFormat(pattern="dd-MM-yyyy")
-	public Date getFechaAlegacionesPropuestaLiquidacion() {
-		return fechaAlegacionesPropuestaLiquidacion;
-	}
-
-	@DateTimeFormat(pattern="yyyy-MM-dd")
-	public void setFechaAlegacionesPropuestaLiquidacion(Date fechaAlegacionesPropuestaLiquidacion) {
-		this.fechaAlegacionesPropuestaLiquidacion = fechaAlegacionesPropuestaLiquidacion;
-	}
-
-	@JsonFormat(pattern="dd-MM-yyyy")
-	public Date getFechaLiquidacion() {
-		return fechaLiquidacion;
-	}
-
-	@DateTimeFormat(pattern="yyyy-MM-dd")
-	public void setFechaLiquidacion(Date fechaLiquidacion) {
-		this.fechaLiquidacion = fechaLiquidacion;
-	}
-
-	@JsonFormat(pattern="dd-MM-yyyy")
-	public Date getFechaNotificacionLiquidacion() {
-		return fechaNotificacionLiquidacion;
-	}
-
-	@DateTimeFormat(pattern="yyyy-MM-dd")
-	public void setFechaNotificacionLiquidacion(Date fechaNotificacionLiquidacion) {
-		this.fechaNotificacionLiquidacion = fechaNotificacionLiquidacion;
-	}
 
 
-	
-
-
-	public String getExpedienteContableJ() {
-		return expedienteContableJ;
-	}
-
-
-	public void setExpedienteContableJ(String expedienteContableJ) {
-		this.expedienteContableJ = expedienteContableJ;
-	}
-
-
-	public String getNumeroDocumentoJ() {
-		return numeroDocumentoJ;
-	}
-
-
-	public void setNumeroDocumentoJ(String numeroDocumentoJ) {
-		this.numeroDocumentoJ = numeroDocumentoJ;
-	}
-
-
-	
-
-
-	public String getExpedienteContablePropuestaO() {
-		return expedienteContablePropuestaO;
-	}
-
-
-	public void setExpedienteContablePropuestaO(String expedienteContablePropuestaO) {
-		this.expedienteContablePropuestaO = expedienteContablePropuestaO;
-	}
-
-
-	public String getNumeroPropuestaDocumentoO() {
-		return numeroPropuestaDocumentoO;
-	}
-
-
-	public void setNumeroPropuestaDocumentoO(String numeroPropuestaDocumentoO) {
-		this.numeroPropuestaDocumentoO = numeroPropuestaDocumentoO;
-	}
-
-
-	public String getNumeroDocumentoO() {
-		return numeroDocumentoO;
-	}
-
-
-	public void setNumeroDocumentoO(String numeroDocumentoO) {
-		this.numeroDocumentoO = numeroDocumentoO;
-	}
-
-	@JsonFormat(pattern="dd-MM-yyyy")
-	public Date getFechaPagoMaterialO() {
-		return fechaPagoMaterialO;
-	}
-
-	@DateTimeFormat(pattern="yyyy-MM-dd")
-	public void setFechaPagoMaterialO(Date fechaPagoMaterialO) {
-		this.fechaPagoMaterialO = fechaPagoMaterialO;
-	}
-
-	@JsonFormat(pattern="dd-MM-yyyy")
-	public Date getFechaAcuerdoInicioReintegro() {
-		return fechaAcuerdoInicioReintegro;
-	}
-
-	@DateTimeFormat(pattern="yyyy-MM-dd")
-	public void setFechaAcuerdoInicioReintegro(Date fechaAcuerdoInicioReintegro) {
-		this.fechaAcuerdoInicioReintegro = fechaAcuerdoInicioReintegro;
-	}
-
-	@JsonFormat(pattern="dd-MM-yyyy")
-	public Date getFechaAlegacionesAIR() {
-		return fechaAlegacionesAIR;
-	}
-
-	@DateTimeFormat(pattern="yyyy-MM-dd")
-	public void setFechaAlegacionesAIR(Date fechaAlegacionesAIR) {
-		this.fechaAlegacionesAIR = fechaAlegacionesAIR;
-	}
-
-	@JsonFormat(pattern="dd-MM-yyyy")
-	public Date getFechaResolucionReintegro() {
-		return fechaResolucionReintegro;
-	}
-
-	@DateTimeFormat(pattern="yyyy-MM-dd")
-	public void setFechaResolucionReintegro(Date fechaResolucionReintegro) {
-		this.fechaResolucionReintegro = fechaResolucionReintegro;
-	}
-
-
-	public String getNumeroModelo022() {
-		return numeroModelo022;
-	}
-
-
-	public void setNumeroModelo022(String numeroModelo022) {
-		this.numeroModelo022 = numeroModelo022;
-	}
-
-
-	public BigDecimal getImporteModelo022() {
-		return importeModelo022;
-	}
-
-
-	public void setImporteModelo022(BigDecimal importeModelo022) {
-		this.importeModelo022 = importeModelo022;
-	}
-	@JsonFormat(pattern="dd-MM-yyyy")
-	public Date getFechaNotificacionResolucionReintegro() {
-		return fechaNotificacionResolucionReintegro;
-	}
-
-	@DateTimeFormat(pattern="yyyy-MM-dd")
-	public void setFechaNotificacionResolucionReintegro(Date fechaNotificacionResolucionReintegro) {
-		this.fechaNotificacionResolucionReintegro = fechaNotificacionResolucionReintegro;
-	}
-
-	@JsonFormat(pattern="dd-MM-yyyy")
-	public Date getFechaAbonoReintegro() {
-		return fechaAbonoReintegro;
-	}
-
-	@DateTimeFormat(pattern="yyyy-MM-dd")
-	public void setFechaAbonoReintegro(Date fechaAbonoReintegro) {
-		this.fechaAbonoReintegro = fechaAbonoReintegro;
-	}
-
-	
 
 	public int getNumeroMesesAlcanzado() {
 		return numeroMesesAlcanzado;
 	}
 
 
+
+
 	public void setNumeroMesesAlcanzado(int numeroMesesAlcanzado) {
 		this.numeroMesesAlcanzado = numeroMesesAlcanzado;
 	}
-	
-	
+
+
 
 
 	public BigDecimal getImporteJustificadoPersonal() {
@@ -655,9 +627,13 @@ public class Solicitud {
 	}
 
 
+
+
 	public void setImporteJustificadoPersonal(BigDecimal importeJustificadoPersonal) {
 		this.importeJustificadoPersonal = importeJustificadoPersonal;
 	}
+
+
 
 
 	public BigDecimal getImporteJustificadoDietas() {
@@ -665,9 +641,13 @@ public class Solicitud {
 	}
 
 
+
+
 	public void setImporteJustificadoDietas(BigDecimal importeJustificadoDietas) {
 		this.importeJustificadoDietas = importeJustificadoDietas;
 	}
+
+
 
 
 	public BigDecimal getImporteAceptadoPersonal() {
@@ -675,9 +655,13 @@ public class Solicitud {
 	}
 
 
+
+
 	public void setImporteAceptadoPersonal(BigDecimal importeAceptadoPersonal) {
 		this.importeAceptadoPersonal = importeAceptadoPersonal;
 	}
+
+
 
 
 	public BigDecimal getImporteAceptadoDietas() {
@@ -685,21 +669,252 @@ public class Solicitud {
 	}
 
 
+
+
 	public void setImporteAceptadoDietas(BigDecimal importeAceptadoDietas) {
 		this.importeAceptadoDietas = importeAceptadoDietas;
 	}
 
 
-	@Override
-	public String toString() {
-		return "Solicitud [idSolicitud=" + idSolicitud + ", idConvocatoria=" + idConvocatoria + ", idEntidad="
-				+ idEntidad + ", fechaEntrada=" + fechaEntrada + ", expediente=" + expediente + ", SUBCC=" + SUBCC
-				+ ", costePersonal=" + costePersonal + ", costeDietas=" + costeDietas + ", subvencionPersonal="
-				+ subvencionPersonal + ", subvencionDietas=" + subvencionDietas + "]";
+
+
+	public String getFechaPropuestaLiquidacion() {
+		return fechaPropuestaLiquidacion;
+	}
+
+
+
+
+	public void setFechaPropuestaLiquidacion(String fechaPropuestaLiquidacion) {
+		this.fechaPropuestaLiquidacion = fechaPropuestaLiquidacion;
+	}
+
+
+
+
+	public String getFechaAlegacionesPropuestaLiquidacion() {
+		return fechaAlegacionesPropuestaLiquidacion;
+	}
+
+
+
+
+	public void setFechaAlegacionesPropuestaLiquidacion(String fechaAlegacionesPropuestaLiquidacion) {
+		this.fechaAlegacionesPropuestaLiquidacion = fechaAlegacionesPropuestaLiquidacion;
+	}
+
+
+
+
+	public String getFechaLiquidacion() {
+		return fechaLiquidacion;
+	}
+
+
+
+
+	public void setFechaLiquidacion(String fechaLiquidacion) {
+		this.fechaLiquidacion = fechaLiquidacion;
+	}
+
+
+
+
+	public String getFechaNotificacionLiquidacion() {
+		return fechaNotificacionLiquidacion;
+	}
+
+
+
+
+	public void setFechaNotificacionLiquidacion(String fechaNotificacionLiquidacion) {
+		this.fechaNotificacionLiquidacion = fechaNotificacionLiquidacion;
+	}
+
+
+
+
+	public String getExpedienteContableJ() {
+		return expedienteContableJ;
+	}
+
+
+
+
+	public void setExpedienteContableJ(String expedienteContableJ) {
+		this.expedienteContableJ = expedienteContableJ;
+	}
+
+
+
+
+	public String getNumeroDocumentoJ() {
+		return numeroDocumentoJ;
+	}
+
+
+
+
+	public void setNumeroDocumentoJ(String numeroDocumentoJ) {
+		this.numeroDocumentoJ = numeroDocumentoJ;
+	}
+
+
+
+
+	public String getExpedienteContablePropuestaO() {
+		return expedienteContablePropuestaO;
+	}
+
+
+
+
+	public void setExpedienteContablePropuestaO(String expedienteContablePropuestaO) {
+		this.expedienteContablePropuestaO = expedienteContablePropuestaO;
+	}
+
+
+
+
+	public String getNumeroPropuestaDocumentoO() {
+		return numeroPropuestaDocumentoO;
+	}
+
+
+
+
+	public void setNumeroPropuestaDocumentoO(String numeroPropuestaDocumentoO) {
+		this.numeroPropuestaDocumentoO = numeroPropuestaDocumentoO;
+	}
+
+
+
+
+	public String getNumeroDocumentoO() {
+		return numeroDocumentoO;
+	}
+
+
+
+
+	public void setNumeroDocumentoO(String numeroDocumentoO) {
+		this.numeroDocumentoO = numeroDocumentoO;
+	}
+
+
+
+
+	public String getFechaPagoMaterialO() {
+		return fechaPagoMaterialO;
+	}
+
+
+
+
+	public void setFechaPagoMaterialO(String fechaPagoMaterialO) {
+		this.fechaPagoMaterialO = fechaPagoMaterialO;
+	}
+
+
+
+
+	public String getFechaAcuerdoInicioReintegro() {
+		return fechaAcuerdoInicioReintegro;
+	}
+
+
+
+
+	public void setFechaAcuerdoInicioReintegro(String fechaAcuerdoInicioReintegro) {
+		this.fechaAcuerdoInicioReintegro = fechaAcuerdoInicioReintegro;
+	}
+
+
+
+
+	public String getFechaAlegacionesAIR() {
+		return fechaAlegacionesAIR;
+	}
+
+
+
+
+	public void setFechaAlegacionesAIR(String fechaAlegacionesAIR) {
+		this.fechaAlegacionesAIR = fechaAlegacionesAIR;
+	}
+
+
+
+
+	public String getFechaResolucionReintegro() {
+		return fechaResolucionReintegro;
+	}
+
+
+
+
+	public void setFechaResolucionReintegro(String fechaResolucionReintegro) {
+		this.fechaResolucionReintegro = fechaResolucionReintegro;
+	}
+
+
+
+
+	public String getNumeroModelo022() {
+		return numeroModelo022;
+	}
+
+
+
+
+	public void setNumeroModelo022(String numeroModelo022) {
+		this.numeroModelo022 = numeroModelo022;
+	}
+
+
+
+
+	public BigDecimal getImporteModelo022() {
+		return importeModelo022;
+	}
+
+
+
+
+	public void setImporteModelo022(BigDecimal importeModelo022) {
+		this.importeModelo022 = importeModelo022;
+	}
+
+
+
+
+	public String getFechaNotificacionResolucionReintegro() {
+		return fechaNotificacionResolucionReintegro;
+	}
+
+
+
+
+	public void setFechaNotificacionResolucionReintegro(String fechaNotificacionResolucionReintegro) {
+		this.fechaNotificacionResolucionReintegro = fechaNotificacionResolucionReintegro;
+	}
+
+
+
+
+	public String getFechaAbonoReintegro() {
+		return fechaAbonoReintegro;
+	}
+
+
+
+
+	public void setFechaAbonoReintegro(String fechaAbonoReintegro) {
+		this.fechaAbonoReintegro = fechaAbonoReintegro;
 	}
 
 	
-
+	
 	
 	
 }

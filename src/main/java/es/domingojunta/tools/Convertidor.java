@@ -38,29 +38,38 @@ public class Convertidor {
 
 	public Convocatoria ConvocatoriaListarViewModel2Convocatoria(Convocatoria convocatoria,
 			ConvocatoriaListarViewModel viewModel) {
-		convocatoria.setIdConvocatoria(viewModel.getIdConvocatoria());
-		convocatoria.setNombre(viewModel.getNombreConvocatoria());
-		convocatoria.setYear(viewModel.getYearConvocatoria());
-		convocatoria.setIdOrden(viewModel.getIdOrden());
-		convocatoria.setFechaInicio(viewModel.getFechaInicio());
-		convocatoria.setFechaFin(viewModel.getFechaFin());
-		convocatoria.setImporteAyuntamientoA(new BigDecimal(viewModel.getImporteAyuntamientoA()));
-		convocatoria.setImporteAyuntamientoB(new BigDecimal(viewModel.getImporteAyuntamientoB()));
-		convocatoria.setImporteAyuntamientoC(new BigDecimal(viewModel.getImporteAyuntamientoC()));
-		convocatoria.setImporteELAA(new BigDecimal(viewModel.getImporteELAA()));
-		convocatoria.setImporteELAB(new BigDecimal(viewModel.getImporteELAB()));
-		convocatoria.setFechaJustificacion(viewModel.getFechaJustificacion());
-		convocatoria.setSUBAG(viewModel.getSUBAG());
-		convocatoria.setSUBCO(viewModel.getSUBCO());
-		convocatoria.setImporteGuadalinfoCorriente(new BigDecimal(viewModel.getImporteGuadalinfoCorriente()));
-		convocatoria.setImporteGuadalinfoFuturo(new BigDecimal(viewModel.getImporteGuadalinfoFuturo()));
-		convocatoria.setImporteELACorriente(new BigDecimal(viewModel.getImporteELACorriente()));
-		convocatoria.setImporteELAFuturo(new BigDecimal(viewModel.getImporteELAFuturo()));
-		convocatoria.setNumeroDias(viewModel.getNumeroDias());
-		convocatoria.setAplicacionPresupuestariaCorriente(viewModel.getAplicacionPresupuestariaCorriente());
-		convocatoria.setAplicacionPresupuestariaFutura(viewModel.getAplicacionPresupuestariaFutura());
-		convocatoria.setResuelvePago(viewModel.getResuelvePago());
-		convocatoria.setResuelveJustificacion(viewModel.getResuelveJustificacion());
+		
+		try {
+			convocatoria.setIdConvocatoria(viewModel.getIdConvocatoria());
+			convocatoria.setNombre(viewModel.getNombreConvocatoria());
+			convocatoria.setYear(viewModel.getYearConvocatoria());
+			convocatoria.setIdOrden(viewModel.getIdOrden());
+			
+			convocatoria.setFechaInicio(viewModel.getFechaInicio());
+			convocatoria.setFechaFin(viewModel.getFechaFin());
+			convocatoria.setImporteAyuntamientoA(viewModel.getImporteAyuntamientoA());
+			convocatoria.setImporteAyuntamientoB(viewModel.getImporteAyuntamientoB());
+			convocatoria.setImporteAyuntamientoC(viewModel.getImporteAyuntamientoC());
+			convocatoria.setImporteELAA(viewModel.getImporteELAA());
+			convocatoria.setImporteELAB(viewModel.getImporteELAB());
+			convocatoria.setFechaJustificacion(viewModel.getFechaJustificacion());
+			convocatoria.setSUBAG(viewModel.getSUBAG());
+			convocatoria.setSUBCO(viewModel.getSUBCO());
+			convocatoria.setImporteGuadalinfoCorriente(viewModel.getImporteGuadalinfoCorriente());
+			convocatoria.setImporteGuadalinfoFuturo(viewModel.getImporteGuadalinfoFuturo());
+			convocatoria.setImporteELACorriente(viewModel.getImporteELACorriente());
+			convocatoria.setImporteELAFuturo(viewModel.getImporteELAFuturo());
+			convocatoria.setNumeroDias(viewModel.getNumeroDias());
+			convocatoria.setAplicacionPresupuestariaCorriente(viewModel.getAplicacionPresupuestariaCorriente());
+     		convocatoria.setAplicacionPresupuestariaFutura(viewModel.getAplicacionPresupuestariaFutura());
+			convocatoria.setResuelvePago(viewModel.getResuelvePago());
+			convocatoria.setResuelveJustificacion(viewModel.getResuelveJustificacion());
+			
+		} catch (Exception e) {
+			System.out.println("Error al convertir viewModel en Entity");
+			System.out.println(e.getMessage());
+		}
+		
 		
 		
 		return convocatoria;
@@ -68,23 +77,24 @@ public class Convertidor {
 
 	public Convocatoria ConvocatoriaCrearViewModel2Convocatoria(Convocatoria convocatoria,
 			ConvocatoriaCrearViewModel viewModel) {
+		
 		convocatoria.setNombre(viewModel.getNombreConvocatoria());
 		convocatoria.setYear(viewModel.getYearConvocatoria());
 		convocatoria.setIdOrden(viewModel.getIdOrden());
 		convocatoria.setFechaInicio(viewModel.getFechaInicio());
 		convocatoria.setFechaFin(viewModel.getFechaFin());
-		convocatoria.setImporteAyuntamientoA(new BigDecimal(viewModel.getImporteAyuntamientoA()));
-		convocatoria.setImporteAyuntamientoB(new BigDecimal(viewModel.getImporteAyuntamientoB()));
-		convocatoria.setImporteAyuntamientoC(new BigDecimal(viewModel.getImporteAyuntamientoC()));
-		convocatoria.setImporteELAA(new BigDecimal(viewModel.getImporteELAA()));
-		convocatoria.setImporteELAB(new BigDecimal(viewModel.getImporteELAB()));
+		convocatoria.setImporteAyuntamientoA(viewModel.getImporteAyuntamientoA());
+		convocatoria.setImporteAyuntamientoB(viewModel.getImporteAyuntamientoB());
+		convocatoria.setImporteAyuntamientoC(viewModel.getImporteAyuntamientoC());
+		convocatoria.setImporteELAA(viewModel.getImporteELAA());
+		convocatoria.setImporteELAB(viewModel.getImporteELAB());
 		convocatoria.setFechaJustificacion(viewModel.getFechaJustificacion());
 		convocatoria.setSUBAG(viewModel.getSUBAG());
 		convocatoria.setSUBCO(viewModel.getSUBCO());
-		convocatoria.setImporteGuadalinfoCorriente(new BigDecimal(viewModel.getImporteGuadalinfoCorriente()));
-		convocatoria.setImporteGuadalinfoFuturo(new BigDecimal(viewModel.getImporteGuadalinfoFuturo()));
-		convocatoria.setImporteELACorriente(new BigDecimal(viewModel.getImporteELACorriente()));
-		convocatoria.setImporteELAFuturo(new BigDecimal(viewModel.getImporteELAFuturo()));
+		convocatoria.setImporteGuadalinfoCorriente(viewModel.getImporteGuadalinfoCorriente());
+		convocatoria.setImporteGuadalinfoFuturo(viewModel.getImporteGuadalinfoFuturo());
+		convocatoria.setImporteELACorriente(viewModel.getImporteELACorriente());
+		convocatoria.setImporteELAFuturo(viewModel.getImporteELAFuturo());
 		convocatoria.setNumeroDias(viewModel.getNumeroDias());
 		convocatoria.setAplicacionPresupuestariaCorriente(viewModel.getAplicacionPresupuestariaCorriente());
 		convocatoria.setAplicacionPresupuestariaFutura(viewModel.getAplicacionPresupuestariaFutura());
@@ -93,6 +103,46 @@ public class Convertidor {
 		return convocatoria;
 	}
 
+	public ConvocatoriaListarViewModel Entidad2ConvocatoriaListarViewModel(Convocatoria item) {
+		
+		ConvocatoriaListarViewModel vm = new ConvocatoriaListarViewModel();
+		try {
+			vm.setIdConvocatoria(item.getIdConvocatoria());
+			vm.setNombreConvocatoria(item.getNombre());
+			vm.setYearConvocatoria(item.getYear());
+			vm.setIdOrden(item.getIdOrden());
+			vm.setFechaInicio(item.getFechaInicio());
+			vm.setFechaFin(item.getFechaFin());
+			vm.setImporteAyuntamientoA(item.getImporteAyuntamientoA());
+			vm.setImporteAyuntamientoB(item.getImporteAyuntamientoB());
+			vm.setImporteAyuntamientoC(item.getImporteAyuntamientoC());
+			vm.setImporteELAA(item.getImporteELAA());
+			vm.setImporteELAB(item.getImporteELAB());
+			vm.setFechaJustificacion(item.getFechaJustificacion());
+			vm.setSUBAG(item.getSUBAG());
+			vm.setSUBCO(item.getSUBCO());
+			vm.setImporteGuadalinfoCorriente(item.getImporteGuadalinfoCorriente());
+			vm.setImporteGuadalinfoFuturo(item.getImporteGuadalinfoFuturo());
+			vm.setImporteELACorriente(item.getImporteELACorriente());
+			vm.setImporteELAFuturo(item.getImporteELAFuturo());
+			vm.setNumeroDias(item.getNumeroDias());
+			vm.setAplicacionPresupuestariaCorriente(item.getAplicacionPresupuestariaCorriente());
+     		vm.setAplicacionPresupuestariaFutura(item.getAplicacionPresupuestariaFutura());
+			vm.setResuelvePago(item.getResuelvePago());
+			vm.setResuelveJustificacion(item.getResuelveJustificacion());
+			
+		} catch (Exception e) {
+			System.out.println("Error al convertir viewModel en Entity");
+			System.out.println(e.getMessage());
+			return vm;
+		}
+		
+		
+		
+		return vm;
+	}
+	
+	
 	public Entidad EntidadListarViewModel2Entidad(Entidad entidad, EntidadListarViewModel viewModel) {
 		
 		entidad.setIdEntidad(viewModel.getIdEntidad());
@@ -134,18 +184,18 @@ public class Convertidor {
 	}
 
 	public Solicitud SolicitudListarViewModel2Entidad(SolicitudListarViewModel vm) {
-		//System.out.println("La fecha aet que entra al converter es: "+sol.getFechaAeat());
+		
 		Solicitud solicitud = new Solicitud();
 		solicitud.setIdSolicitud(vm.getIdSolicitud());
 		solicitud.setIdConvocatoria(vm.getIdConvocatoria());
 		solicitud.setIdEntidad(vm.getIdEntidad());
 		solicitud.setFechaEntrada(vm.getFechaEntrada());
 		solicitud.setExpediente(vm.getExpediente());
-		solicitud.setSUBCC(vm.getSUBCC());
-		solicitud.setCostePersonal(new BigDecimal(vm.getCostePersonal()));
-		solicitud.setCosteDietas(new BigDecimal(vm.getCosteDietas()));
-		solicitud.setSubvencionPersonal(new BigDecimal(vm.getSubvencionPersonal()));
-		solicitud.setSubvencionDietas(new BigDecimal(vm.getSubvencionDietas()));
+		solicitud.setSubcc(vm.getSubcc());
+		solicitud.setCostePersonal(vm.getCostePersonal());
+		solicitud.setCosteDietas(vm.getCosteDietas());
+		solicitud.setSubvencionPersonal(vm.getSubvencionPersonal());
+		solicitud.setSubvencionDietas(vm.getSubvencionDietas());
 		solicitud.setFechaComunicacionEntrada(vm.getFechaComunicacionEntrada());
 		solicitud.setFechaAeat(vm.getFechaAeat());
 		solicitud.setFechaAtrian(vm.getFechaAtrian());
@@ -182,7 +232,9 @@ public class Convertidor {
 		
 		solicitud.setExpedienteContableJ(vm.getExpedienteContableJ());
 		solicitud.setNumeroDocumentoJ(vm.getNumeroDocumentoJ());
+		
 		solicitud.setNumeroPropuestaDocumentoO(vm.getNumeroPropuestaDocumentoO());
+		solicitud.setExpedienteContablePropuestaO(vm.getExpedienteContablePropuestaO());
 		solicitud.setNumeroDocumentoO(vm.getNumeroDocumentoO());
 		solicitud.setFechaPagoMaterialO(vm.getFechaPagoMaterialO());
 		
@@ -207,15 +259,13 @@ public class Convertidor {
 		viewModel.setIdEntidad(solicitud.getIdEntidad());
 		viewModel.setFechaEntrada(solicitud.getFechaEntrada());
 		viewModel.setExpediente(solicitud.getExpediente());
-		viewModel.setSUBCC(solicitud.getSUBCC());
+		viewModel.setSubcc(solicitud.getSubcc());
 		viewModel.setCostePersonal(solicitud.getCostePersonal());
 		viewModel.setCosteDietas(solicitud.getCosteDietas());
 		viewModel.setSubvencionPersonal(solicitud.getSubvencionPersonal());
 		viewModel.setSubvencionDietas(solicitud.getSubvencionDietas());
 		viewModel.setFechaComunicacionEntrada(solicitud.getFechaComunicacionEntrada());
-		//System.out.println("La fecha aeat de la solicitud es: "+solicitud.getFechaAeat());
 		viewModel.setFechaAeat(solicitud.getFechaAeat());
-		//System.out.println("La fecha del viewModel es: "+ viewModel.getFechaAeat());
 		viewModel.setFechaAtrian(solicitud.getFechaAtrian());
 		viewModel.setFechaSeguridadSocial(solicitud.getFechaSeguridadSocial());
 		viewModel.setFechaRequerimientoSolicitud(solicitud.getFechaRequerimientoSolicitud());
@@ -223,7 +273,7 @@ public class Convertidor {
 		viewModel.setExpedienteContableD(solicitud.getExpedienteContableD());
 		viewModel.setNumeroDocumentoD(solicitud.getNumeroDocumentoD());
 		viewModel.setFechaResolucionConcesion(solicitud.getFechaResolucionConcesion());
-		viewModel.setFechaNotificacionResolucionConcesion(solicitud.getFechaResolucionConcesion());
+		viewModel.setFechaNotificacionResolucionConcesion(solicitud.getFechaNotificacionResolucionConcesion());
 		
 		
 		viewModel.setFechaPropuestaOJ(solicitud.getFechaPropuestaOJ());
@@ -251,6 +301,7 @@ public class Convertidor {
 		
 		viewModel.setExpedienteContableJ(solicitud.getExpedienteContableJ());
 		viewModel.setNumeroDocumentoJ(solicitud.getNumeroDocumentoJ());
+		viewModel.setExpedienteContablePropuestaO(solicitud.getExpedienteContablePropuestaO());
 		viewModel.setNumeroPropuestaDocumentoO(solicitud.getNumeroPropuestaDocumentoO());
 		viewModel.setNumeroDocumentoO(solicitud.getNumeroDocumentoO());
 		viewModel.setFechaPagoMaterialO(solicitud.getFechaPagoMaterialO());
@@ -267,17 +318,19 @@ public class Convertidor {
 	}
 
 	public Solicitud SolicitudCrearViewModel2Entidad(SolicitudCrearViewModel vm) {
+		
 		Solicitud solicitud = new Solicitud();
 		//solicitud.setIdSolicitud(vm.getIdSolicitud());
+		System.out.println("Entrando en el convertidor, viewmodel con expt.= "+vm.getExpediente());
 		solicitud.setIdConvocatoria(vm.getIdConvocatoria());
 		solicitud.setIdEntidad(vm.getIdEntidad());
 		solicitud.setFechaEntrada(vm.getFechaEntrada());
 		solicitud.setExpediente(vm.getExpediente());
-		solicitud.setSUBCC(vm.getSUBCC());
-		solicitud.setCostePersonal(new BigDecimal(vm.getCostePersonal()));
-		solicitud.setCosteDietas(new BigDecimal(vm.getCosteDietas()));
-		solicitud.setSubvencionPersonal(new BigDecimal(vm.getSubvencionPersonal()));
-		solicitud.setSubvencionDietas(new BigDecimal(vm.getSubvencionDietas()));
+		solicitud.setSubcc(vm.getSubcc());
+		solicitud.setCostePersonal(vm.getCostePersonal());
+		solicitud.setCosteDietas(vm.getCosteDietas());
+		solicitud.setSubvencionPersonal(vm.getSubvencionPersonal());
+		solicitud.setSubvencionDietas(vm.getSubvencionDietas());
 		solicitud.setFechaComunicacionEntrada(vm.getFechaComunicacionEntrada());
 		solicitud.setFechaAeat(vm.getFechaAeat());
 		solicitud.setFechaAtrian(vm.getFechaAtrian());
@@ -314,7 +367,9 @@ public class Convertidor {
 		
 		solicitud.setExpedienteContableJ(vm.getExpedienteContableJ());
 		solicitud.setNumeroDocumentoJ(vm.getNumeroDocumentoJ());
+		
 		solicitud.setNumeroPropuestaDocumentoO(vm.getNumeroPropuestaDocumentoO());
+		solicitud.setExpedienteContablePropuestaO(vm.getExpedienteContablePropuestaO());
 		solicitud.setNumeroDocumentoO(vm.getNumeroDocumentoO());
 		solicitud.setFechaPagoMaterialO(vm.getFechaPagoMaterialO());
 		
@@ -326,10 +381,10 @@ public class Convertidor {
 		solicitud.setFechaNotificacionResolucionReintegro(vm.getFechaNotificacionResolucionReintegro());
 		solicitud.setFechaAbonoReintegro(vm.getFechaAbonoReintegro());
 		
-		
-		
 		return solicitud;
 	}
+
+	
 	
 	
 

@@ -48,13 +48,19 @@ public class SolicitudService {
 	}
 	
 	public List<SolicitudListarViewModel> solicitudesListar() {
+		
+		
+		
 		try {
-			List<Solicitud> solicitudes = solicitudes();
+			
+			
+			List<Solicitud> solicitudes = repository.findAll();
 			List<SolicitudListarViewModel> viewModels = new ArrayList<>();
 			for (Solicitud item : solicitudes) {
 				SolicitudListarViewModel viewModel = converter.Entidad2SolicitudListarViewModel(item);
-				viewModel.setYearConvocatoria(convocatoriaService.getYearConvocatoria(item.getIdConvocatoria()));
-				viewModel.setNombreConvocatoria(convocatoriaService.getNombreConvocatoria(item.getIdConvocatoria()));
+				Convocatoria convocatoria = convocatoriaService.getConvocatoriaById(item.getIdConvocatoria());
+				viewModel.setYearConvocatoria(convocatoria.getYear());
+				viewModel.setNombreConvocatoria(convocatoria.getNombre());
 				viewModel.setNombreEntidad(entidadService.getNombreEntidad(item.getIdEntidad()));
 				viewModels.add(viewModel);
 				
@@ -62,6 +68,8 @@ public class SolicitudService {
 			
 			return viewModels;
 		} catch (Exception e) {
+			System.out.println("Fallo al intentar recuperar datos desde el repositorio de solicitudes");
+			System.out.println(e.getMessage());
 			return null;
 		}
 		
@@ -103,7 +111,8 @@ public class SolicitudService {
 
 	public Boolean actualizar(SolicitudListarViewModel viewModel) {
 		
-		//System.out.println("La fecha aeat que entra al servicio es: "+viewModel.getFechaAeat());
+		
+		//System.out.println("El SUBCC introducido es: "+viewModel.getSUBCC());
 		try {
 				Solicitud solicitud = null;
 				solicitud = converter.SolicitudListarViewModel2Entidad(viewModel);

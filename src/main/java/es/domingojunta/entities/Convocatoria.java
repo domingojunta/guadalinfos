@@ -1,24 +1,19 @@
 package es.domingojunta.entities;
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlRootElement;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
+@XmlRootElement
 public class Convocatoria {
 
 	@Id
@@ -34,9 +29,9 @@ public class Convocatoria {
 	@Column(name="id_orden")
 	private int idOrden;
 	@Column(name="fecha_inicio")
-	private Date fechaInicio;
+	private String fechaInicio;
 	@Column(name="fecha_fin")
-	private Date fechaFin;
+	private String fechaFin;
 	@Column(name="importe_ayuntamientoa")
 	private BigDecimal importeAyuntamientoA;
 	@Column(name="importe_ayuntamientob")
@@ -48,7 +43,7 @@ public class Convocatoria {
 	@Column(name="importe_elab")
 	private BigDecimal importeELAB;
 	@Column(name="fecha_justificacion")
-	private Date fechaJustificacion;
+	private String fechaJustificacion;
 	@Column(name="SUBAG")
 	private String SUBAG;
 	@Column(name="SUBCO")
@@ -71,6 +66,7 @@ public class Convocatoria {
 	private String resuelvePago;
 	@Column(name="resuelve_justificacion")
 	private String resuelveJustificacion;
+	
 	
 	@OneToMany(mappedBy="idConvocatoria", fetch=FetchType.LAZY)
 	//@JoinColumn(name="id_convocatoria")
@@ -122,23 +118,24 @@ public class Convocatoria {
 		this.idOrden = idOrden;
 	}
 
-	@JsonFormat(pattern="dd-MM-yyyy")
-	public Date getFechaInicio() {
-		return fechaInicio;
+	
+	public String getFechaInicio() {
+		
+		return this.fechaInicio;
 	}
 
-	@DateTimeFormat(pattern="yyyy-MM-dd")
-	public void setFechaInicio(Date fechaInicio) {
-		this.fechaInicio = fechaInicio;
+	
+	public void setFechaInicio(String fechaInicio) {
+		this.fechaInicio = fechaInicio;	}
+
+	
+	public String getFechaFin() {
+		
+		return this.fechaFin;
 	}
 
-	@JsonFormat(pattern="dd-MM-yyyy")
-	public Date getFechaFin() {
-		return fechaFin;
-	}
-
-	@DateTimeFormat(pattern="yyyy-MM-dd")
-	public void setFechaFin(Date fechaFin) {
+	
+	public void setFechaFin(String fechaFin) {
 		this.fechaFin = fechaFin;
 	}
 
@@ -212,13 +209,15 @@ public class Convocatoria {
 		this.importeELAB = new BigDecimal(importeELAB);
 	}
 
-	@JsonFormat(pattern="dd-MM-yyyy")
-	public Date getFechaJustificacion() {
+	
+
+
+	public String getFechaJustificacion() {
 		return fechaJustificacion;
 	}
 
-	@DateTimeFormat(pattern="yyyy-MM-dd")
-	public void setFechaJustificacion(Date fechaJustificacion) {
+
+	public void setFechaJustificacion(String fechaJustificacion) {
 		this.fechaJustificacion = fechaJustificacion;
 	}
 

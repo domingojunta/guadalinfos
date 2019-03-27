@@ -1,5 +1,6 @@
 package es.domingojunta.services;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -34,7 +35,8 @@ public class ConvocatoriaService {
 			}
 			
 			for (Convocatoria item : convocatorias) {
-				ConvocatoriaListarViewModel viewModel = new ConvocatoriaListarViewModel(item);
+				
+				ConvocatoriaListarViewModel viewModel = converter.Entidad2ConvocatoriaListarViewModel(item);
 				viewModel.setNombreOrden(ordenService.getNombreOrden(item.getIdOrden()));
 				viewModel.setAliasOrden(ordenService.getAliasOrden(item.getIdOrden()));
 				convocatoriasListarViewModel.add(viewModel);
@@ -74,8 +76,9 @@ public class ConvocatoriaService {
 		try {
 			Convocatoria convocatoria = getConvocatoriaById(id);
 			//System.out.println("La convocatoria encontrada es: "+convocatoria.getYear());
-			ConvocatoriaListarViewModel viewModel = new ConvocatoriaListarViewModel(convocatoria);
-			//System.out.println("La convocatoria encontrada es la: "+viewModel.getYearConvocatoria());
+			ConvocatoriaListarViewModel viewModel = converter.Entidad2ConvocatoriaListarViewModel(convocatoria);
+			viewModel.setNombreOrden(ordenService.getNombreOrden(convocatoria.getIdOrden()));
+			viewModel.setAliasOrden(ordenService.getAliasOrden(convocatoria.getIdOrden()));
 			return viewModel;
 		} catch (Exception e) {
 			return null;
@@ -85,8 +88,11 @@ public class ConvocatoriaService {
 	public Boolean actualizar(ConvocatoriaListarViewModel viewModel) {
 		try {
 			Convocatoria convocatoria = getConvocatoriaById(viewModel.getIdConvocatoria());
+			//System.out.println("el id pasado es: "+viewModel.getIdConvocatoria());
+			//System.out.println("La Entity obtenida con ese id es: "+convocatoria.toString());
 			if (convocatoria!=null) {
 				convocatoria = converter.ConvocatoriaListarViewModel2Convocatoria(convocatoria, viewModel);
+				
 				repository.save(convocatoria);
 				return true;
 			}

@@ -74,7 +74,8 @@ public class ConvocatoriaRestController {
 	public ResponseEntity<ConvocatoriaListarViewModel> actualizar (@RequestBody ConvocatoriaListarViewModel viewModel ){
 		
 		ResponseEntity respuesta = null;
-		Boolean actualizar = service.actualizar(viewModel);
+		
+				Boolean actualizar = service.actualizar(viewModel);
 		if (actualizar) {
 			respuesta = new ResponseEntity(HttpStatus.OK);
 		} else {
@@ -86,6 +87,8 @@ public class ConvocatoriaRestController {
 	
 	@PostMapping({"/convocatoria_crear","/convocatoria"})
 	public ResponseEntity<ConvocatoriaCrearViewModel> crear (@RequestBody ConvocatoriaCrearViewModel viewModel ){
+		
+		System.out.println("La fechaInicio de entrada es: "+ viewModel.getFechaInicio());
 		
 		ResponseEntity respuesta = null;
 		Boolean actualizar = service.crear(viewModel);

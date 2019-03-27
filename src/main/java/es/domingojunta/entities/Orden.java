@@ -11,10 +11,12 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlRootElement;
 
 import es.domingojunta.models.orden.OrdenListarViewModel;
 
 @Entity
+@XmlRootElement
 public class Orden {
 
 	@Id

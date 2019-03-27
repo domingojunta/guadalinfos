@@ -39,9 +39,12 @@ public class SolicitudRestController {
 	@GetMapping({"/solicitudes_listar","/solicitud_listar"})
 	public ResponseEntity<List<SolicitudListarViewModel>> listar() {
 		
+		//System.out.println("Entrando en el servicio...");
+		
 		List<SolicitudListarViewModel> viewModels = service.solicitudesListar();
+		
 		ResponseEntity<List<SolicitudListarViewModel>> respuesta = null;
-		if (viewModels == null || viewModels.size()==0) {
+		if (viewModels == null) {
 			respuesta = new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		} else {
 			respuesta = new ResponseEntity<List<SolicitudListarViewModel>>(viewModels, HttpStatus.OK);
@@ -66,7 +69,9 @@ public class SolicitudRestController {
 	
 	@PutMapping({"/solicitud_actualizar","/solicitud"})
 	public ResponseEntity<SolicitudListarViewModel> actualizar (@RequestBody SolicitudListarViewModel viewModel ){
+		//System.out.println("El SUBCC introducido en el controller es: "+viewModel.getSubcc());
 		ResponseEntity respuesta = null;
+		System.out.println("El idCopnvocatoria pasado es: "+viewModel.getIdConvocatoria());
 		Boolean actualizar = service.actualizar(viewModel);
 		if (actualizar) {
 			respuesta = new ResponseEntity(HttpStatus.OK);
