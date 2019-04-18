@@ -1,4 +1,4 @@
-package es.domingojunta.models.solicitud;
+package es.domingojunta.model;
 
 import java.math.BigDecimal;
 import javax.persistence.Column;
@@ -28,6 +28,7 @@ public class SolicitudListarViewModel {
 	private String fechaAtrian;
 	private String fechaSeguridadSocial;
 	private String fechaRequerimientoSolicitud;
+	private String documentacionRequerida;
 	private String fechaPropuestaConcesion;
 	private String expedienteContableD;
 	private String numeroDocumentoD;
@@ -646,6 +647,16 @@ public class SolicitudListarViewModel {
 
 	public void setFechaAbonoReintegro(String fechaAbonoReintegro) {
 		this.fechaAbonoReintegro = fechaAbonoReintegro;
+	}
+
+
+	public String getDocumentacionRequerida() {
+		return documentacionRequerida;
+	}
+
+
+	public void setDocumentacionRequerida(String documentacionRequerida) {
+		this.documentacionRequerida = documentacionRequerida;
 	}
 	
 	

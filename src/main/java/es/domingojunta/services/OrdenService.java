@@ -9,8 +9,8 @@ import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
 import es.domingojunta.entities.Orden;
-import es.domingojunta.models.orden.OrdenCrearViewModel;
-import es.domingojunta.models.orden.OrdenListarViewModel;
+import es.domingojunta.model.OrdenCrearViewModel;
+import es.domingojunta.model.OrdenListarViewModel;
 import es.domingojunta.repositories.OrdenRepository;
 import es.domingojunta.tools.Convertidor;
 

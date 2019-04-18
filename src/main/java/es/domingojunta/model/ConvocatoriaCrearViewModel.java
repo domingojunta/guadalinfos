@@ -1,4 +1,4 @@
-package es.domingojunta.models.convocatoria;
+package es.domingojunta.model;
 
 import java.math.BigDecimal;
 

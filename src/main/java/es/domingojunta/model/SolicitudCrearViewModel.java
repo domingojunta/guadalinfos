@@ -1,4 +1,4 @@
-package es.domingojunta.models.solicitud;
+package es.domingojunta.model;
 
 import java.math.BigDecimal;
 import javax.persistence.Column;

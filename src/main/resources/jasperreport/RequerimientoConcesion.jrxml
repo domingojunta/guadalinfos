@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RequerimientoConcesion" pageWidth="595" pageHeight="842" columnWidth="469" leftMargin="70" rightMargin="56" topMargin="56" bottomMargin="56" uuid="c5c80c04-435a-4636-a4a9-8bea3518ab5d">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="cm"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="cm"/>
+	<property name="com.jaspersoft.studio.report.description" value=""/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="parrafoNotificacion" class="java.lang.String"/>
+	<field name="parrafoInformacion" class="java.lang.String"/>
+	<field name="parrafoNormativa" class="java.lang.String"/>
+	<field name="documentacionRequerida" class="java.lang.String"/>
+	<background>
+		<band height="730">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<image vAlign="Bottom">
+				<reportElement positionType="FixRelativeToBottom" stretchType="ContainerBottom" x="-40" y="630" width="60" height="100" uuid="cd409a9b-d873-4f10-a21e-8d00a3497a4e"/>
+				<imageExpression><![CDATA["src/main/resources/jasperreport/Hercules.png"]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<pageHeader>
+		<band height="50">
+			<image>
+				<reportElement x="-20" y="0" width="170" height="29" uuid="9c50ec9f-6a9d-4766-874f-25f70f53d37e"/>
+				<imageExpression><![CDATA["src/main/resources/jasperreport/JuntaDeAndalucia.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="180" y="0" width="290" height="50" uuid="dbffa5c0-3cd1-41df-9cfe-65a598edeede"/>
+				<imageExpression><![CDATA["src/main/resources/jasperreport/NombreConsejerias.png"]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="579">
+			<textField>
+				<reportElement x="230" y="50" width="240" height="70" uuid="ba1d47e0-552d-4b6a-a833-4c67f71b52eb"/>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{parrafoNotificacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="0" y="120" width="290" height="80" uuid="73eccbe9-c96b-44fc-a98a-5e0e43d0e9cc"/>
+				<textElement verticalAlignment="Top">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{parrafoInformacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="0" y="200" width="470" height="120" uuid="95b50368-e6da-4938-89a1-18ce256fb573"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA[$F{parrafoNormativa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="0" y="320" width="470" height="258" uuid="9aee2261-cbd7-4b70-9e85-c65c474965b4"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["El artículo 13.2 de la Ley 38/2003 de 17 de noviembre, Ley General de Subvenciones, establece que no podrá obtener la condición de beneficiario la entidad en quienes concurra alguna de las circunstancias siguientes: e) No hallarse al corriente en el cumplimiento de las obligaciones tributarias o frente a la Seguridad Social impuestas por las disposiciones vigentes, … g) No hallarse al corriente de pago de obligaciones por reintegro de subvenciones. El artículo 116.2 del Decreto Legislativo 1/2010 de 2 de marzo, por el que se aprueba el Texto Refundido de la Ley General de Hacienda Pública de la Junta de Andalucía establece: Además de los supuestos contemplados en el artículo 13.2 y 3 de la Ley 38/2003, de 17 de noviembre, tampoco podrán obtener la condición de personas o entidades beneficiarias de subvenciones quienes tengan deudas en periodo ejecutivo de cualquier otro ingreso de derecho público de la Junta de Andalucía. La acreditación de dicha circunstancia constituye, además de las previstas en el artículo 14 de la referida Ley, una obligación de la persona o entidad beneficiaria que deberá cumplir con anterioridad a dictarse la propuesta de resolución de concesión, en la forma que se determine por la Consejería competente en materia de Hacienda. El artículo 14 de la Orden de 25 de enero de 2016, reguladora de la subvención solicitada establece que para las líneas ELA y Guadalinfo, si en la solicitud no se hubieran cumplimentado los extremos contenidos en el artículo 10 o no se hubiera aportado la documentación establecida en el mismo, el órgano instructor requerirá a la entidad interesada para que, en el plazo de DIEZ DÍAS, proceda a la subsanación.\n\n"+
+"Por todo ello y una vez examinada la documentación y observadas las deficiencias que a continuación se indican se le REQUIERE la aportación de la siguiente documentación:"]]></textFieldExpression>
+			</textField>
+			<break>
+				<reportElement x="0" y="578" width="98" height="1" uuid="f7f8de96-6bb9-4299-a371-471a233d7236"/>
+			</break>
+			<staticText>
+				<reportElement x="0" y="10" width="470" height="30" uuid="5e399f07-385c-4023-a3c0-0e285c1f75e9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REQUERIMIENTO SUBSANACIÓN SOLICITUD]]></text>
+			</staticText>
+		</band>
+		<band height="219">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="30" width="470" height="30" uuid="0487a4ce-e982-4fc3-95dc-68198e815af0"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top"/>
+				<textFieldExpression><![CDATA[$F{documentacionRequerida}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="80" width="470" height="80" uuid="9f603de3-509c-48a0-a415-51e90cf9c6cc"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["De conformidad con el artículo 11 de la Orden reguladora, se establece la obligatoriedad de comunicarse con la Administración a través de medios electrónicos, a través del Registro Telemático Único de la Administración de la Junta de Andalucía, en la sede electrónica prevista en la Orden.\n\n"+
+"Transcurrido el plazo para subsanar sin que se hubiese respondido al requerimiento se dictará resolución declarando el desistimiento y el archivo de la solicitud no subsanada y la inadmisión en los casos en que corresponda."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="0" y="160" width="470" height="59" uuid="58b369b5-6d59-49f0-aa52-1b7580cc3178"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["EL JEFE DEL SERVICIO DE COOPERACIÓN ECONÓMICA Y DESARROLLO TECNOLÓGICO\n"+
+"Fdo.: Domingo José Orta Pacheco"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

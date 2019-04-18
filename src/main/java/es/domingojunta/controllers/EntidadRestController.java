@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import es.domingojunta.entities.Entidad;
-import es.domingojunta.models.entidad.EntidadCrearViewModel;
-import es.domingojunta.models.entidad.EntidadListarViewModel;
+import es.domingojunta.model.EntidadCrearViewModel;
+import es.domingojunta.model.EntidadListarViewModel;
 import es.domingojunta.services.EntidadService;
 
 @RestController

@@ -1,4 +1,4 @@
-package es.domingojunta.models.orden;
+package es.domingojunta.model;
 
 import javax.xml.bind.annotation.XmlRootElement;
 

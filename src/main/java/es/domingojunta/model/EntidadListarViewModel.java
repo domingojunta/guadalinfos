@@ -1,13 +1,13 @@
-package es.domingojunta.models.entidad;
+package es.domingojunta.model;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
 import es.domingojunta.entities.Entidad;
 
 @XmlRootElement
-public class EntidadCrearViewModel {
+public class EntidadListarViewModel {
 
-	
+	private int idEntidad;
 	private String nombreEntidad;
 	private String acreedorGIRO;
 	private String cif;
@@ -22,10 +22,34 @@ public class EntidadCrearViewModel {
 	private String IBAN;
 	private String posicionIBAN;
 	
-	public EntidadCrearViewModel() {
+	public EntidadListarViewModel() {
 		}
 	
-	
+	public EntidadListarViewModel(Entidad entidad) {
+		this.idEntidad=entidad.getIdEntidad();
+		this.nombreEntidad=entidad.getNombre();
+		this.acreedorGIRO=entidad.getAcreedorGIRO();
+		this.cif=entidad.getCif();
+		this.direccion=entidad.getDireccion();
+		this.codigoPostal=entidad.getCodigoPostal();
+		this.municipio=entidad.getMunicipio();
+		this.provincia=entidad.getProvincia();
+		this.emailAyuntamiento=entidad.getEmailAyuntamiento();
+		this.emailCentro=entidad.getEmailCentro();
+		this.tipoEntidad=entidad.getTipo();
+		this.grupoEntidad=entidad.getGrupo();
+		this.IBAN=entidad.getIBAN();
+		this.posicionIBAN=entidad.getPosicionIBAN();
+		
+	}
+
+	public int getIdEntidad() {
+		return idEntidad;
+	}
+
+	public void setIdEntidad(int idEntidad) {
+		this.idEntidad = idEntidad;
+	}
 
 	public String getNombreEntidad() {
 		return nombreEntidad;

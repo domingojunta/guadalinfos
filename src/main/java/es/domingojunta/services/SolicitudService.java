@@ -2,7 +2,9 @@ package es.domingojunta.services;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,9 +15,13 @@ import es.domingojunta.entities.Convocatoria;
 import es.domingojunta.entities.Entidad;
 import es.domingojunta.entities.Orden;
 import es.domingojunta.entities.Solicitud;
-import es.domingojunta.models.entidad.EntidadListarViewModel;
-import es.domingojunta.models.solicitud.SolicitudCrearViewModel;
-import es.domingojunta.models.solicitud.SolicitudListarViewModel;
+import es.domingojunta.model.EntidadListarViewModel;
+import es.domingojunta.model.RequerimientoConcesionViewModel;
+import es.domingojunta.model.SolicitudCrearViewModel;
+import es.domingojunta.model.SolicitudListarViewModel;
+import es.domingojunta.model.ComunicacionEntradaViewModel;
+import es.domingojunta.model.ConcesionNotificacionViewModel;
+import es.domingojunta.model.ConcesionViewModel;
 import es.domingojunta.repositories.SolicitudRepository;
 import es.domingojunta.tools.Convertidor;
 
@@ -35,9 +41,12 @@ public class SolicitudService {
 	private EntidadService entidadService;
 	
 	@Autowired
+	private OrdenService ordenService;
+	
+	@Autowired
 	private Convertidor converter;
 	
-	
+	private String nombreFicheroPdfAGenerar;
 	
 	public List<Solicitud> solicitudes(){
 		
@@ -154,6 +163,225 @@ public class SolicitudService {
 			return false;
 		}
 	}
+
+	public List<ComunicacionEntradaViewModel> getComunicacionEntradaViewModel(int id) {
+		
+		List<ComunicacionEntradaViewModel> listado = new ArrayList<>();
+		
+		try {
+			
+				Solicitud solicitud = repository.getOne(id);
+				ComunicacionEntradaViewModel viewModel = new ComunicacionEntradaViewModel();
+				viewModel.setIdSolicitud(solicitud.getIdSolicitud());
+				viewModel.setExpediente(solicitud.getExpediente());
+				SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+				Date fechaEntradaDate = formatter.parse(solicitud.getFechaEntrada());
+				SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+				viewModel.setFechaEntrada(formato.format(fechaEntradaDate));
+				
+				Convocatoria convocatoria = convocatoriaService.getConvocatoriaById(solicitud.getIdConvocatoria());
+				
+				viewModel.setYearConvocatoria(convocatoria.getYear());
+				viewModel.setNombreConvocatoria(convocatoria.getNombre());
+				
+				Orden orden = ordenService.getOrdenById(convocatoria.getIdOrden());
+				
+				viewModel.setNombreOrden(orden.getNombre());
+				
+				Entidad entidad = entidadService.findEntidadById(solicitud.getIdEntidad());
+				viewModel.setNombreEntidad(entidad.getNombre());
+				viewModel.setTipoEntidad(entidad.getTipo());
+				viewModel.setDireccion(entidad.getDireccion());
+				viewModel.setCodigoPostal(entidad.getCodigoPostal());
+				viewModel.setMunicipio(entidad.getMunicipio());
+				viewModel.setProvincia(entidad.getProvincia());
+				
+				viewModel.setParrafoNotificacion();
+				viewModel.setParrafoInformacion();
+				viewModel.setParrafoNormativa();
+				
+				
+				
+				listado.add(viewModel);
+				//this.nombreFicheroPdfAGenerar = "Comunicacion Entrada RAPI "+viewModel.getYearConvocatoria()+" "+viewModel.getNombreEntidad();
+				
+				return listado;
+			
+		} catch (Exception e) {
+			return null;
+		}
+		
+		
+		
+	}
+
+	public String getNombreFicheroPdfAGenerar() {
+		return nombreFicheroPdfAGenerar;
+	}
+
+	public List<RequerimientoConcesionViewModel> getRequerimientoConcesionViewModel(RequerimientoConcesionViewModel reqvm) {
+			
+		List<RequerimientoConcesionViewModel> listado = new ArrayList<>();
+		int id = reqvm.getIdSolicitud();
+		try {
+			
+				Solicitud solicitud = repository.getOne(id);
+				RequerimientoConcesionViewModel viewModel = new RequerimientoConcesionViewModel();
+				viewModel.setIdSolicitud(solicitud.getIdSolicitud());
+				viewModel.setExpediente(solicitud.getExpediente());
+				SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+				Date fechaEntradaDate = formatter.parse(solicitud.getFechaEntrada());
+				SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+				viewModel.setFechaEntrada(formato.format(fechaEntradaDate));
+				
+				Convocatoria convocatoria = convocatoriaService.getConvocatoriaById(solicitud.getIdConvocatoria());
+				
+				viewModel.setYearConvocatoria(convocatoria.getYear());
+				viewModel.setNombreConvocatoria(convocatoria.getNombre());
+				
+				Orden orden = ordenService.getOrdenById(convocatoria.getIdOrden());
+				
+				viewModel.setNombreOrden(orden.getNombre());
+				
+				Entidad entidad = entidadService.findEntidadById(solicitud.getIdEntidad());
+				viewModel.setNombreEntidad(entidad.getNombre());
+				viewModel.setTipoEntidad(entidad.getTipo());
+				viewModel.setDireccion(entidad.getDireccion());
+				viewModel.setCodigoPostal(entidad.getCodigoPostal());
+				viewModel.setMunicipio(entidad.getMunicipio());
+				viewModel.setProvincia(entidad.getProvincia());
+				
+				viewModel.setParrafoNotificacion();
+				viewModel.setParrafoInformacion();
+				viewModel.setParrafoNormativa();
+				
+				
+				viewModel.setDocumentacionRequerida(reqvm.getDocumentacionRequerida());
+				
+				
+				listado.add(viewModel);
+				//this.nombreFicheroPdfAGenerar = "Comunicacion Entrada RAPI "+viewModel.getYearConvocatoria()+" "+viewModel.getNombreEntidad();
+				
+				return listado;
+			
+		} catch (Exception e) {
+			return null;
+		}
+		
+	}
+
+	public List<ConcesionViewModel> getConcesionViewModel(int id) throws Exception {
+
+		List<ConcesionViewModel> listado = new ArrayList<ConcesionViewModel>();
+		ConcesionViewModel viewModel = new ConcesionViewModel();
+		
+		Solicitud solicitud = repository.getOne(id);
+				
+				
+				
+				viewModel.setIdSolicitud(solicitud.getIdSolicitud());
+				viewModel.setExpediente(solicitud.getExpediente());
+				viewModel.setFechaEntrada(solicitud.getFechaEntrada());
+				viewModel.setCostePersonal(solicitud.getCostePersonal());
+				viewModel.setCosteDietas(solicitud.getCosteDietas());
+				viewModel.setSubvencionPersonal(solicitud.getSubvencionPersonal());
+				viewModel.setSubvencionDietas(solicitud.getSubvencionDietas());
+				
+				Convocatoria convocatoria = convocatoriaService.getConvocatoriaById(solicitud.getIdConvocatoria());
+				
+				viewModel.setYearConvocatoria(convocatoria.getYear());
+				viewModel.setNombreConvocatoria(convocatoria.getNombre());
+				viewModel.setAplicacionPresupuestariaCorriente(convocatoria.getAplicacionPresupuestariaCorriente());
+				viewModel.setAplicacionPresupuestariaFutura(convocatoria.getAplicacionPresupuestariaFutura());
+				viewModel.setFechaInicio(convocatoria.getFechaInicio());
+				viewModel.setFechaFin(convocatoria.getFechaFin());
+				viewModel.setFechaJustificacion(convocatoria.getFechaJustificacion());
+				
+				Orden orden = ordenService.getOrdenById(convocatoria.getIdOrden());
+				
+				viewModel.setNombreOrden(orden.getNombre());
+				
+				Entidad entidad = entidadService.findEntidadById(solicitud.getIdEntidad());
+				viewModel.setNombreEntidad(entidad.getNombre());
+				viewModel.setTipoEntidad(entidad.getTipo());
+				viewModel.setDireccion(entidad.getDireccion());
+				viewModel.setCodigoPostal(entidad.getCodigoPostal());
+				viewModel.setMunicipio(entidad.getMunicipio());
+				viewModel.setProvincia(entidad.getProvincia());
+				viewModel.setCif(entidad.getCif());
+				viewModel.setGrupoEntidad(entidad.getGrupo());
+				
+				
+				viewModel.setCoste();
+				viewModel.setSubvencion();
+				viewModel.setPorcentajeFinanciacion();
+				viewModel.setFinanciacionPropia();
+				viewModel.setParrafoDatosSubvencion();
+				viewModel.setParrafoVista();
+				viewModel.setAntecedente01();
+				viewModel.setPropone01();
+				viewModel.setPropone02();
+				viewModel.setParrafoAnexo();
+				
+								
+				listado.add(viewModel);
+				
+				
+				return listado;
+			
+		
+		
+	}
+
+	public List<ConcesionNotificacionViewModel> getConcesionNotificacionViewModel(int id) throws Exception {
+			
+		List<ConcesionNotificacionViewModel> listado = new ArrayList<>();
+		
+		
+			
+				Solicitud solicitud = repository.getOne(id);
+				ConcesionNotificacionViewModel viewModel = new ConcesionNotificacionViewModel();
+				
+				
+				viewModel.setIdSolicitud(solicitud.getIdSolicitud());
+				viewModel.setExpediente(solicitud.getExpediente());
+				
+				
+				Convocatoria convocatoria = convocatoriaService.getConvocatoriaById(solicitud.getIdConvocatoria());
+				
+				viewModel.setYearConvocatoria(convocatoria.getYear());
+				viewModel.setNombreConvocatoria(convocatoria.getNombre());
+				
+				Orden orden = ordenService.getOrdenById(convocatoria.getIdOrden());
+				
+				viewModel.setNombreOrden(orden.getNombre());
+				
+				Entidad entidad = entidadService.findEntidadById(solicitud.getIdEntidad());
+				viewModel.setNombreEntidad(entidad.getNombre());
+				viewModel.setTipoEntidad(entidad.getTipo());
+				viewModel.setDireccion(entidad.getDireccion());
+				viewModel.setCodigoPostal(entidad.getCodigoPostal());
+				viewModel.setMunicipio(entidad.getMunicipio());
+				viewModel.setProvincia(entidad.getProvincia());
+				
+				viewModel.setParrafoNotificacion();
+				viewModel.setParrafoInformacion();
+				viewModel.setParrafoNormativa();
+				
+				
+				
+				listado.add(viewModel);
+				//this.nombreFicheroPdfAGenerar = "Comunicacion Entrada RAPI "+viewModel.getYearConvocatoria()+" "+viewModel.getNombreEntidad();
+				
+				return listado;
+			
+		
+		
+		
+	}
+	
+	
+
 	
 	
 	

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ResolucionConcesion" pageWidth="595" pageHeight="842" columnWidth="469" leftMargin="70" rightMargin="56" topMargin="56" bottomMargin="28" uuid="c5c80c04-435a-4636-a4a9-8bea3518ab5d">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.report.description" value=""/>
+	<subDataset name="Dataset1" uuid="98227f99-b60a-484c-94ac-62a93ba0339f">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+	</subDataset>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="nombreEntidad" class="java.lang.String"/>
+	<field name="parrafoDatosSubvencion" class="java.lang.String"/>
+	<field name="parrafoVista" class="java.lang.String"/>
+	<field name="antecedente01" class="java.lang.String"/>
+	<field name="propone01" class="java.lang.String"/>
+	<field name="propone02" class="java.lang.String"/>
+	<field name="fechaJustificacion" class="java.lang.String"/>
+	<field name="parrafoAnexo" class="java.lang.String"/>
+	<background>
+		<band height="730">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<image vAlign="Bottom">
+				<reportElement positionType="FixRelativeToBottom" stretchType="ContainerBottom" x="-40" y="630" width="60" height="100" uuid="cd409a9b-d873-4f10-a21e-8d00a3497a4e"/>
+				<imageExpression><![CDATA["src/main/resources/jasperreport/Hercules.png"]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<pageHeader>
+		<band height="50">
+			<image>
+				<reportElement x="-20" y="0" width="170" height="29" uuid="9c50ec9f-6a9d-4766-874f-25f70f53d37e"/>
+				<imageExpression><![CDATA["src/main/resources/jasperreport/JuntaDeAndalucia.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="180" y="0" width="290" height="50" uuid="dbffa5c0-3cd1-41df-9cfe-65a598edeede"/>
+				<imageExpression><![CDATA["src/main/resources/jasperreport/NombreConsejerias.png"]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="708">
+			<break>
+				<reportElement x="0" y="700" width="97" height="1" uuid="f7f8de96-6bb9-4299-a371-471a233d7236"/>
+			</break>
+			<staticText>
+				<reportElement x="0" y="10" width="470" height="30" uuid="5e399f07-385c-4023-a3c0-0e285c1f75e9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RESOLUCIÓN]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="50" width="470" height="60" uuid="0241282f-f86a-47d5-a303-4f3e8d0daf9c"/>
+				<textElement textAlignment="Justified">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["DE LA DELEGACIÓN DE EMPLEO, FORMACIÓN, TRABAJO AUTÓNOMO, ECONOMÍA, CONOCIMIENTO, EMPRESA Y UNIVERSIDAD EN CÓRDOBA, POR LA QUE SE CONCEDE, EN RÉGIMEN DE CONCURRENCIA NO COMPETITIVA, UNA SUBVENCIÓN A LA ENTIDAD "+$F{nombreEntidad}.toUpperCase() + ", PARA LA DINAMIZACIÓN DE LA RED DE CENTROS DE ACCESO PÚBLICO A INTERNET DE ANDALUCÍA."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="110" width="470" height="60" uuid="df68de31-e9c5-4db4-ba8a-c09e1c5cc23d"/>
+				<textFieldExpression><![CDATA["\n\n"+$F{parrafoDatosSubvencion}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="170" width="470" height="60" uuid="5d31a76d-210c-41b6-92d1-f183c3f4e631"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["\n\n"+$F{parrafoVista}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="250" width="470" height="30" uuid="1280a07b-1405-4ff5-a00f-03e61349578d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ANTECEDENTES DE HECHO]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="290" width="470" height="36" uuid="456b75e3-4c71-41ae-8322-0d7d30ceddb5"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA[$F{antecedente01}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="329" width="470" height="50" uuid="602d87d6-75aa-4bd0-84a3-a5376af02837"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["\nSegundo.- Una vez realizadas las oportunas comprobaciones, se constata que la entidad solicitante reune los requisitos establecidos en la mencionada Orden para la obtención de la subvención."+
+"\n\nTercero.- El expediente ha sido fiscalizado de conformidad con carácter previo a la presente resolución."+
+"\n\nA los anteriores hechos resultan de aplicación los siguientes"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="701">
+			<break>
+				<reportElement x="0" y="700" width="94" height="1" uuid="547e8971-f942-44a3-bb07-8cc691107354"/>
+			</break>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="10" width="470" height="30" uuid="6270c0ab-a123-4325-94a5-42307c7f9ec5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FUNDAMENTOS DE DERECHO]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="50" width="470" height="420" uuid="9c24b253-ac71-4b33-bf2a-bea73b07c5d1"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["PRIMERO.- El artículo 9.1 de la Orden Reguladora dispone que para las líneas Guadalinfo, ..., ELA, ..., el procedimiento de concesión de subvenciones se iniciará a solicitud de las entidades interesadas, y se tramitará y resolverá en régimen de concurrencia no competitiva. Se tramitará en atención a la mera concurrencia de la determinada situación de la entidad perceptora, el cumplimiento de los requisitos establecidos, sin que sea necesario establecer la comparación de solicitudes ni la prelación entre las mismas."+
+"\n\nSEGUNDO.- El artículo 5.1 de la Orden Reguladora establece que  la concesión de las subvenciones estará limitada por las disponibilidades presupuestarias existentes, de acuerdo con el artículo 119.2.j) del Texto Refundido de la Ley General de la Hacienda Pública de la Junta de Andalucía."
++"\n\nTERCERO.- Conforme al artículo 19.a) del Decreto 342/2012, de 31 de julio , por el que se regula la organización territorial provincial de la Administración de la Junta de Andalucía, los titulares de las Delegaciones Territoriales de la Junta de Andalucía ostentan las siguientes funciones y competencias en el ámbito de su provincia: a) la representación ordinaria de las Consejerías cuyos servicios periféricos se encuentran adscritos en la Delegación Territorial..."+
+
+"\nSegún se establece en la Disposición adicional sexta del Decreto señalado en el punto anterior, modificada por el Decreto 32/2019, de 5 de febrero, en cada una de las provincias de la Comunidad Autónoma de Andalucía existirán las siguientes Delegaciones Territoriales de la Junta de Andalucía: Delegación Territorial de Empleo, Formación, Trabajo Autónomo, Economía, Conocimiento, Empresas y Universidad."+
+"\nLa Delegación Territorial de Empleo, Formación, Trabajo Autónomo, Economía, Conocimiento, Empresas y Universidad, depende orgánicamente de la Consejería de Empleo, Formación y Trabajo Autónomo."+
+"\nEl artículo 16.1 de la Orden Reguladora, en su nueva redacción, establece que en el caso de las líneas Guadalinfo y ELA, será competente para la instrucción del procedimiento de concesión, la Delegación Territorial de Economía, Innovación, Ciencia y Empleo."+
+"\nEl artículo 16.3 de la Orden Reguladora, en su nueva redacción, establece que en el caso de las líneas Guadalinfo y ELA, será competente para resolver el procedimiento la Delegación Territorial de Economía, Innovación, Ciencia y Empleo, por delegación de la persona titular de la Consejería de Empleo, Empresa y Comercio."+
+"\n\nVISTA la normativa anteriormente citada y las demás normas de general aplicación, el abajo firmante, en ejercicio de las atribuciones que tiene conferidas,"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="490" width="470" height="30" uuid="55bd5350-3299-430e-af08-7dfbf62c09db"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RESUELVE]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="530" width="470" height="60" uuid="09f52f90-553f-40ff-92b0-0400dad47902"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA[$F{propone01}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="590" width="470" height="18" uuid="bf16ac10-8042-4189-ae30-d20b02c36893"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA[$F{propone02}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="708">
+			<break>
+				<reportElement x="0" y="700" width="92" height="1" uuid="9b55194a-09bc-4918-8025-b422e9094b70"/>
+			</break>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="20" width="470" height="639" uuid="c494503c-cc1e-49ad-a9ca-0f686e16e349"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["\n\nTERCERO.- La entidad beneficiaria deberá asumir las obligaciones recogidas en el artículo 23 de la Orden reguladora, siendo entre otras las siguientes:"+
+"\n1.- Cumplir el objetivo, ejecutar el proyecto, realizar la actividad o adoptar el comportamiento que fundamenta la concesión de las subvenciones en la forma y plazos establecidos."+
+"\n2.- Justificar ante el órgano concedente el cumplimiento de los requisitos y condiciones, así como la realización de la actividad y el cumplimiento de la finalidad que determinen la concesión o disfrute de la subvención.Someterse a las actuaciones de comprobación, a efectuar por el órgano concedente, así como cualesquiera otras de comprobación y control financiero que puedan realizar los órganos de control competentes, tanto nacionales como comunitarios, aportando cuanta información le sea requerida en el ejercicio de las actuaciones anteriores."+
+"\n3.- Someterse a las actuaciones de comprobación y control financiero que corresponden a la Intervención General de la Junta de Andalucía, en relación con las subvenciones y ayudas concedidas, y a las previstas en la legislación del Tribunal de Cuentas y de la Cámara de Cuentas de Andalucía, el Ministerio de Hacienda y Administraciones Públicas, facilitando cuanta información le sea requerida por dichos órganos."+
+"\n4.- Hacer constar en toda información y publicidad que se efectúe de las actuaciones objeto de la subvención, que las mismas están subvencionadas por la Junta de Andalucía, indicando que ha sido concedida por la Consejería de Empleo, Empresa y Comercio. Para ello, en la resolución de concesión de las subvenciones, se comunicará a la entidad beneficiaria la publicidad que debe realizar de la misma, facilitándose el diseño homologado de los instrumentos publicitarios, plantillas, logotipos autorizados, y el período obligatorio de mantenimiento de esta actividad."+
+"\n5.- Estar al corriente, con anterioridad a dictarse la propuesta de resolución, en el cumplimiento de sus obligaciones tributarias y frente a la Seguridad Social, y no ser deudora en periodo ejecutivo de cualquier otro ingreso de derecho público de la Junta de Andalucía."+
+"\n6.- Contar con personal específico para el desempeño de las tareas de dinamización. La titulación mínima exigida será la de Bachillerato, Ciclo Formativo de Grado Superior o equivalente."+
+"\n7.- Disponer de un local adecuado para el óptimo funcionamiento del Centro, que implicará contar con el mobiliario y equipamiento informático necesario y la red de área local plenamente operativa."+
+"\n8.- La entidad beneficiaria no podrá proceder al traslado del local del Centro sin autorización previa del órgano concedente. La solicitud de autorización se presentará en los términos establecidos en el artículo 22 de la Orden reguladora. En el caso de que dicho traslado sea autorizado, su coste y gestión serán asumidos y financiados al 100% por la entidad beneficiaria."+
+"\n9.- La entidad beneficiaria no podrá proceder al cierre al público del Centro sin autorización previa del órgano concedente, salvo la aparición de causas de fuerza mayor, que deberán ser comunicadas formalmente y de manera inmediata a la aparición de las circunstancias que motiven el cierre. La solicitud de autorización se presentará en los términos establecidos en el artículo 22 de la Orden reguladora. El cierre del Centro motivado por las vacaciones de la persona que se encuentra al frente del Centro, no requiere de una autorización previa por parte del órgano concedente siendo únicamente necesaria la comunicación a dicho órgano.La entidad beneficiaria deberá formalizar con la entidad colaboradora el Plan de Trabajo, donde se determinarán los objetivos a alcanzar y cuyo cumplimiento determinará el grado de ejecución técnica del proyecto. Dichos objetivos estarán alineados con el Plan Estratégico Guadalinfo."+
+"\n10.- La entidad beneficiaria deberá programar las actividades a través de la herramienta que proporcione la entidad colaboradora."+
+"\n11.- Incluir la variable de sexo en las estadísticas, encuestas y recogida de datos que se lleven a cabo."+
+"\n12.- La entidad beneficiaria deberá asegurar que el horario de funcionamiento de su Centro garantice siempre un mínimo de 20 horas semanales en el caso de los municipios del grupo A, y de 35 horas semanales en los de los grupos B y C, tratando de adaptar dicho horario a las necesidades potenciales de las personas usuarias. El horario de funcionamiento deberá ser preferentemente por la tarde."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="708">
+			<break>
+				<reportElement x="0" y="700" width="90" height="1" uuid="e0d18660-84c3-48e2-b873-d7838933885a"/>
+			</break>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="20" width="470" height="639" uuid="21b61824-9127-4af3-8216-dce986aa6617"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["\nCUARTO.- El pago de la subvención se efectuará mediante transferencia bancaria a la cuenta que al efecto haya señalado la entidad beneficiaria en la solicitud. Esta cuenta, además, debe estar dada de alta en el sistema GIRO, para lo cual la entidad debe acceder con su certificado digital a la siguiente dirección de Internet:"+
+"\nhttps://www.juntadeandalucia.es/haciendayadministracionpublica/ov/tesoreria/gasos_pagos/ mantenimiento.htm"+
+"\nTal y como se recoge en la Resolución de convocatoria, el pago de la subvención se hará efectivo mediante el abono de:"+
+"\n1.- Un primer pago correspondiente al 75% del importe total de la subvención, tras la firma de la resolución de concesión, que se hará efectivo durante el año corriente sin necesidad de justificación previa."+
+"\n2.- Un segundo pago correspondiente como máximo al 25% del importe restante de la subvención, al finalizar el periodo de ejecución del proyecto, que se hará efectivo durante el año siguiente, una vez justificado el 100% del total del proyecto. Este pago, que se efectuará una vez realizadas las actuaciones pertinentes de control final de las actividades realizadas por las entidades beneficiarias, y previa justificación del importe total del proyecto, se librará en concepto de liquidación de la subvención."+
+"\nDe conformidad con la Resolución anteriormente citada, el coste total para la presente convocatoria se hará con cargo a las partidas presupuestarias indicadas en el encabezado de la presente propuesta."+
+"\n\nQUINTO.- La Resolución de convocatoria establece en relación a la justificación de la subvención:  Para las líneas Guadalinfo y ELA, hasta el "+$F{fechaJustificacion}+" deberá aportarse el 100% de la documentación justificativa. La justificación de la subvención se llevará a cabo en los términos previstos en el artículo 25 de la Orden."+
+"\nEl apartado 8 de dicho articulo 25, establece que “Para las líneas Guadalinfo y ELA, la justificación económica se realizará mediante un certificado de la Intervención de la Entidad Local correspondiente, que acreditará al menos los siguientes extremos:"+
+"\n• Que la subvención concedida ha sido destinada a la finalidad para el que se otorgó."+
+"\n• Que la entidad beneficiaria ha cumplido con su obligación de presentar la cuenta justificativa con aportación de justificantes de gasto, integrada por la memoria económica justificativa."+
+"\n• El importe total presentado de documentación justificativa."+
+"\n• El importe finalmente justificado."+
+"\n• Que los gastos justificados han sido totalmente invertidos en la ejecución del proyecto, cumpliéndose las obligaciones exigidas por las normas de aplicación y la resolución de concesión."+
+"\n• Que la persona que desempeña las tareas de dinamización cuenta con la titulación mínima de Bachillerato, Ciclo Formativo de Grado Superior o equivalente."+
+"\n• Día de inicio de la actividad subvencionada."+
+"\n• Si se ha recibido, no se ha recibido o se tiene previsto recibir para el mismo fin otras subvenciones o ayudas de cualquier Administración o ente público o privado nacional o internacional. En caso afirmativo, se indicará el importe, procedencia y aplicación de tales fondos a la actividad subvencionada."+
+"\n• Que la totalidad de los documentos que han servido de soporte para el reconocimiento de las obligaciones recogidas en el certificado cumplen con los requisitos previstos en la legislación vigente."+
+"\n\nSiempre que se haya alcanzado el objetivo o finalidad perseguidos, si no se justificara debidamente el total de la actividad o la inversión subvencionada, deberá reducirse el importe de la subvención concedida aplicando el porcentaje de financiación sobre la cuantía correspondiente a los justificantes no presentados o no aceptados."+
+"\nPuesto que la actividad subvencionable se compone de varias fases o actuaciones, y se pueden identificar objetos vinculados a cada una de ellas, como criterio de graduación a aplicar a los incumplimientos de las condiciones impuestas con motivo de la concesión de esta subvención, se establece que el importe final de la subvención será proporcional al volumen de las fases o actuaciones de la actividad en las que se hayan conseguido los objetivos previstos."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="708">
+			<break>
+				<reportElement x="0" y="698" width="87" height="1" uuid="1537e872-b162-4c47-a35d-0f277306f69d"/>
+			</break>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="10" width="470" height="559" uuid="055f5a6b-b663-49b2-a119-e479cce4b719"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["\nA partir del Informe de Cumplimiento de Objetivos Técnicos, y sin perjuicio de lo dispuesto en el artículo 71.2 del Reglamento de la Ley 38/2003, de 17 de noviembre, aprobado por Real Decreto 887/2006, de 21 de julio, así como en el artículo 25 de la presente Orden, se requerirá el reintegro de las cantidades percibidas y el interés de demora correspondiente, desde el momento del pago de la subvención hasta la fecha en que se acuerde la procedencia del reintegro. A este respecto, se considerará que la entidad beneficiaria se aproxima de modo inequívoco al cumplimiento total y acredita una actuación inequívocamente tendente a la satisfacción de sus compromisos, cuando el grado de cumplimiento de los objetivos determinado en el Informe de Cumplimiento de Objetivos Técnicos emitido por la entidad colaboradora, sea igual o superior al 70%."+
+"\n\nEn estos casos, el porcentaje a reintegrar que corresponde al grado de cumplimiento de los objetivos alcanzados por la entidad beneficiaria que se señala en el Informe de Cumplimiento de Objetivos Técnicos, resultará de la aplicación del siguiente baremo:"+
+"\n"+
+"\nPara un grado de cumplimiento entre el 70 y el 74%, el importe a reintegrar será de un 15%."+
+"\nPara un grado de cumplimiento entre el 75 y el 79%, el importe a reintegrar será de un 12%."+
+"\nPara un grado de cumplimiento entre el 80 y el 84%, el importe a reintegrar será de un  9%."+
+"\nPara un grado de cumplimiento entre el 85 y el 89%, el importe a reintegrar será de un  6%."+
+"\nPara un grado de cumplimiento entre el 90 y el 94%, el importe a reintegrar será de un  3%."+
+"\nPara un grado de cumplimiento entre el 95 y el 100%, el importe a reintegrar será de un 0%."+
+"\n"+
+"\nLa cantidad final a reintegrar por incumplimiento de actividad será la resultante de aplicar al importe de subvención otorgado a la entidad beneficiaria en la resolución de concesión, minorado en la cantidad de reintegro que proceda por causas económicas, el porcentaje correspondiente del baremo que se recoge en la tabla anterior."+
+"\n\nSEXTO.- Además de los casos de nulidad y anulabilidad previstos en el artículo 36 de la Ley 38/2003, de 17 de noviembre, General de Subvenciones, procederá también el reintegro de las cantidades percibidas y la exigencia del interés de demora correspondiente desde el momento del pago de la subvención hasta la fecha que se acuerde la procedencia del reintegro, en el supuesto de incumplimiento de cualquiera de las condiciones fijadas en la resolución de concesión así como en los demás supuestos fijados legalmente conforme a los artículos 37 de la Ley 38/2003, de 17 de noviembre, General de Subvenciones y el artículo 125 del Texto Refundido de la Ley General de la Hacienda Pública de la Junta de Andalucía, aprobado por Decreto Legislativo 1/2010, de 2 de marzo."+
+"\n\nSÉPTIMO.- Con respecto al cumplimiento de la normativa vigente sobre Transparencia Pública, se imponen a la entidad beneficiaria las siguientes obligaciones:"+
+"\n1.- De conformidad con el artículo 23.1 de la Orden Reguladora, en sus apartados l) y m):  - Dar publicidad específica de las subvenciones y ayudas percibidas en los términos y condiciones establecidos en la normativa sobre transparencia. - Cumplir con las obligaciones de transparencia y suministro de información en los términos previstos en la normativa sobre transparencia."+
+"\n2.- Para dar cumplimiento a lo estipulado en el artículo 4 de la Ley 1/2014, de 24 de junio, de Transparencia Pública de Andalucía, la entidad beneficiaria estará obligada a suministrar a la Administración de la Junta de Andalucía, a través del órgano concedente, en un plazo de quince días y previo requerimiento al efecto, toda la información necesaria para el cumplimiento de las obligaciones previstas en dicha Ley."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="708">
+			<break>
+				<reportElement x="0" y="700" width="85" height="1" uuid="9a8ddb4a-f718-4a4d-9a18-035afdda641d"/>
+			</break>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="150" width="470" height="50" uuid="b855dfc9-5cd2-48b5-8f01-0c508715868d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Córdoba a fecha de la firma"+
+"\nEL DELEGADO TERRITORIAL"+
+"\n\nFdo.: Ángel Herrador Leiva."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="10" width="470" height="130" uuid="929e2347-6c3f-422c-8f27-7f2b146792b2"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["\nOCTAVO.- Contra la presente resolución, que pone fin a la vía administrativa, se podrá interponer recurso potestativo de reposición ante esta Delegación Territorial, en el plazo de UN MES contado a partir del día siguiente a aquel en que tenga lugar la notificación o publicación del presente acto, o interponer directamente el recurso contencioso administrativo ante los correspondientes órganos judiciales, en el plazo de DOS MESES contados desde el día siguiente al de la notificación de este acto, todo ello de conformidad con lo establecido en el artículo 115 de la Ley 9/2007, de 22 de octubre, de la Administración de la Junta de Andalucía, artículo 124 de la Ley 39/2015 del Procedimiento Administrativo Común de las Administraciones Públicas, y en el artículo 46.1 de la Ley 29/1998, de 13 de julio, reguladora de la Jurisdicción Contencioso Administrativa."]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="708">
+			<staticText>
+				<reportElement x="0" y="10" width="470" height="30" uuid="3fba33f5-cee8-4563-b5c7-dc759af89edd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ANEXO]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="62" width="470" height="32" uuid="04848fca-7de9-40f6-bfe4-788d9279d1bf"/>
+				<textFieldExpression><![CDATA[$F{parrafoAnexo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="102" width="470" height="30" uuid="e2c3f863-4cd3-4bce-baa4-9a6966b2196f"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["\n\n\n(1) Incluye la aportación de fondos propios de la entidad solicitante junto con las posibles subvenciones de otras entidades que puedan aplicarse concurrentemente a la que se propone."]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

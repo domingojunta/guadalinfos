@@ -9,14 +9,14 @@ import es.domingojunta.entities.Convocatoria;
 import es.domingojunta.entities.Entidad;
 import es.domingojunta.entities.Orden;
 import es.domingojunta.entities.Solicitud;
-import es.domingojunta.models.convocatoria.ConvocatoriaCrearViewModel;
-import es.domingojunta.models.convocatoria.ConvocatoriaListarViewModel;
-import es.domingojunta.models.entidad.EntidadCrearViewModel;
-import es.domingojunta.models.entidad.EntidadListarViewModel;
-import es.domingojunta.models.orden.OrdenCrearViewModel;
-import es.domingojunta.models.orden.OrdenListarViewModel;
-import es.domingojunta.models.solicitud.SolicitudCrearViewModel;
-import es.domingojunta.models.solicitud.SolicitudListarViewModel;
+import es.domingojunta.model.ConvocatoriaCrearViewModel;
+import es.domingojunta.model.ConvocatoriaListarViewModel;
+import es.domingojunta.model.EntidadCrearViewModel;
+import es.domingojunta.model.EntidadListarViewModel;
+import es.domingojunta.model.OrdenCrearViewModel;
+import es.domingojunta.model.OrdenListarViewModel;
+import es.domingojunta.model.SolicitudCrearViewModel;
+import es.domingojunta.model.SolicitudListarViewModel;
 
 @Component
 public class Convertidor {

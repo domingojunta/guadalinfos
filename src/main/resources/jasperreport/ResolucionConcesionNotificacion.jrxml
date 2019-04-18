@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ResolucionConcesionNotificacion" pageWidth="595" pageHeight="842" columnWidth="469" leftMargin="70" rightMargin="56" topMargin="56" bottomMargin="28" uuid="c5c80c04-435a-4636-a4a9-8bea3518ab5d">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="parrafoNotificacion" class="java.lang.String"/>
+	<field name="parrafoInformacion" class="java.lang.String"/>
+	<field name="parrafoNormativa" class="java.lang.String"/>
+	<background>
+		<band height="758">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<image vAlign="Bottom">
+				<reportElement positionType="FixRelativeToBottom" stretchType="ContainerBottom" x="-50" y="658" width="60" height="100" uuid="cd409a9b-d873-4f10-a21e-8d00a3497a4e"/>
+				<imageExpression><![CDATA["src/main/resources/jasperreport/Hercules.png"]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<pageHeader>
+		<band height="50">
+			<image>
+				<reportElement x="-20" y="0" width="170" height="29" uuid="9c50ec9f-6a9d-4766-874f-25f70f53d37e"/>
+				<imageExpression><![CDATA["src/main/resources/jasperreport/JuntaDeAndalucia.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="180" y="0" width="290" height="50" uuid="dbffa5c0-3cd1-41df-9cfe-65a598edeede"/>
+				<imageExpression><![CDATA["src/main/resources/jasperreport/NombreConsejerias.png"]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="708">
+			<textField>
+				<reportElement x="230" y="50" width="240" height="70" uuid="ba1d47e0-552d-4b6a-a833-4c67f71b52eb"/>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{parrafoNotificacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="0" y="120" width="470" height="80" uuid="73eccbe9-c96b-44fc-a98a-5e0e43d0e9cc"/>
+				<textElement verticalAlignment="Top">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{parrafoInformacion}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="200" width="470" height="40" uuid="95b50368-e6da-4938-89a1-18ce256fb573"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA[$F{parrafoNormativa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="0" y="250" width="470" height="110" uuid="9aee2261-cbd7-4b70-9e85-c65c474965b4"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["\nContra la presente resolución, que pone fin a la vía administrativa, se podrá interponer recurso potestativo de reposición ante esta Delegación Territorial, en el plazo de UN MES contado a partir del día siguiente a aquel en que tenga lugar la notificación o publicación del presente acto, o interponer directamente el recurso contencioso administrativo ante los correspondientes órganos judiciales, en el plazo de DOS MESES contados desde el día siguiente al de la notificación de este acto, todo ello de conformidad con lo establecido en el artículo 115 de la Ley 9/2007, de 22 de octubre, de la Administración de la Junta de Andalucía, artículo 124 de la Ley 39/2015 del Procedimiento Administrativo Común de las Administraciones Públicas, y en el artículo 46.1 de la Ley 29/1998, de 13 de julio, reguladora de la Jurisdicción Contencioso Administrativa."]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="10" width="470" height="30" uuid="5e399f07-385c-4023-a3c0-0e285c1f75e9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOTIFICACIÓN RESOLUCIÓN CONCESIÓN]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="0" y="370" width="470" height="59" uuid="58b369b5-6d59-49f0-aa52-1b7580cc3178"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["EL JEFE DEL SERVICIO DE COOPERACIÓN ECONÓMICA Y DESARROLLO TECNOLÓGICO\n"+
+"Fdo.: Domingo José Orta Pacheco"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

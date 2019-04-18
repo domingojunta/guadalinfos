@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import es.domingojunta.entities.Convocatoria;
-import es.domingojunta.models.convocatoria.ConvocatoriaListarViewModel;
-import es.domingojunta.models.orden.OrdenCrearViewModel;
-import es.domingojunta.models.orden.OrdenListarViewModel;
-import es.domingojunta.models.convocatoria.ConvocatoriaCrearViewModel;
+import es.domingojunta.model.ConvocatoriaCrearViewModel;
+import es.domingojunta.model.ConvocatoriaListarViewModel;
+import es.domingojunta.model.OrdenCrearViewModel;
+import es.domingojunta.model.OrdenListarViewModel;
 import es.domingojunta.services.ConvocatoriaService;
 
 @RestController

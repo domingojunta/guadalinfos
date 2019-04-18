@@ -13,7 +13,7 @@ import javax.persistence.OneToMany;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import es.domingojunta.models.orden.OrdenListarViewModel;
+import es.domingojunta.model.OrdenListarViewModel;
 
 @Entity
 @XmlRootElement

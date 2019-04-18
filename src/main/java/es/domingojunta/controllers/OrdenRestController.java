@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import es.domingojunta.entities.Orden;
-import es.domingojunta.models.orden.OrdenCrearViewModel;
-import es.domingojunta.models.orden.OrdenListarViewModel;
+import es.domingojunta.model.OrdenCrearViewModel;
+import es.domingojunta.model.OrdenListarViewModel;
 import es.domingojunta.services.OrdenService;
 
 @RestController

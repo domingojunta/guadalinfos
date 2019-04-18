@@ -9,8 +9,8 @@ import org.springframework.stereotype.Service;
 
 import es.domingojunta.entities.Convocatoria;
 import es.domingojunta.entities.Entidad;
-import es.domingojunta.models.entidad.EntidadCrearViewModel;
-import es.domingojunta.models.entidad.EntidadListarViewModel;
+import es.domingojunta.model.EntidadCrearViewModel;
+import es.domingojunta.model.EntidadListarViewModel;
 import es.domingojunta.repositories.EntidadRepository;
 import es.domingojunta.tools.Convertidor;
 

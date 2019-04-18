@@ -13,11 +13,13 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 import es.domingojunta.entities.Solicitud;
-import es.domingojunta.models.entidad.EntidadCrearViewModel;
-import es.domingojunta.models.entidad.EntidadListarViewModel;
-import es.domingojunta.models.solicitud.SolicitudCrearViewModel;
-import es.domingojunta.models.solicitud.SolicitudListarViewModel;
+import es.domingojunta.model.EntidadCrearViewModel;
+import es.domingojunta.model.EntidadListarViewModel;
+import es.domingojunta.model.SolicitudCrearViewModel;
+import es.domingojunta.model.SolicitudListarViewModel;
 import es.domingojunta.services.SolicitudService;
 
 @RestController
@@ -49,6 +51,8 @@ public class SolicitudRestController {
 		} else {
 			respuesta = new ResponseEntity<List<SolicitudListarViewModel>>(viewModels, HttpStatus.OK);
 		}
+		
+		
 			
 		
 		return respuesta;
@@ -68,7 +72,7 @@ public class SolicitudRestController {
 	}
 	
 	@PutMapping({"/solicitud_actualizar","/solicitud"})
-	public ResponseEntity<SolicitudListarViewModel> actualizar (@RequestBody SolicitudListarViewModel viewModel ){
+	public ResponseEntity<SolicitudListarViewModel> actualizar (@RequestBody SolicitudListarViewModel viewModel, RedirectAttributes redirectAttributes ){
 		//System.out.println("El SUBCC introducido en el controller es: "+viewModel.getSubcc());
 		ResponseEntity respuesta = null;
 		System.out.println("El idCopnvocatoria pasado es: "+viewModel.getIdConvocatoria());
@@ -78,6 +82,9 @@ public class SolicitudRestController {
 		} else {
 			respuesta = new ResponseEntity(HttpStatus.NOT_FOUND);
 		}
+		
+		
+		
 		return respuesta;
 		
 	}
