@@ -74,8 +74,7 @@ public class Solicitud {
 	private String fechaPagoMaterialOJ;
 	@Column(name="numero_documentoom")
 	private String numeroDocumentoOM;
-	@Column(name="numero_dias_funcionamiento")
-	private int numeroDiasFuncionamiento;
+	
 	@Column(name="objetivo_numero_actividades")
 	private int objetivoNumeroActividades;
 	@Column(name="objetivo_numero_actividades_marcadas")
@@ -88,6 +87,9 @@ public class Solicitud {
 	private int numeroActividadesMarcadasAlcanzado;
 	@Column(name="numero_meses_alcanzado")
 	private int numeroMesesAlcanzado;
+	@Column(name="grado_cumplimiento_tecnico")
+	private BigDecimal gradoCumplimientoTecnico;
+	
 	@Column(name="importe_justificado_personal")
 	private BigDecimal importeJustificadoPersonal;
 	@Column(name="importe_justificado_dietas")
@@ -96,6 +98,8 @@ public class Solicitud {
 	private BigDecimal importeAceptadoPersonal;
 	@Column(name="importe_aceptado_dietas")
 	private BigDecimal importeAceptadoDietas;
+	@Column(name="numero_dias_cerrado")
+	private Integer numeroDiasCerrado;
 	
 	
 	@Column(name="fecha_propuesta_liquidacion")
@@ -113,8 +117,6 @@ public class Solicitud {
 	private String numeroDocumentoJ;
 	@Column(name="expediente_contable_propuestao")
 	private String expedienteContablePropuestaO;
-	@Column(name="numero_propuesta_documentoo")
-	private String numeroPropuestaDocumentoO;
 	@Column(name="numero_documentoo")
 	private String numeroDocumentoO;
 	@Column(name="fecha_pago_materialo")
@@ -522,22 +524,6 @@ public class Solicitud {
 	}
 
 
-
-
-	public int getNumeroDiasFuncionamiento() {
-		return numeroDiasFuncionamiento;
-	}
-
-
-
-
-	public void setNumeroDiasFuncionamiento(int numeroDiasFuncionamiento) {
-		this.numeroDiasFuncionamiento = numeroDiasFuncionamiento;
-	}
-
-
-
-
 	public int getObjetivoNumeroActividades() {
 		return objetivoNumeroActividades;
 	}
@@ -775,21 +761,6 @@ public class Solicitud {
 
 
 
-
-	public String getNumeroPropuestaDocumentoO() {
-		return numeroPropuestaDocumentoO;
-	}
-
-
-
-
-	public void setNumeroPropuestaDocumentoO(String numeroPropuestaDocumentoO) {
-		this.numeroPropuestaDocumentoO = numeroPropuestaDocumentoO;
-	}
-
-
-
-
 	public String getNumeroDocumentoO() {
 		return numeroDocumentoO;
 	}
@@ -911,6 +882,34 @@ public class Solicitud {
 
 	public void setFechaAbonoReintegro(String fechaAbonoReintegro) {
 		this.fechaAbonoReintegro = fechaAbonoReintegro;
+	}
+
+
+
+
+	public BigDecimal getGradoCumplimientoTecnico() {
+		return gradoCumplimientoTecnico;
+	}
+
+
+
+
+	public void setGradoCumplimientoTecnico(BigDecimal gradoCumplimientoTecnico) {
+		this.gradoCumplimientoTecnico = gradoCumplimientoTecnico;
+	}
+
+
+
+
+	public Integer getNumeroDiasCerrado() {
+		return numeroDiasCerrado;
+	}
+
+
+
+
+	public void setNumeroDiasCerrado(Integer numeroDiasCerrado) {
+		this.numeroDiasCerrado = numeroDiasCerrado;
 	}
 
 	

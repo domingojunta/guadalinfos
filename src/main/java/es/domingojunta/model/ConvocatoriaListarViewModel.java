@@ -45,11 +45,11 @@ public class ConvocatoriaListarViewModel {
 	private BigDecimal importeGuadalinfoFuturo;
 	private BigDecimal importeELACorriente;
 	private BigDecimal importeELAFuturo;
-	private int numeroDias;
+	
+	private Integer numeroDiasYear;
 	private String aplicacionPresupuestariaCorriente;
 	private String aplicacionPresupuestariaFutura;
-	private String resuelvePago;
-	private String resuelveJustificacion;
+	
 	
 	
 	public ConvocatoriaListarViewModel() {
@@ -267,14 +267,13 @@ public class ConvocatoriaListarViewModel {
 		this.importeELAFuturo = importeELAFuturo;
 	}
 
-
-	public int getNumeroDias() {
-		return numeroDias;
+	public Integer getNumeroDiasYear() {
+		return numeroDiasYear;
 	}
 
 
-	public void setNumeroDias(int numeroDias) {
-		this.numeroDias = numeroDias;
+	public void setNumeroDiasYear(Integer numeroDiasYear) {
+		this.numeroDiasYear = numeroDiasYear;
 	}
 
 
@@ -297,29 +296,5 @@ public class ConvocatoriaListarViewModel {
 		this.aplicacionPresupuestariaFutura = aplicacionPresupuestariaFutura;
 	}
 
-
-	public String getResuelvePago() {
-		return resuelvePago;
-	}
-
-
-	public void setResuelvePago(String resuelvePago) {
-		this.resuelvePago = resuelvePago;
-	}
-
-
-	public String getResuelveJustificacion() {
-		return resuelveJustificacion;
-	}
-
-
-	public void setResuelveJustificacion(String resuelveJustificacion) {
-		this.resuelveJustificacion = resuelveJustificacion;
-	}
-
-	
-	
-	
-	
 	
 }

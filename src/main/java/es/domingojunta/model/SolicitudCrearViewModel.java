@@ -40,17 +40,19 @@ public class SolicitudCrearViewModel {
 	private BigDecimal importeOJ;
 	private String fechaPagoMaterialOJ;
 	private String numeroDocumentoOM;
-	private int numeroDiasFuncionamiento;
+	
 	private int objetivoNumeroActividades;
 	private int objetivoNumeroActividadesMarcadas;
 	private int objetivoNumeroMeses;
 	private int numeroActividadesAlcanzado;
 	private int numeroActividadesMarcadasAlcanzado;
 	private int numeroMesesAlcanzado;
+	private BigDecimal gradoCumplimientoTecnico;
 	private BigDecimal importeJustificadoPersonal;
 	private BigDecimal importeJustificadoDietas;
 	private BigDecimal importeAceptadoPersonal;
 	private BigDecimal importeAceptadoDietas;
+	private Integer numeroDiasCerrado;
 	
 	private String fechaPropuestaLiquidacion;
 	private String fechaAlegacionesPropuestaLiquidacion;
@@ -104,6 +106,17 @@ public class SolicitudCrearViewModel {
 
 	public void setYearConvocatoria(String yearConvocatoria) {
 		this.yearConvocatoria = yearConvocatoria;
+	}
+
+	
+
+	public BigDecimal getGradoCumplimientoTecnico() {
+		return gradoCumplimientoTecnico;
+	}
+
+
+	public void setGradoCumplimientoTecnico(BigDecimal gradoCumplimientoTecnico) {
+		this.gradoCumplimientoTecnico = gradoCumplimientoTecnico;
 	}
 
 
@@ -358,17 +371,6 @@ public class SolicitudCrearViewModel {
 	public void setNumeroDocumentoOM(String numeroDocumentoOM) {
 		this.numeroDocumentoOM = numeroDocumentoOM;
 	}
-
-
-	public int getNumeroDiasFuncionamiento() {
-		return numeroDiasFuncionamiento;
-	}
-
-
-	public void setNumeroDiasFuncionamiento(int numeroDiasFuncionamiento) {
-		this.numeroDiasFuncionamiento = numeroDiasFuncionamiento;
-	}
-
 
 	public int getObjetivoNumeroActividades() {
 		return objetivoNumeroActividades;
@@ -637,6 +639,16 @@ public class SolicitudCrearViewModel {
 
 	public void setFechaAbonoReintegro(String fechaAbonoReintegro) {
 		this.fechaAbonoReintegro = fechaAbonoReintegro;
+	}
+
+
+	public Integer getNumeroDiasCerrado() {
+		return numeroDiasCerrado;
+	}
+
+
+	public void setNumeroDiasCerrado(Integer numeroDiasCerrado) {
+		this.numeroDiasCerrado = numeroDiasCerrado;
 	}
 	
 

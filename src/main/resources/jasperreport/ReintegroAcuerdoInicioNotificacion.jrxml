@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ComunicacionEntrada" pageWidth="595" pageHeight="842" columnWidth="469" leftMargin="70" rightMargin="56" topMargin="56" bottomMargin="28" uuid="c5c80c04-435a-4636-a4a9-8bea3518ab5d">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReintegroAcuerdoInicioNotificacion" pageWidth="595" pageHeight="842" columnWidth="469" leftMargin="70" rightMargin="56" topMargin="56" bottomMargin="28" uuid="c5c80c04-435a-4636-a4a9-8bea3518ab5d">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.report.description" value=""/>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
@@ -30,43 +31,40 @@
 		</band>
 	</pageHeader>
 	<detail>
-		<band height="708">
-			<textField>
-				<reportElement x="230" y="50" width="240" height="70" uuid="ba1d47e0-552d-4b6a-a833-4c67f71b52eb"/>
+		<band height="429">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="230" y="50" width="240" height="40" uuid="ba1d47e0-552d-4b6a-a833-4c67f71b52eb"/>
 				<textElement textAlignment="Right" verticalAlignment="Top">
 					<font size="11"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{parrafoNotificacion}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="0" y="120" width="290" height="50" uuid="73eccbe9-c96b-44fc-a98a-5e0e43d0e9cc"/>
+				<reportElement positionType="Float" x="0" y="90" width="470" height="50" uuid="73eccbe9-c96b-44fc-a98a-5e0e43d0e9cc"/>
 				<textElement verticalAlignment="Top">
 					<font size="11"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{parrafoInformacion}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="170" width="470" height="40" uuid="95b50368-e6da-4938-89a1-18ce256fb573"/>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="140" width="470" height="40" uuid="95b50368-e6da-4938-89a1-18ce256fb573"/>
 				<textElement textAlignment="Justified"/>
-				<textFieldExpression><![CDATA[$F{parrafoNormativa}]]></textFieldExpression>
+				<textFieldExpression><![CDATA["\n\n"+$F{parrafoNormativa}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="0" y="210" width="470" height="130" uuid="9aee2261-cbd7-4b70-9e85-c65c474965b4"/>
+				<reportElement positionType="Float" x="0" y="180" width="470" height="60" uuid="9aee2261-cbd7-4b70-9e85-c65c474965b4"/>
 				<textElement textAlignment="Justified"/>
-				<textFieldExpression><![CDATA["\n\n"+
-"De conformidad con el artículo 9 de la citada Orden, la presente solicitud inicia un procedimiento administrativo que se tramitará y resolverá en régimen de concurrencia no competitiva por esta Delegación Territorial, siendo el plazo máximo para resolver y notificar de seis meses a computar desde que la solicitud haya tenido entrada en el Registro de esta Delegación Terrritorial, ( artículo 19.3 de la Orden)."+
-"\n\n"+
-"De conformidad con el artículo 19.4 de la Orden, deberá entender desestimada su solicitud al vencer el plazo máximo anteriormente citado, sin que se hubiese notificado la resolución expresa."]]></textFieldExpression>
+				<textFieldExpression><![CDATA["\n"+"Conceder a la entidad beneficiaria un plazo de QUINCE DÍAS para formular las alegaciones y aportar cuantos documentos y justificaciones estime convenientes, de conformidad con el artículo 82.2 de la Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas."]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="0" y="10" width="470" height="30" uuid="5e399f07-385c-4023-a3c0-0e285c1f75e9"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="16" isBold="true"/>
+					<font size="18" isBold="true"/>
 				</textElement>
-				<text><![CDATA[NOTIFICACIÓN PROPUESTA RESOLUCIÓN LIQUIDACIÓN]]></text>
+				<text><![CDATA[NOTIFICACIÓN ACUERDO INICIO REINTEGRO]]></text>
 			</staticText>
 			<textField>
-				<reportElement positionType="Float" x="0" y="360" width="470" height="59" uuid="58b369b5-6d59-49f0-aa52-1b7580cc3178"/>
+				<reportElement positionType="Float" x="0" y="260" width="470" height="59" uuid="58b369b5-6d59-49f0-aa52-1b7580cc3178"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA["EL JEFE DEL SERVICIO DE COOPERACIÓN ECONÓMICA Y DESARROLLO TECNOLÓGICO\n"+
 "Fdo.: Domingo José Orta Pacheco"]]></textFieldExpression>

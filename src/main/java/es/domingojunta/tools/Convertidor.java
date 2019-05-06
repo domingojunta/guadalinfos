@@ -59,11 +59,11 @@ public class Convertidor {
 			convocatoria.setImporteGuadalinfoFuturo(viewModel.getImporteGuadalinfoFuturo());
 			convocatoria.setImporteELACorriente(viewModel.getImporteELACorriente());
 			convocatoria.setImporteELAFuturo(viewModel.getImporteELAFuturo());
-			convocatoria.setNumeroDias(viewModel.getNumeroDias());
+			//convocatoria.setNumeroDiasCerrado(viewModel.getNumeroDiasCerrado());
+			convocatoria.setNumeroDiasYear(viewModel.getNumeroDiasYear());
 			convocatoria.setAplicacionPresupuestariaCorriente(viewModel.getAplicacionPresupuestariaCorriente());
      		convocatoria.setAplicacionPresupuestariaFutura(viewModel.getAplicacionPresupuestariaFutura());
-			convocatoria.setResuelvePago(viewModel.getResuelvePago());
-			convocatoria.setResuelveJustificacion(viewModel.getResuelveJustificacion());
+			
 			
 		} catch (Exception e) {
 			System.out.println("Error al convertir viewModel en Entity");
@@ -95,11 +95,11 @@ public class Convertidor {
 		convocatoria.setImporteGuadalinfoFuturo(viewModel.getImporteGuadalinfoFuturo());
 		convocatoria.setImporteELACorriente(viewModel.getImporteELACorriente());
 		convocatoria.setImporteELAFuturo(viewModel.getImporteELAFuturo());
-		convocatoria.setNumeroDias(viewModel.getNumeroDias());
+		//convocatoria.setNumeroDiasCerrado(viewModel.getNumeroDiasCerrado());
+		convocatoria.setNumeroDiasYear(viewModel.getNumeroDiasYear());
 		convocatoria.setAplicacionPresupuestariaCorriente(viewModel.getAplicacionPresupuestariaCorriente());
 		convocatoria.setAplicacionPresupuestariaFutura(viewModel.getAplicacionPresupuestariaFutura());
-		convocatoria.setResuelvePago(viewModel.getResuelvePago());
-		convocatoria.setResuelveJustificacion(viewModel.getResuelveJustificacion());
+		
 		return convocatoria;
 	}
 
@@ -125,11 +125,11 @@ public class Convertidor {
 			vm.setImporteGuadalinfoFuturo(item.getImporteGuadalinfoFuturo());
 			vm.setImporteELACorriente(item.getImporteELACorriente());
 			vm.setImporteELAFuturo(item.getImporteELAFuturo());
-			vm.setNumeroDias(item.getNumeroDias());
+			//vm.setNumeroDiasCerrado(item.getNumeroDiasCerrado());
+			vm.setNumeroDiasYear(item.getNumeroDiasYear());
 			vm.setAplicacionPresupuestariaCorriente(item.getAplicacionPresupuestariaCorriente());
      		vm.setAplicacionPresupuestariaFutura(item.getAplicacionPresupuestariaFutura());
-			vm.setResuelvePago(item.getResuelvePago());
-			vm.setResuelveJustificacion(item.getResuelveJustificacion());
+			
 			
 		} catch (Exception e) {
 			System.out.println("Error al convertir viewModel en Entity");
@@ -213,13 +213,14 @@ public class Convertidor {
 		solicitud.setImporteOJ(vm.getImporteOJ());
 		solicitud.setFechaPagoMaterialOJ(vm.getFechaPagoMaterialOJ());
 		solicitud.setNumeroDocumentoOM(vm.getNumeroDocumentoOM());
-		solicitud.setNumeroDiasFuncionamiento(vm.getNumeroDiasFuncionamiento());
+		solicitud.setNumeroDiasCerrado(vm.getNumeroDiasCerrado());
 		solicitud.setObjetivoNumeroActividades(vm.getObjetivoNumeroActividades());
 		solicitud.setObjetivoNumeroActividadesMarcadas(vm.getObjetivoNumeroActividadesMarcadas());
 		solicitud.setObjetivoNumeroMeses(vm.getObjetivoNumeroMeses());
 		solicitud.setNumeroActividadesAlcanzado(vm.getNumeroActividadesAlcanzado());
 		solicitud.setNumeroActividadesMarcadasAlcanzado(vm.getNumeroActividadesMarcadasAlcanzado());
 		solicitud.setNumeroMesesAlcanzado(vm.getNumeroMesesAlcanzado());
+		solicitud.setGradoCumplimientoTecnico(vm.getGradoCumplimientoTecnico());
 		solicitud.setImporteJustificadoPersonal(vm.getImporteJustificadoPersonal());
 		solicitud.setImporteJustificadoDietas(vm.getImporteJustificadoDietas());
 		solicitud.setImporteAceptadoPersonal(vm.getImporteAceptadoPersonal());
@@ -233,7 +234,7 @@ public class Convertidor {
 		solicitud.setExpedienteContableJ(vm.getExpedienteContableJ());
 		solicitud.setNumeroDocumentoJ(vm.getNumeroDocumentoJ());
 		
-		solicitud.setNumeroPropuestaDocumentoO(vm.getNumeroPropuestaDocumentoO());
+		
 		solicitud.setExpedienteContablePropuestaO(vm.getExpedienteContablePropuestaO());
 		solicitud.setNumeroDocumentoO(vm.getNumeroDocumentoO());
 		solicitud.setFechaPagoMaterialO(vm.getFechaPagoMaterialO());
@@ -282,13 +283,14 @@ public class Convertidor {
 		viewModel.setImporteOJ(solicitud.getImporteOJ());
 		viewModel.setFechaPagoMaterialOJ(solicitud.getFechaPagoMaterialOJ());
 		viewModel.setNumeroDocumentoOM(solicitud.getNumeroDocumentoOM());
-		viewModel.setNumeroDiasFuncionamiento(solicitud.getNumeroDiasFuncionamiento());
+		viewModel.setNumeroDiasCerrado(solicitud.getNumeroDiasCerrado());
 		viewModel.setObjetivoNumeroActividades(solicitud.getObjetivoNumeroActividades());
 		viewModel.setObjetivoNumeroActividadesMarcadas(solicitud.getObjetivoNumeroActividadesMarcadas());
 		viewModel.setObjetivoNumeroMeses(solicitud.getObjetivoNumeroMeses());
 		viewModel.setNumeroActividadesAlcanzado(solicitud.getNumeroActividadesAlcanzado());
 		viewModel.setNumeroActividadesMarcadasAlcanzado(solicitud.getNumeroActividadesMarcadasAlcanzado());
 		viewModel.setNumeroMesesAlcanzado(solicitud.getNumeroMesesAlcanzado());
+		viewModel.setGradoCumplimientoTecnico(solicitud.getGradoCumplimientoTecnico());
 		viewModel.setImporteJustificadoPersonal(solicitud.getImporteJustificadoPersonal());
 		viewModel.setImporteJustificadoDietas(solicitud.getImporteJustificadoDietas());
 		viewModel.setImporteAceptadoPersonal(solicitud.getImporteAceptadoPersonal());
@@ -302,7 +304,7 @@ public class Convertidor {
 		viewModel.setExpedienteContableJ(solicitud.getExpedienteContableJ());
 		viewModel.setNumeroDocumentoJ(solicitud.getNumeroDocumentoJ());
 		viewModel.setExpedienteContablePropuestaO(solicitud.getExpedienteContablePropuestaO());
-		viewModel.setNumeroPropuestaDocumentoO(solicitud.getNumeroPropuestaDocumentoO());
+		
 		viewModel.setNumeroDocumentoO(solicitud.getNumeroDocumentoO());
 		viewModel.setFechaPagoMaterialO(solicitud.getFechaPagoMaterialO());
 		
@@ -348,13 +350,15 @@ public class Convertidor {
 		solicitud.setImporteOJ(vm.getImporteOJ());
 		solicitud.setFechaPagoMaterialOJ(vm.getFechaPagoMaterialOJ());
 		solicitud.setNumeroDocumentoOM(vm.getNumeroDocumentoOM());
-		solicitud.setNumeroDiasFuncionamiento(vm.getNumeroDiasFuncionamiento());
+		solicitud.setNumeroDiasCerrado(vm.getNumeroDiasCerrado());
 		solicitud.setObjetivoNumeroActividades(vm.getObjetivoNumeroActividades());
 		solicitud.setObjetivoNumeroActividadesMarcadas(vm.getObjetivoNumeroActividadesMarcadas());
 		solicitud.setObjetivoNumeroMeses(vm.getObjetivoNumeroMeses());
 		solicitud.setNumeroActividadesAlcanzado(vm.getNumeroActividadesAlcanzado());
 		solicitud.setNumeroActividadesMarcadasAlcanzado(vm.getNumeroActividadesMarcadasAlcanzado());
 		solicitud.setNumeroMesesAlcanzado(vm.getNumeroMesesAlcanzado());
+		solicitud.setGradoCumplimientoTecnico(vm.getGradoCumplimientoTecnico());
+		
 		solicitud.setImporteJustificadoPersonal(vm.getImporteJustificadoPersonal());
 		solicitud.setImporteJustificadoDietas(vm.getImporteJustificadoDietas());
 		solicitud.setImporteAceptadoPersonal(vm.getImporteAceptadoPersonal());
@@ -368,7 +372,7 @@ public class Convertidor {
 		solicitud.setExpedienteContableJ(vm.getExpedienteContableJ());
 		solicitud.setNumeroDocumentoJ(vm.getNumeroDocumentoJ());
 		
-		solicitud.setNumeroPropuestaDocumentoO(vm.getNumeroPropuestaDocumentoO());
+		
 		solicitud.setExpedienteContablePropuestaO(vm.getExpedienteContablePropuestaO());
 		solicitud.setNumeroDocumentoO(vm.getNumeroDocumentoO());
 		solicitud.setFechaPagoMaterialO(vm.getFechaPagoMaterialO());

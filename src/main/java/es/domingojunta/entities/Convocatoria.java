@@ -56,16 +56,13 @@ public class Convocatoria {
 	private BigDecimal importeELACorriente;
 	@Column(name="importe_ela_futuro")
 	private BigDecimal importeELAFuturo;
-	@Column(name="numero_dias")
-	private int numeroDias;
+	@Column(name="numero_dias_year")
+	private Integer numeroDiasYear;
 	@Column(name="aplicacion_presupuestaria_corriete")
 	private String aplicacionPresupuestariaCorriente;
 	@Column(name="aplicacion_presupuestaria_futura")
 	private String aplicacionPresupuestariaFutura;
-	@Column(name="resuelve_pago")
-	private String resuelvePago;
-	@Column(name="resuelve_justificacion")
-	private String resuelveJustificacion;
+	
 	
 	
 	@OneToMany(mappedBy="idConvocatoria", fetch=FetchType.LAZY)
@@ -299,17 +296,19 @@ public class Convocatoria {
 		this.importeELAFuturo = new BigDecimal(importeELAFuturo);
 	}
 
-
-	public int getNumeroDias() {
-		return numeroDias;
+	
+	
+	public Integer getNumeroDiasYear() {
+		return numeroDiasYear;
 	}
 
 
-	public void setNumeroDias(int numeroDias) {
-		this.numeroDias = numeroDias;
+	public void setNumeroDiasYear(Integer numeroDiasYear) {
+		this.numeroDiasYear = numeroDiasYear;
 	}
 
 
+	
 	public List<Solicitud> getSolicitudes() {
 		return solicitudes;
 	}
@@ -341,37 +340,17 @@ public class Convocatoria {
 	}
 
 
-	
-
-
-	public String getResuelvePago() {
-		return resuelvePago;
-	}
-
-
-	public void setResuelvePago(String resuelvePago) {
-		this.resuelvePago = resuelvePago;
-	}
-
-
-	public String getResuelveJustificacion() {
-		return resuelveJustificacion;
-	}
-
-
-	public void setResuelveJustificacion(String resuelveJustificacion) {
-		this.resuelveJustificacion = resuelveJustificacion;
-	}
-
-
 	@Override
 	public String toString() {
-		return "idConvocatoria=" + idConvocatoria + ", nombre=" + nombre + ", year=" + year + ", idOrden="
-				+ idOrden + ", fechaInicio=" + fechaInicio + ", fechaFin=" + fechaFin + ", numeroDias=" + numeroDias;
+		return "Convocatoria [idConvocatoria=" + idConvocatoria + ", nombre=" + nombre + ", year=" + year + ", idOrden="
+				+ idOrden + ", fechaInicio=" + fechaInicio + ", fechaFin=" + fechaFin + ", importeAyuntamientoA="
+				+ importeAyuntamientoA + ", importeAyuntamientoB=" + importeAyuntamientoB + ", importeAyuntamientoC="
+				+ importeAyuntamientoC + ", importeELAA=" + importeELAA + ", importeELAB=" + importeELAB
+				+ ", fechaJustificacion=" + fechaJustificacion + ", SUBAG=" + SUBAG + ", SUBCO=" + SUBCO
+				+ ", importeGuadalinfoCorriente=" + importeGuadalinfoCorriente + ", importeGuadalinfoFuturo="
+				+ importeGuadalinfoFuturo + ", importeELACorriente=" + importeELACorriente + ", importeELAFuturo="
+				+ importeELAFuturo + ", numeroDiasYear=" + numeroDiasYear + "]";
 	}
 
-	
-	
-	
 	
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RequerimientoConcesion" pageWidth="595" pageHeight="842" columnWidth="469" leftMargin="70" rightMargin="56" topMargin="56" bottomMargin="56" uuid="c5c80c04-435a-4636-a4a9-8bea3518ab5d">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RequerimientoLiquidacion" pageWidth="595" pageHeight="842" columnWidth="469" leftMargin="70" rightMargin="56" topMargin="56" bottomMargin="56" uuid="c5c80c04-435a-4636-a4a9-8bea3518ab5d">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<property name="com.jaspersoft.studio.unit." value="cm"/>
 	<property name="com.jaspersoft.studio.unit.pageHeight" value="cm"/>
@@ -60,12 +60,13 @@
 				<reportElement positionType="Float" x="0" y="140" width="470" height="120" uuid="95b50368-e6da-4938-89a1-18ce256fb573"/>
 				<textElement textAlignment="Justified"/>
 				<textFieldExpression><![CDATA[$F{parrafoNormativa}+
-"\n\nEl artículo 13.2 de la Ley 38/2003 de 17 de noviembre, Ley General de Subvenciones, establece que no podrá obtener la condición de beneficiario la entidad en quienes concurra alguna de las circunstancias siguientes: e) No hallarse al corriente en el cumplimiento de las obligaciones tributarias o frente a la Seguridad Social impuestas por las disposiciones vigentes, … g) No hallarse al corriente de pago de obligaciones por reintegro de subvenciones. El artículo 116.2 del Decreto Legislativo 1/2010 de 2 de marzo, por el que se aprueba el Texto Refundido de la Ley General de Hacienda Pública de la Junta de Andalucía establece: Además de los supuestos contemplados en el artículo 13.2 y 3 de la Ley 38/2003, de 17 de noviembre, tampoco podrán obtener la condición de personas o entidades beneficiarias de subvenciones quienes tengan deudas en periodo ejecutivo de cualquier otro ingreso de derecho público de la Junta de Andalucía. La acreditación de dicha circunstancia constituye, además de las previstas en el artículo 14 de la referida Ley, una obligación de la persona o entidad beneficiaria que deberá cumplir con anterioridad a dictarse la propuesta de resolución de concesión, en la forma que se determine por la Consejería competente en materia de Hacienda. El artículo 14 de la Orden de 25 de enero de 2016, reguladora de la subvención solicitada establece que para las líneas ELA y Guadalinfo, si en la solicitud no se hubieran cumplimentado los extremos contenidos en el artículo 10 o no se hubiera aportado la documentación establecida en el mismo, el órgano instructor requerirá a la entidad interesada para que, en el plazo de DIEZ DÍAS, proceda a la subsanación.\n\n"+
-"Por todo ello y una vez examinada la documentación y observadas las deficiencias que a continuación se indican se le REQUIERE la aportación de la siguiente documentación:"+
 "\n\n"+
-$F{documentacionRequerida}+
-"\n\nDe conformidad con el artículo 11 de la Orden reguladora, se establece la obligatoriedad de comunicarse con la Administración a través de medios electrónicos, a través del Registro Telemático Único de la Administración de la Junta de Andalucía, en la sede electrónica prevista en la Orden.\n\n"+
-"Transcurrido el plazo para subsanar sin que se hubiese respondido al requerimiento se dictará resolución declarando el desistimiento y el archivo de la solicitud no subsanada y la inadmisión en los casos en que corresponda."]]></textFieldExpression>
+"El artículo 25.8 de dicha Orden establece que para las líneas Guadalinfo y ELA, la justificación económica se realizará mediante un certificado de la Intervención de la Entidad Local, acreditativo del empleo de las cantidades a la finalidad para las que fueron concedidas y en el apartado 9 del mismo artículo se establece, que la justificación técnica de la actividad se realizará a través de un Informe de Cumplimiento de objetivos técnicos, en el que se tasará a modo de conclusión, el grado de cumplimiento de objetivos alcanzados por la entidad beneficiaria, mediante un determinado porcentaje."+
+"\n\n"+
+"Una vez examinada la documentación y observadas las deficiencias que a continuación se indican y de conformidad con el artículo 71.2 del Real Decreto 887/2006 de 21 de julio por el que se aprueba el Reglamento de la Ley 38/2003 de 17 de noviembre, general de subvenciones: Se le concede un plazo de diez días para su subsanación, la cual deberá realizarse, de conformidad con el artículo 25.1 de la Orden reguladora anteriormente citada, utilizando los medios electrónicos del <<tramitador telemático>> indicado en la Orden."+
+"\n\n"
++$F{documentacionRequerida}
+]]></textFieldExpression>
 			</textField>
 			<break>
 				<reportElement x="0" y="578" width="98" height="1" uuid="f7f8de96-6bb9-4299-a371-471a233d7236"/>
@@ -73,9 +74,9 @@ $F{documentacionRequerida}+
 			<staticText>
 				<reportElement x="0" y="10" width="470" height="30" uuid="5e399f07-385c-4023-a3c0-0e285c1f75e9"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="18" isBold="true"/>
+					<font size="12" isBold="true"/>
 				</textElement>
-				<text><![CDATA[REQUERIMIENTO SUBSANACIÓN SOLICITUD]]></text>
+				<text><![CDATA[REQUERIMIENTO SUBSANACIÓN DE DOCUMENTACIÓN JUSTIFICATIVA]]></text>
 			</staticText>
 			<textField isStretchWithOverflow="true">
 				<reportElement positionType="Float" x="0" y="260" width="470" height="59" uuid="58b369b5-6d59-49f0-aa52-1b7580cc3178"/>

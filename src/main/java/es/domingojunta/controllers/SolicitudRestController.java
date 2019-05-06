@@ -75,18 +75,14 @@ public class SolicitudRestController {
 	public ResponseEntity<SolicitudListarViewModel> actualizar (@RequestBody SolicitudListarViewModel viewModel, RedirectAttributes redirectAttributes ){
 		//System.out.println("El SUBCC introducido en el controller es: "+viewModel.getSubcc());
 		ResponseEntity respuesta = null;
-		System.out.println("El idCopnvocatoria pasado es: "+viewModel.getIdConvocatoria());
+		System.out.println("el grado de cumplimiento pasado es: "+viewModel.getGradoCumplimientoTecnico());
 		Boolean actualizar = service.actualizar(viewModel);
 		if (actualizar) {
 			respuesta = new ResponseEntity(HttpStatus.OK);
 		} else {
 			respuesta = new ResponseEntity(HttpStatus.NOT_FOUND);
 		}
-		
-		
-		
 		return respuesta;
-		
 	}
 	
 	@PostMapping({"/solicitud_crear","/solicitud"})

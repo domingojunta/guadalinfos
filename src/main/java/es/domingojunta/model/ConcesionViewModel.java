@@ -72,7 +72,7 @@ public class ConcesionViewModel {
 	public void setPorcentajeFinanciacion() {
 		BigDecimal cien = new BigDecimal(100);
 		BigDecimal numerador = getSubvencion().multiply(cien);
-		BigDecimal porcentaje = numerador.divide(getCoste(),10, RoundingMode.HALF_UP);
+		BigDecimal porcentaje = numerador.divide(getCoste(),10, RoundingMode.HALF_DOWN);
 		
 		
 		this.porcentajeFinanciacion = porcentaje.toString();
