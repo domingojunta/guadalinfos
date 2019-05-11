@@ -4,6 +4,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,6 +31,7 @@ public class SolicitudRestController {
 	@Autowired
 	private SolicitudService service;
 	
+	@PreAuthorize("(hasAuthority('LECTOR') or hasAuthority('USUARIO') or hasAuthority('ADMINISTRADOR'))")
 	@GetMapping("/solicitudes")
 	public ResponseEntity<List<Solicitud>> getAllSolicitudes() {
 		
@@ -38,6 +40,7 @@ public class SolicitudRestController {
 		return respuesta;
 	}
 	
+	@PreAuthorize("(hasAuthority('LECTOR') or hasAuthority('USUARIO') or hasAuthority('ADMINISTRADOR'))")
 	@GetMapping({"/solicitudes_listar","/solicitud_listar"})
 	public ResponseEntity<List<SolicitudListarViewModel>> listar() {
 		
@@ -58,6 +61,7 @@ public class SolicitudRestController {
 		return respuesta;
 	}
 	
+	@PreAuthorize("(hasAuthority('LECTOR') or hasAuthority('USUARIO') or hasAuthority('ADMINISTRADOR'))")
 	@GetMapping({"/solicitud_mostrar/{id}","/solicitud/{id}"})
 	public ResponseEntity<SolicitudListarViewModel> mostrar(@PathVariable("id") int id){
 		
@@ -71,6 +75,7 @@ public class SolicitudRestController {
 		return respuesta;
 	}
 	
+	@PreAuthorize("(hasAuthority('USUARIO') or hasAuthority('ADMINISTRADOR'))")
 	@PutMapping({"/solicitud_actualizar","/solicitud"})
 	public ResponseEntity<SolicitudListarViewModel> actualizar (@RequestBody SolicitudListarViewModel viewModel, RedirectAttributes redirectAttributes ){
 		//System.out.println("El SUBCC introducido en el controller es: "+viewModel.getSubcc());
@@ -85,6 +90,7 @@ public class SolicitudRestController {
 		return respuesta;
 	}
 	
+	@PreAuthorize("(hasAuthority('USUARIO') or hasAuthority('ADMINISTRADOR'))")
 	@PostMapping({"/solicitud_crear","/solicitud"})
 	public ResponseEntity<SolicitudCrearViewModel> crear (@RequestBody SolicitudCrearViewModel viewModel ){
 		
@@ -99,6 +105,7 @@ public class SolicitudRestController {
 		
 	}
 	
+	@PreAuthorize("(hasAuthority('USUARIO') or hasAuthority('ADMINISTRADOR'))")
 	@DeleteMapping({"/solicitud_borrar/{id}","/solicitud/{id}"})
 	public ResponseEntity borrar(@PathVariable("id") int id){
 		

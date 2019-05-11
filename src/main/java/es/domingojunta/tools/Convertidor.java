@@ -2,13 +2,14 @@ package es.domingojunta.tools;
 
 import java.math.BigDecimal;
 
-import org.javamoney.moneta.Money;
 import org.springframework.stereotype.Component;
 
+import es.domingojunta.entities.ApplicationUser;
 import es.domingojunta.entities.Convocatoria;
 import es.domingojunta.entities.Entidad;
 import es.domingojunta.entities.Orden;
 import es.domingojunta.entities.Solicitud;
+import es.domingojunta.model.ApplicationUserViewModel;
 import es.domingojunta.model.ConvocatoriaCrearViewModel;
 import es.domingojunta.model.ConvocatoriaListarViewModel;
 import es.domingojunta.model.EntidadCrearViewModel;
@@ -389,7 +390,27 @@ public class Convertidor {
 	}
 
 	
+	public ApplicationUser applicationUserViewModel2ApplicationUser (ApplicationUserViewModel model) {
+		
+		ApplicationUser appuser = new ApplicationUser();
+		appuser.setIdUsuario(model.getIdUsuario());
+		appuser.setNombreUsuario(model.getNombreUsuario());
+		appuser.setPassword(model.getPassword());
+		appuser.setRol(model.getRol());
+		appuser.setActivo(model.isActivo());
+		return appuser;
+	}
 	
+	public ApplicationUserViewModel applicationUser2ApplicationUserViewModel (ApplicationUser appuser) {
+		
+		ApplicationUserViewModel model = new ApplicationUserViewModel();
+		model.setIdUsuario(appuser.getIdUsuario());
+		model.setNombreUsuario(appuser.getNombreUsuario());
+		model.setPassword(appuser.getPassword());
+		model.setRol(appuser.getRol());
+		model.setActivo(appuser.isActivo());
+		return model;
+	}
 	
 
 }

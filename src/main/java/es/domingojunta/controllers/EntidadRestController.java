@@ -4,6 +4,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,6 +27,7 @@ public class EntidadRestController {
 	@Autowired
 	private EntidadService service;
 	
+	@PreAuthorize("(hasAuthority('LECTOR') or hasAuthority('USUARIO') or hasAuthority('ADMINISTRADOR'))")
 	@GetMapping("/entidades")
 	public ResponseEntity<List<Entidad>> getAllEntidades() {
 		
@@ -41,6 +43,7 @@ public class EntidadRestController {
 	}
 	
 	@GetMapping({"/entidades_listar","/entidad_listar"})
+	@PreAuthorize("(hasAuthority('LECTOR') or hasAuthority('USUARIO') or hasAuthority('ADMINISTRADOR'))")
 	public ResponseEntity<List<EntidadListarViewModel>> listar() {
 		
 		List<EntidadListarViewModel> entidades = service.listar();
@@ -55,6 +58,7 @@ public class EntidadRestController {
 	}
 	
 	@GetMapping({"/entidad_mostrar/{id}","/entidad/{id}"})
+	@PreAuthorize("(hasAuthority('LECTOR') or hasAuthority('USUARIO') or hasAuthority('ADMINISTRADOR'))")
 	public ResponseEntity<EntidadListarViewModel> mostrar(@PathVariable("id") int id){
 		//System.out.println("Entrando en mostrar entidad controller");
 		EntidadListarViewModel viewModel = service.mostrar(id);
@@ -69,6 +73,7 @@ public class EntidadRestController {
 	}
 	
 	@PutMapping({"/entidad_actualizar","/entidad"})
+	@PreAuthorize("(hasAuthority('USUARIO') or hasAuthority('ADMINISTRADOR'))")
 	public ResponseEntity<EntidadListarViewModel> actualizar (@RequestBody EntidadListarViewModel viewModel ){
 		
 		ResponseEntity respuesta = null;
@@ -83,6 +88,7 @@ public class EntidadRestController {
 	}
 	
 	@PostMapping({"/entidad_crear","/entidad"})
+	@PreAuthorize("(hasAuthority('USUARIO') or hasAuthority('ADMINISTRADOR'))")
 	public ResponseEntity<EntidadCrearViewModel> crear (@RequestBody EntidadCrearViewModel viewModel ){
 		
 		ResponseEntity respuesta = null;
@@ -97,6 +103,7 @@ public class EntidadRestController {
 	}
 	
 	@DeleteMapping({"/entidad_borrar/{id}","/entidad/{id}"})
+	@PreAuthorize("(hasAuthority('USUARIO') or hasAuthority('ADMINISTRADOR'))")
 	public ResponseEntity borrar(@PathVariable("id") int id){
 		
 		ResponseEntity respuesta = null;

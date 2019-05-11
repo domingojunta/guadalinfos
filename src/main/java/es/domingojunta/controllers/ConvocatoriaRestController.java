@@ -4,6 +4,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,6 +29,7 @@ public class ConvocatoriaRestController {
 	@Autowired
 	private ConvocatoriaService service;
 	
+	@PreAuthorize("(hasAuthority('LECTOR') or hasAuthority('USUARIO') or hasAuthority('ADMINISTRADOR'))")
 	@GetMapping({"/convocatorias_listar","/convocatoria_listar"})
 	public ResponseEntity<List<ConvocatoriaListarViewModel>> listar() {
 		
@@ -43,6 +45,7 @@ public class ConvocatoriaRestController {
 		 return respuesta;
 	}
 	
+	@PreAuthorize("(hasAuthority('LECTOR') or hasAuthority('USUARIO') or hasAuthority('ADMINISTRADOR'))")
 	@GetMapping("/convocatorias")
 	public ResponseEntity<List<Convocatoria>> getConvocatorias(){
 		List<Convocatoria> convocatorias = service.convocatorias();
@@ -56,6 +59,7 @@ public class ConvocatoriaRestController {
 		 return respuesta;
 	}
 	
+	@PreAuthorize("(hasAuthority('LECTOR') or hasAuthority('USUARIO') or hasAuthority('ADMINISTRADOR'))")
 	@GetMapping({"/convocatoria_mostrar/{id}","/convocatoria/{id}"})
 	public ResponseEntity<ConvocatoriaListarViewModel> mostrar(@PathVariable("id") int id){
 		//System.out.println("Entrando en mostrar convocatoria controller");
@@ -70,6 +74,7 @@ public class ConvocatoriaRestController {
 		return respuesta;
 	}
 	
+	@PreAuthorize("(hasAuthority('USUARIO') or hasAuthority('ADMINISTRADOR'))")
 	@PutMapping({"/convocatoria_actualizar","/convocatoria"})
 	public ResponseEntity<ConvocatoriaListarViewModel> actualizar (@RequestBody ConvocatoriaListarViewModel viewModel ){
 		
@@ -85,6 +90,7 @@ public class ConvocatoriaRestController {
 		
 	}
 	
+	@PreAuthorize("(hasAuthority('USUARIO') or hasAuthority('ADMINISTRADOR'))")
 	@PostMapping({"/convocatoria_crear","/convocatoria"})
 	public ResponseEntity<ConvocatoriaCrearViewModel> crear (@RequestBody ConvocatoriaCrearViewModel viewModel ){
 		
@@ -101,6 +107,7 @@ public class ConvocatoriaRestController {
 		
 	}
 	
+	@PreAuthorize("(hasAuthority('USUARIO') or hasAuthority('ADMINISTRADOR'))")
 	@DeleteMapping({"/convocatoria_borrar/{id}","/convocatoria/{id}"})
 	public ResponseEntity borrar(@PathVariable("id") int id){
 		

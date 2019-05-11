@@ -2,13 +2,10 @@ package es.domingojunta.model;
 
 import java.math.BigDecimal;
 
-import javax.money.CurrencyUnit;
-import javax.money.Monetary;
-import javax.money.MonetaryAmount;
+
 import javax.persistence.Column;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
-import org.javamoney.moneta.Money;
 import org.springframework.format.annotation.DateTimeFormat;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import es.domingojunta.entities.Convocatoria;

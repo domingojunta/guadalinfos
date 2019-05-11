@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,6 +29,7 @@ public class OrdenRestController {
 	@Autowired
 	private OrdenService service;
 	
+	@PreAuthorize("(hasAuthority('LECTOR') or hasAuthority('USUARIO') or hasAuthority('ADMINISTRADOR'))")
 	@GetMapping("/ordenes")
 	public ResponseEntity<List<Orden>> getAllOrdenes() {
 		
@@ -43,6 +45,7 @@ public class OrdenRestController {
 		return respuesta;
 	}
 	
+	@PreAuthorize("(hasAuthority('LECTOR') or hasAuthority('USUARIO') or hasAuthority('ADMINISTRADOR'))")
 	@GetMapping({"/ordenes_listar","/orden_listar"})
 	public ResponseEntity<List<OrdenListarViewModel>> listar() {
 		
@@ -56,6 +59,7 @@ public class OrdenRestController {
 		return respuesta;
 	}
 	
+	@PreAuthorize("(hasAuthority('LECTOR') or hasAuthority('USUARIO') or hasAuthority('ADMINISTRADOR'))")
 	@GetMapping({"/orden_mostrar/{id}","/orden/{id}"})
 	public ResponseEntity<OrdenListarViewModel> mostrar(@PathVariable("id") int id){
 		
@@ -70,6 +74,7 @@ public class OrdenRestController {
 		return respuesta;
 	}
 	
+	@PreAuthorize("(hasAuthority('USUARIO') or hasAuthority('ADMINISTRADOR'))")
 	@PutMapping({"/orden_actualizar","/orden"})
 	public ResponseEntity<OrdenListarViewModel> actualizar (@RequestBody OrdenListarViewModel viewModel ){
 		
@@ -85,6 +90,7 @@ public class OrdenRestController {
 		
 	}
 	
+	@PreAuthorize("(hasAuthority('USUARIO') or hasAuthority('ADMINISTRADOR'))")
 	@PostMapping({"/orden_crear","/orden"})
 	public ResponseEntity<OrdenCrearViewModel> crear (@RequestBody OrdenCrearViewModel viewModel ){
 		
@@ -99,6 +105,7 @@ public class OrdenRestController {
 		
 	}
 	
+	@PreAuthorize("(hasAuthority('USUARIO') or hasAuthority('ADMINISTRADOR'))")
 	@DeleteMapping({"/orden_borrar/{id}","/orden/{id}"})
 	public ResponseEntity borrar(@PathVariable("id") int id){
 		
