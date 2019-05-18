@@ -51,6 +51,7 @@ public class LoginFilter extends UsernamePasswordAuthenticationFilter {
 		try {
 			InputStream body = request.getInputStream();
 			ApplicationUser credentials = new ObjectMapper().readValue(body, ApplicationUser.class);
+			//System.out.println("Intento de entrar de: "+ credentials.getNombreUsuario());
 			UsernamePasswordAuthenticationToken userToken = new UsernamePasswordAuthenticationToken(
 					credentials.getNombreUsuario(), credentials.getPassword(), new ArrayList<>());
 			return authenticationManager.authenticate(userToken);
@@ -87,6 +88,7 @@ public class LoginFilter extends UsernamePasswordAuthenticationFilter {
 		
 		response.addHeader("Authorization", "Bearer "+token);
 		response.addHeader("Content-Type", "application/json");
+		
 	}
 
 	@Override

@@ -15,10 +15,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import es.domingojunta.model.ActivoInactivoApplicationUserViewModel;
 import es.domingojunta.model.ApplicationUserViewModel;
 import es.domingojunta.services.ApplicationUserService;
 
-@Controller
+@RestController
+@RequestMapping("/api")
 @CrossOrigin(origins="*")
 @PreAuthorize("(hasAuthority('ADMINISTRADOR'))")
 public class ApplicationUserController {
@@ -77,6 +82,19 @@ public class ApplicationUserController {
 			respuesta = new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		} else {
 			respuesta = new ResponseEntity<ApplicationUserViewModel>(viewmodel,HttpStatus.OK);
+		}
+		return respuesta;
+	}
+	
+	@PutMapping("/activoInactivoUsuario")
+	public ResponseEntity<ActivoInactivoApplicationUserViewModel> activoInactivoActualizar(@RequestBody ActivoInactivoApplicationUserViewModel viewmodel) {
+		
+		boolean resultado = service.activoInactivoActualizarUsuario(viewmodel);
+		ResponseEntity<ActivoInactivoApplicationUserViewModel> respuesta = null;
+		if (!resultado) {
+			respuesta = new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		} else {
+			respuesta = new ResponseEntity<ActivoInactivoApplicationUserViewModel>(viewmodel,HttpStatus.OK);
 		}
 		return respuesta;
 	}

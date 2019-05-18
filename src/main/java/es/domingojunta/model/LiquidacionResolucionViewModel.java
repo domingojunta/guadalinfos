@@ -1309,9 +1309,22 @@ public class LiquidacionResolucionViewModel {
 			
 			if (this.perdidaDerechoAlCobro.floatValue()==0) {
 				
-				sb.append("SEGUNDO.- Conceder a la entidad beneficiaria un plazo de QUINCE DÍAS para formular las alegaciones ");
-				sb.append("y aportar cuantos documentos y justificaciones estime convenientes, de conformidad con el artículo 82.2 ");
-				sb.append("de la Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas.");
+				sb.append("SEGUNDO.- Procede un segundo pago por ");
+				sb.append("importe de ");
+				sb.append(formatCurrency(getResultadoLiquidacion()));
+				sb.append(" euros, lo que implica una minoración del pago sobre el inicialmente previsto de ");
+				sb.append(formatCurrency(getPerdidaDerechoAlCobro()));
+				sb.append(" euros.");
+				sb.append("\n\n");
+				sb.append("TERCERO.- Contra la presente resolución, que pone fin a la vía administrativa, se podrá interponer recurso ");
+				sb.append("potestativo de reposición ante esta Delegación Territorial, en el plazo de UN MES contado a partir del día "); 
+				sb.append("siguiente a aquel en que tenga lugar la notificación o publicación del presente acto, o interponer "); 
+				sb.append("directamente el recurso contencioso administrativo ante los correspondientes órganos judiciales, en el "); 
+				sb.append("plazo de DOS MESES contados desde el día siguiente al de la notificación de este acto, todo ello de ");
+				sb.append("conformidad con lo establecido en el artículo 115 de la Ley 9/2007, de 22 de octubre, de la "); 
+				sb.append("Administración de la Junta de Andalucía, artículo 124 de la Ley 39/2015 del Procedimiento Administrativo "); 
+				sb.append("Común de las Administraciones Públicas, y en el artículo 46.1 de la Ley 29/1998, de 13 de julio, "); 
+				sb.append("reguladora de la Jurisdicción Contencioso Administrativa.");
 				
 			} else if (this.gradoMinoracionTemporal.floatValue()==100 && this.resultadoLiquidacion.floatValue()>=0) {
 				

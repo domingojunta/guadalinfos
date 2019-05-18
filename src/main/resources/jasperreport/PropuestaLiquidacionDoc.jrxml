@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ResolucionLiquidacion" pageWidth="595" pageHeight="842" columnWidth="469" leftMargin="70" rightMargin="56" topMargin="56" bottomMargin="28" uuid="c5c80c04-435a-4636-a4a9-8bea3518ab5d">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PropuestaResolucionDoc" pageWidth="595" pageHeight="842" columnWidth="469" leftMargin="70" rightMargin="56" topMargin="56" bottomMargin="28" uuid="c5c80c04-435a-4636-a4a9-8bea3518ab5d">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<property name="com.jaspersoft.studio.report.description" value=""/>
 	<subDataset name="Dataset1" uuid="98227f99-b60a-484c-94ac-62a93ba0339f">
@@ -17,7 +17,7 @@
 	<field name="antecedente01" class="java.lang.String"/>
 	<field name="propone01" class="java.lang.String"/>
 	<field name="propone02" class="java.lang.String"/>
-	<field name="parrafoAnexoPresupuesto" class="java.lang.String"/>
+	<field name="parrafoAnexo" class="java.lang.String"/>
 	<field name="antecedente02" class="java.lang.String"/>
 	<field name="antecedente03" class="java.lang.String"/>
 	<field name="parrafoNotificacion" class="java.lang.String"/>
@@ -27,8 +27,6 @@
 	<field name="antecedente04RevisionTecnica" class="java.lang.String"/>
 	<field name="antecedente06" class="java.lang.String"/>
 	<field name="parrafoInformacion" class="java.lang.String"/>
-	<field name="antecedente07" class="java.lang.String"/>
-	<field name="parrafoAnexoAlegaciones" class="java.lang.String"/>
 	<background>
 		<band height="730">
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
@@ -51,57 +49,100 @@
 		</band>
 	</pageHeader>
 	<detail>
-		<band height="708">
+		<band height="691">
+			<staticText>
+				<reportElement x="0" y="0" width="470" height="30" uuid="5e399f07-385c-4023-a3c0-0e285c1f75e9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOTIFICACIÓN PROPUESTA RESOLUCIÓN DE LIQUIDACIÓN]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="230" y="40" width="240" height="40" uuid="ad67d9f6-3851-43a4-99af-58701b8532bd"/>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{parrafoNotificacion}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="80" width="290" height="50" uuid="ae050d48-03e1-4463-aaa9-c9287f8fdfd7"/>
+				<textElement verticalAlignment="Top">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{parrafoInformacion}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="130" width="470" height="40" uuid="adf96154-b301-41ab-918f-420524a5af49"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["\n\n"+$F{parrafoNormativa}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="170" width="470" height="70" uuid="a969a4d9-1375-4e45-98d7-3e9d3e300f9e"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["\n\n"+
+"Conceder a la entidad beneficiaria un plazo de QUINCE días para formular las alegaciones y aportar cuantos documentos y justificaciones estime convenientes, de conformidad con el artículo 82.2 de la Ley 39/2015 de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="0" y="260" width="470" height="59" uuid="e897d6c3-15c1-4f87-83ed-39a269aff81b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["EL JEFE DEL SERVICIO DE COOPERACIÓN ECONÓMICA Y DESARROLLO TECNOLÓGICO\n"+
+"Fdo.: Domingo José Orta Pacheco"]]></textFieldExpression>
+			</textField>
 			<break>
 				<reportElement x="0" y="690" width="94" height="1" uuid="ed690d7b-aa7f-4be8-9114-1e47556a2427"/>
 			</break>
-			<staticText>
-				<reportElement x="0" y="10" width="470" height="30" uuid="2600b357-987c-480a-93c5-afc80e7d107a"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="16" isBold="true"/>
-				</textElement>
-				<text><![CDATA[RESOLUCIÓN DE LIQUIDACIÓN]]></text>
-			</staticText>
+		</band>
+		<band height="708">
+			<break>
+				<reportElement x="0" y="700" width="97" height="1" uuid="f7f8de96-6bb9-4299-a371-471a233d7236"/>
+			</break>
 			<textField isStretchWithOverflow="true">
-				<reportElement x="0" y="50" width="470" height="100" uuid="0241282f-f86a-47d5-a303-4f3e8d0daf9c"/>
+				<reportElement x="0" y="50" width="470" height="60" uuid="0241282f-f86a-47d5-a303-4f3e8d0daf9c"/>
 				<textElement textAlignment="Justified">
 					<font size="12" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA["DE LA DELEGACIÓN DE EMPLEO, FORMACIÓN, TRABAJO AUTÓNOMO, ECONOMÍA, CONOCIMIENTO, EMPRESA Y UNIVERSIDAD EN CÓRDOBA, POR LA QUE SE CONCEDE, EN RÉGIMEN DE CONCURRENCIA NO COMPETITIVA, UNA SUBVENCIÓN A LA ENTIDAD "+$F{nombreEntidad}.toUpperCase() + ", PARA LA DINAMIZACIÓN DE LA RED DE CENTROS DE ACCESO PÚBLICO A INTERNET DE ANDALUCÍA."]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="0" y="150" width="470" height="60" uuid="df68de31-e9c5-4db4-ba8a-c09e1c5cc23d"/>
-				<textFieldExpression><![CDATA[$F{parrafoDatosSubvencion}]]></textFieldExpression>
+				<reportElement positionType="Float" x="0" y="110" width="470" height="60" uuid="df68de31-e9c5-4db4-ba8a-c09e1c5cc23d"/>
+				<textFieldExpression><![CDATA["\n\n"+$F{parrafoDatosSubvencion}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="0" y="210" width="470" height="60" uuid="5d31a76d-210c-41b6-92d1-f183c3f4e631"/>
+				<reportElement positionType="Float" x="0" y="170" width="470" height="60" uuid="5d31a76d-210c-41b6-92d1-f183c3f4e631"/>
 				<textElement textAlignment="Justified"/>
 				<textFieldExpression><![CDATA["\n\n"+$F{parrafoVista}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement positionType="Float" x="0" y="290" width="470" height="30" uuid="1280a07b-1405-4ff5-a00f-03e61349578d"/>
+				<reportElement positionType="Float" x="0" y="250" width="470" height="30" uuid="1280a07b-1405-4ff5-a00f-03e61349578d"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[ANTECEDENTES DE HECHO]]></text>
 			</staticText>
 			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="0" y="330" width="470" height="36" uuid="456b75e3-4c71-41ae-8322-0d7d30ceddb5"/>
+				<reportElement positionType="Float" x="0" y="290" width="470" height="36" uuid="456b75e3-4c71-41ae-8322-0d7d30ceddb5"/>
 				<textElement textAlignment="Justified"/>
 				<textFieldExpression><![CDATA[$F{antecedente01}]]></textFieldExpression>
 			</textField>
+			<staticText>
+				<reportElement x="0" y="10" width="470" height="30" uuid="2600b357-987c-480a-93c5-afc80e7d107a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PROPUESTA DE RESOLUCIÓN]]></text>
+			</staticText>
 			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="0" y="370" width="470" height="36" uuid="45f9c5a7-4fa6-4f56-981b-51a79fefb922"/>
+				<reportElement positionType="Float" x="0" y="330" width="470" height="36" uuid="45f9c5a7-4fa6-4f56-981b-51a79fefb922"/>
 				<textElement textAlignment="Justified"/>
 				<textFieldExpression><![CDATA["\n"+$F{antecedente02}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="0" y="410" width="470" height="36" uuid="fdb22cb9-a3d8-45bf-b132-9ff05e8c3fd8"/>
+				<reportElement positionType="Float" x="0" y="370" width="470" height="36" uuid="fdb22cb9-a3d8-45bf-b132-9ff05e8c3fd8"/>
 				<textElement textAlignment="Justified"/>
 				<textFieldExpression><![CDATA["\n"+$F{antecedente03}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="0" y="450" width="470" height="40" uuid="8df518e1-3e40-460d-b6a4-c8e8b4a30001"/>
+				<reportElement positionType="Float" x="0" y="410" width="470" height="40" uuid="8df518e1-3e40-460d-b6a4-c8e8b4a30001"/>
 				<textElement textAlignment="Justified"/>
 				<textFieldExpression><![CDATA["\n"+
 "Cuarto.- Como resultado de la revisión de la documentación justificativa aportada se resume lo siguiente:"]]></textFieldExpression>
@@ -109,28 +150,28 @@
 		</band>
 		<band height="708">
 			<break>
-				<reportElement x="0" y="700" width="97" height="1" uuid="f7f8de96-6bb9-4299-a371-471a233d7236"/>
+				<reportElement x="0" y="700" width="94" height="1" uuid="547e8971-f942-44a3-bb07-8cc691107354"/>
 			</break>
 			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="0" y="160" width="470" height="80" uuid="564bd02b-4254-4d3d-9f17-5b53ba68380f"/>
+				<reportElement positionType="Float" x="0" y="20" width="470" height="80" uuid="9c24b253-ac71-4b33-bf2a-bea73b07c5d1"/>
 				<textElement textAlignment="Justified"/>
-				<textFieldExpression><![CDATA["\n\n"+$F{antecedente04RevisionTecnica}]]></textFieldExpression>
+				<textFieldExpression><![CDATA["\n"+$F{antecedente04Minoracion}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="0" y="80" width="470" height="80" uuid="1062321f-ecd3-4802-ab53-c121717e1aaa"/>
+				<reportElement positionType="Float" x="0" y="100" width="470" height="80" uuid="1062321f-ecd3-4802-ab53-c121717e1aaa"/>
 				<textElement textAlignment="Justified"/>
 				<textFieldExpression><![CDATA["\n\n"+
 $F{antecedente04RevisionEconomica}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="0" y="0" width="470" height="80" uuid="9c24b253-ac71-4b33-bf2a-bea73b07c5d1"/>
+				<reportElement positionType="Float" x="0" y="180" width="470" height="80" uuid="564bd02b-4254-4d3d-9f17-5b53ba68380f"/>
 				<textElement textAlignment="Justified"/>
-				<textFieldExpression><![CDATA["\n"+$F{antecedente04Minoracion}]]></textFieldExpression>
+				<textFieldExpression><![CDATA["\n\n"+$F{antecedente04RevisionTecnica}]]></textFieldExpression>
 			</textField>
 		</band>
 		<band height="708">
 			<break>
-				<reportElement x="0" y="700" width="94" height="1" uuid="547e8971-f942-44a3-bb07-8cc691107354"/>
+				<reportElement x="0" y="700" width="92" height="1" uuid="9b55194a-09bc-4918-8025-b422e9094b70"/>
 			</break>
 			<textField isStretchWithOverflow="true">
 				<reportElement positionType="Float" x="0" y="10" width="470" height="570" uuid="05e3aeb0-8e5d-4d84-bde0-de304b9f72ef"/>
@@ -160,73 +201,37 @@ $F{antecedente04RevisionEconomica}]]></textFieldExpression>
 		</band>
 		<band height="708">
 			<break>
-				<reportElement x="0" y="700" width="92" height="1" uuid="9b55194a-09bc-4918-8025-b422e9094b70"/>
+				<reportElement x="0" y="700" width="90" height="1" uuid="e0d18660-84c3-48e2-b873-d7838933885a"/>
 			</break>
 			<textField isStretchWithOverflow="true">
-				<reportElement x="0" y="10" width="470" height="78" uuid="e437759f-20b1-4d35-9ad7-9eb2f3ba86d3"/>
+				<reportElement positionType="Float" x="0" y="80" width="470" height="30" uuid="f35eb203-ae62-4ecb-893f-0c8d0f9d0821"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["\n\n"+
+"A los anteriores hechos resultan de aplicación los siguientes"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="2" width="470" height="78" uuid="e437759f-20b1-4d35-9ad7-9eb2f3ba86d3"/>
 				<textElement textAlignment="Justified"/>
 				<textFieldExpression><![CDATA["\n"+
 $F{antecedente06}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="0" y="90" width="470" height="40" uuid="ef566bc8-f9a9-48e4-a144-7546810b9d4f"/>
-				<textElement textAlignment="Justified"/>
-				<textFieldExpression><![CDATA["\n\n"+$F{antecedente07}]]></textFieldExpression>
-			</textField>
-			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="0" y="130" width="470" height="70" uuid="df4cabf6-3e13-4475-a316-f5b4a8c56af0"/>
-				<textElement textAlignment="Justified"/>
-				<textFieldExpression><![CDATA["\n\n"+
-"Octavo.- Las alegaciones realizadas por la entidad, en su caso, serán analizadas de forma pormenorizada en el ANEXO de ALEGACIONES de la presente RESOLUCIÓN."+
-"\n\n"+
-"A los anteriores hechos resultan de aplicación los siguientes"]]></textFieldExpression>
-			</textField>
 			<staticText>
-				<reportElement positionType="Float" x="0" y="220" width="470" height="30" uuid="f1e517a4-97f6-408f-82d4-1984f0fa12b7"/>
+				<reportElement positionType="Float" x="0" y="120" width="470" height="30" uuid="f1e517a4-97f6-408f-82d4-1984f0fa12b7"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[FUNDAMENTOS DE DERECHO]]></text>
 			</staticText>
 			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="0" y="269" width="470" height="170" uuid="7eb3bc54-5668-4a05-9235-ee732dd9b6f1"/>
+				<reportElement positionType="Float" x="0" y="160" width="470" height="320" uuid="055f5a6b-b663-49b2-a119-e479cce4b719"/>
 				<textElement textAlignment="Justified"/>
 				<textFieldExpression><![CDATA["PRIMERO.-  Conforme al artículo 19.a) del Decreto 342/2012, de 31 de julio , por el que se regula la organización territorial provincial de la Administración de la Junta de Andalucía, los titulares de las Delegaciones Territoriales de la Junta de Andalucía ostentan las siguientes funciones y competencias en el ámbito de su provincia: a) la representación ordinaria de las Consejerías cuyos servicios periféricos se encuentran adscritos en la Delegación Territorial…"+
 "\n"+
-"Según se establece en la Disposición adicional sexta del Decreto señalado en el punto anterior, modificada por el Decreto 32/2019, de 5 de febrero, en cada una de las provincias de la Comunidad Autónoma de Andalucía existirán las siguientes Delegaciones Territoriales de la Junta de Andalucía: Delegación Territorial de Empleo, Formación, Trabajo Autónomo, Economía, Conocimiento, Empresas y Universidad. La Delegación Territorial de Empleo, Formación, Trabajo Autónomo, Economía, Conocimiento, Empresas y Universidad, depende orgánicamente de la Consejería de Empleo, Formación y Trabajo Autónomo."]]></textFieldExpression>
-			</textField>
-		</band>
-		<band height="708">
-			<break>
-				<reportElement x="0" y="700" width="90" height="1" uuid="e0d18660-84c3-48e2-b873-d7838933885a"/>
-			</break>
-			<textField isStretchWithOverflow="true">
-				<reportElement x="0" y="10" width="470" height="450" uuid="055f5a6b-b663-49b2-a119-e479cce4b719"/>
-				<textElement textAlignment="Justified"/>
-				<textFieldExpression><![CDATA["\nEl artículo 16.1 de la Orden Reguladora, en su nueva redacción, establece que en el caso de las líneas Guadalinfo y ELA, será competente para la instrucción del procedimiento de concesión, la Delegación Territorial de Economía, Innovación, Ciencia y Empleo.\nEl artículo 16.3 de la Orden Reguladora, en su nueva redacción, establece que en el caso de las líneas Guadalinfo y ELA, será competente para resolver el procedimiento la Delegación Territorial de Economía, Innovación, Ciencia y Empleo, por delegación de la persona titular de la Consejería de Empleo, Empresa y Comercio."
-+"\n\n"+
-"SEGUNDO.- El Decreto 90/1993, de 13 de julio, asigna diversas funciones a determinados Órganos Administrativos de la Junta de Andalucía. En el apartado b) de su artículo 3º atribuye a los Servicios u órganos asimilados la función de Elaborar la propuesta de los actos administrativos que sean competencia del inmediato órgano superior."+
-"\n\n"+
+"Según se establece en la Disposición adicional sexta del Decreto señalado en el punto anterior, modificada por el Decreto 32/2019, de 5 de febrero, en cada una de las provincias de la Comunidad Autónoma de Andalucía existirán las siguientes Delegaciones Territoriales de la Junta de Andalucía: Delegación Territorial de Empleo, Formación, Trabajo Autónomo, Economía, Conocimiento, Empresas y Universidad. La Delegación Territorial de Empleo, Formación, Trabajo Autónomo, Economía, Conocimiento, Empresas y Universidad, depende orgánicamente de la Consejería de Empleo, Formación y Trabajo Autónomo."+
 "\n"+
-"TERCERO.- El artículo 23.1.b) de la citada Orden establece que Son obligaciones de la entidad beneficiaria (…)Justificar ante el órgano concedente o, en su caso, la entidad colaboradora, el cumplimiento de los requisitos y condiciones, así como la realización de la actividad y el cumplimiento de la finalidad que determinen la concesión o disfrute de la subvención."
-+"\n\n"+"CUARTO.- La la Resolución de convocatoria establece la siguiente concreción en la secuencia y porcentaje de pago para las líneas Guadalinfo y ELA: Un segundo pago correspondiente como máximo al 25% del importe restante de la subvención, al finalizar el periodo de ejecución del proyecto, que se hará efectivo durante el año siguiente, una vez justificado el 100% del total del proyecto. Este pago, que se efectuará una vez realizadas las actuaciones pertinentes de control final de las actividades realizadas por los entidades beneficiarias, y previa justificación del importe total del proyecto, se librará en concepto de liquidación de la subvención."+
-"\n\n"+
-"QUINTO.-  El artículo 24.3 de la Orden reguladora establece que: Siempre que se haya alcanzado el objetivo o finalidad perseguido, si no se justificara debidamente el total de la actividad o la inversión subvencionada, deberá reducirse el importe de la subvención concedida aplicando el porcentaje de financiación sobre la cuantía correspondiente a los justificantes no presentados o no aceptados."+
-"\n\n"+
-"SEXTO.- El artículo 34.3 de la Ley 38/2003, de 17 de noviembre, General de Subvenciones establece que se producirá la pérdida del derecho al cobro total o parcial de la subvención en el supuesto de falta de justificación o de concurrencia de alguna de las causas previstas en el artículo 37 de esta Ley."+
-"\n\n"+"VISTA la normativa anteriormente citada y las demás normas de general aplicación, este Servicio, en el uso de las atribuciones que tiene atribuidas,"]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement positionType="Float" x="0" y="490" width="470" height="30" uuid="35809711-7cef-4033-9e2b-4cf1b25550d8"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="14" isBold="true"/>
-				</textElement>
-				<text><![CDATA[RESUELVE]]></text>
-			</staticText>
-			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="0" y="550" width="470" height="20" uuid="e6c5d645-269a-4cd5-967f-c62ae42cc99b"/>
-				<textElement textAlignment="Justified"/>
-				<textFieldExpression><![CDATA["\n"+$F{propone01}]]></textFieldExpression>
+"El artículo 16.1 de la Orden Reguladora, en su nueva redacción, establece que en el caso de las líneas Guadalinfo y ELA, será competente para la instrucción del procedimiento de concesión, la Delegación Territorial de Economía, Innovación, Ciencia y Empleo.\nEl artículo 16.3 de la Orden Reguladora, en su nueva redacción, establece que en el caso de las líneas Guadalinfo y ELA, será competente para resolver el procedimiento la Delegación Territorial de Economía, Innovación, Ciencia y Empleo, por delegación de la persona titular de la Consejería de Empleo, Empresa y Comercio."
++"\n\n"+
+"SEGUNDO.- El Decreto 90/1993, de 13 de julio, asigna diversas funciones a determinados Órganos Administrativos de la Junta de Andalucía. En el apartado b) de su artículo 3º atribuye a los Servicios u órganos asimilados la función de Elaborar la propuesta de los actos administrativos que sean competencia del inmediato órgano superior."]]></textFieldExpression>
 			</textField>
 		</band>
 		<band height="708">
@@ -234,16 +239,44 @@ $F{antecedente06}]]></textFieldExpression>
 				<reportElement x="0" y="698" width="87" height="1" uuid="1537e872-b162-4c47-a35d-0f277306f69d"/>
 			</break>
 			<textField isStretchWithOverflow="true">
-				<reportElement x="0" y="20" width="470" height="80" uuid="3ed08786-4b27-4a2e-b4aa-2451e8ff844c"/>
+				<reportElement x="0" y="10" width="470" height="220" uuid="9110ba63-f624-48e0-83a6-f07dae3988da"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["\n"+
+"TERCERO.- El artículo 23.1.b) de la citada Orden establece que Son obligaciones de la entidad beneficiaria (…)Justificar ante el órgano concedente o, en su caso, la entidad colaboradora, el cumplimiento de los requisitos y condiciones, así como la realización de la actividad y el cumplimiento de la finalidad que determinen la concesión o disfrute de la subvención."
++"\n\n"+"CUARTO.- La la Resolución de convocatoria establece la siguiente concreción en la secuencia y porcentaje de pago para las líneas Guadalinfo y ELA: Un segundo pago correspondiente como máximo al 25% del importe restante de la subvención, al finalizar el periodo de ejecución del proyecto, que se hará efectivo durante el año siguiente, una vez justificado el 100% del total del proyecto. Este pago, que se efectuará una vez realizadas las actuaciones pertinentes de control final de las actividades realizadas por los entidades beneficiarias, y previa justificación del importe total del proyecto, se librará en concepto de liquidación de la subvención."+
+"\n\n"+
+"QUINTO.-  El artículo 24.3 de la Orden reguladora establece que: Siempre que se haya alcanzado el objetivo o finalidad perseguido, si no se justificara debidamente el total de la actividad o la inversión subvencionada, deberá reducirse el importe de la subvención concedida aplicando el porcentaje de financiación sobre la cuantía correspondiente a los justificantes no presentados o no aceptados."+
+"\n\n"+
+"SEXTO.- El artículo 34.3 de la Ley 38/2003, de 17 de noviembre, General de Subvenciones establece que se producirá la pérdida del derecho al cobro total o parcial de la subvención en el supuesto de falta de justificación o de concurrencia de alguna de las causas previstas en el artículo 37 de esta Ley."]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="230" width="470" height="30" uuid="d531bdb8-9bac-4d83-879c-a650772cc192"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["\n\n"+"VISTA la normativa anteriormente citada y las demás normas de general aplicación, este Servicio, en el uso de las atribuciones que tiene atribuidas,"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="270" width="470" height="30" uuid="35809711-7cef-4033-9e2b-4cf1b25550d8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PROPONE]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="300" width="470" height="20" uuid="e6c5d645-269a-4cd5-967f-c62ae42cc99b"/>
+				<textElement textAlignment="Justified"/>
+				<textFieldExpression><![CDATA["\n"+$F{propone01}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="320" width="470" height="30" uuid="3ed08786-4b27-4a2e-b4aa-2451e8ff844c"/>
 				<textElement textAlignment="Justified"/>
 				<textFieldExpression><![CDATA["\n"+$F{propone02}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="0" y="120" width="470" height="40" uuid="b855dfc9-5cd2-48b5-8f01-0c508715868d"/>
+				<reportElement positionType="Float" x="0" y="350" width="470" height="40" uuid="b855dfc9-5cd2-48b5-8f01-0c508715868d"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA["Córdoba a fecha de la firma"+
-"\nEL DELEGADO TERRITORIAL"+
-"\nFdo.: Ángel Herrador Leiva."]]></textFieldExpression>
+"\nEL JEFE DEL SERVICIO DE COOPERACIÓN  ECONÓMICA Y DESARROLLO TECNOLÓGICO"+
+"\nFdo.: Domingo José Orta Pacheco."]]></textFieldExpression>
 			</textField>
 		</band>
 		<band height="708">
@@ -255,30 +288,12 @@ $F{antecedente06}]]></textFieldExpression>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="14" isBold="true"/>
 				</textElement>
-				<text><![CDATA[ANEXO PRESUPUESTO]]></text>
+				<text><![CDATA[ANEXO]]></text>
 			</staticText>
 			<textField isStretchWithOverflow="true">
 				<reportElement x="0" y="62" width="470" height="32" uuid="04848fca-7de9-40f6-bfe4-788d9279d1bf"/>
-				<textElement textAlignment="Justified"/>
-				<textFieldExpression><![CDATA[$F{parrafoAnexoPresupuesto}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{parrafoAnexo}]]></textFieldExpression>
 			</textField>
-		</band>
-		<band height="708">
-			<staticText>
-				<reportElement x="0" y="12" width="470" height="30" uuid="748c413e-25f9-4afe-ac6e-b63350947fa9"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="14" isBold="true"/>
-				</textElement>
-				<text><![CDATA[ANEXO ALEGACIONES]]></text>
-			</staticText>
-			<textField isStretchWithOverflow="true">
-				<reportElement x="0" y="54" width="470" height="32" uuid="b195f5e3-7a79-4a60-833b-f090dca89213"/>
-				<textElement textAlignment="Justified"/>
-				<textFieldExpression><![CDATA[$F{parrafoAnexoAlegaciones}]]></textFieldExpression>
-			</textField>
-			<break>
-				<reportElement x="0" y="680" width="78" height="1" uuid="b4bff184-a2df-41c1-bb4f-0c234519cac7"/>
-			</break>
 		</band>
 	</detail>
 </jasperReport>

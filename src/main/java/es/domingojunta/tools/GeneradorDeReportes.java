@@ -174,10 +174,18 @@ public class GeneradorDeReportes {
 		
 	}
 
-
-
-
-	public JasperPrint generarReporteResolucionLiquidacionPDF(int id) throws Exception {
+	public JasperPrint generarReportePropuestaLiquidacionDoc(int id) throws Exception{
+		List<LiquidacionPropuestaViewModel> collection = solicitudService.getLiquidacionViewModel(id);
+		//System.out.println("El número de ConcesionViewModel traidos desde la BDR es de: "+collection.size());
+		JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(collection);
+		
+		String path = resourceLoader.getResource("classpath:"+File.separator+"jasperreport"+File.separator+"PropuestaLiquidacionDoc.jrxml").getURI().getPath();
+		JasperReport jr = JasperCompileManager.compileReport(path);
+		JasperPrint jasperPrint = JasperFillManager.fillReport(jr, new HashMap<String,Object>(), dataSource);
+		return jasperPrint;
+	}
+		
+		public JasperPrint generarReporteResolucionLiquidacionPDF(int id) throws Exception {
 		
 		List<LiquidacionResolucionViewModel> collection = solicitudService.getLiquidacionResolucionViewModel(id);
 		
@@ -192,7 +200,19 @@ public class GeneradorDeReportes {
 		return jasperPrint;
 	}
 
-
+	public JasperPrint generarReporteResolucionLiquidacionDoc(int id) throws Exception {
+		List<LiquidacionResolucionViewModel> collection = solicitudService.getLiquidacionResolucionViewModel(id);
+		
+		JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(collection);
+		
+		String path = resourceLoader.getResource("classpath:"+File.separator+"jasperreport"+File.separator+"ResolucionLiquidacionDoc.jrxml").getURI().getPath();
+		JasperReport jr = JasperCompileManager.compileReport(path);
+		JasperPrint jasperPrint = JasperFillManager.fillReport(jr, new HashMap<String,Object>(), dataSource);
+		
+		
+		
+		return jasperPrint;
+	}
 
 
 	public JasperPrint generarReporteNotificacionResolucionLiquidacion(int id) throws Exception {
@@ -302,6 +322,16 @@ List<ReintegroResolucionViewModel> collection = solicitudService.getReintegroRes
 		
 		return jasperPrint;
 	}
+
+
+
+
+	
+
+
+
+
+	
 
 
 

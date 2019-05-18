@@ -210,6 +210,37 @@ public class ReportesController {
 		
 	}
 	
+	@GetMapping("/reporte/propuestaLiquidacionDoc/{id}")
+	public void generarPropuestaLiquidacionDoc(@PathVariable("id") int id, HttpServletResponse response) throws Exception {
+		
+		
+		response.setContentType("application/x-download");
+		//System.out.println("El id introducido para el reporte es:"+id);
+		JasperPrint reporteRelleno = reporte.generarReportePropuestaLiquidacionDoc(id);
+		
+		response.setHeader("Content-Disposition", String.format("attachment; filename=\"fichero.rtf\"")); 
+		
+		OutputStream out = response.getOutputStream();
+		JRRtfExporter exporter = new JRRtfExporter();
+        
+        exporter.setParameter(JRExporterParameter.OUTPUT_STREAM, out);
+        exporter.setParameter(JRExporterParameter.CHARACTER_ENCODING, "UTF-8");
+        exporter.setParameter(JRExporterParameter.JASPER_PRINT, reporteRelleno);
+        //exporter.setParameter(JRExporterParameter.OUTPUT_FILE, file);
+        exporter.exportReport();
+        
+        out.flush();
+		out.close();
+		
+		
+		
+		
+		   
+        
+		
+		
+	}
+	
 	@GetMapping("/reporte/resolucionLiquidacionPDF/{id}")
 	public void generarResolucionLiquidacionPDF(@PathVariable("id") int id, HttpServletResponse response) throws Exception {
 		
@@ -235,7 +266,7 @@ public class ReportesController {
 		
 		response.setContentType("application/x-download");
 		//System.out.println("El id introducido para el reporte es:"+id);
-		JasperPrint reporteRelleno = reporte.generarReporteResolucionLiquidacionPDF(id);
+		JasperPrint reporteRelleno = reporte.generarReporteResolucionLiquidacionDoc(id);
 		
 		response.setHeader("Content-Disposition", String.format("attachment; filename=\"fichero.rtf\"")); 
 		

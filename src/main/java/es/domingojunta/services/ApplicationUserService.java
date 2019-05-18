@@ -16,6 +16,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import es.domingojunta.entities.ApplicationUser;
+import es.domingojunta.model.ActivoInactivoApplicationUserViewModel;
 import es.domingojunta.model.ApplicationUserViewModel;
 import es.domingojunta.repositories.GestorUsuario;
 import es.domingojunta.tools.Convertidor;
@@ -113,6 +114,20 @@ public class ApplicationUserService implements UserDetailsService {
 		try {
 			repositorio.deleteById(id);
 			return true;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+
+	public boolean activoInactivoActualizarUsuario(ActivoInactivoApplicationUserViewModel viewmodel) {
+		
+		try {
+			ApplicationUser appuser = new ApplicationUser();
+			appuser = repositorio.getOne(viewmodel.getIdUsuario());
+			appuser.setActivo(viewmodel.isActivo());
+			repositorio.save(appuser);
+			return true;
+		
 		} catch (Exception e) {
 			return false;
 		}
