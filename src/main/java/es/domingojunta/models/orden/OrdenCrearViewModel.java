@@ -1,8 +1,5 @@
-package es.domingojunta.model;
+package es.domingojunta.models.orden;
 
-import javax.xml.bind.annotation.XmlRootElement;
-
-@XmlRootElement
 public class OrdenCrearViewModel {
 
 	private String nombreOrden;

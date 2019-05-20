@@ -11,7 +11,7 @@ import java.util.Locale;
 import java.util.Date;
 
 
-public class LiquidacionPropuestaViewModel {
+public class LiquidacionViewModel {
 		
 	private int idSolicitud;
 	private String yearConvocatoria;
@@ -104,7 +104,7 @@ public class LiquidacionPropuestaViewModel {
 	
 	
 	
-	public LiquidacionPropuestaViewModel() {
+	public LiquidacionViewModel() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -490,14 +490,9 @@ public void setParrafoNotificacion() {
 		public void setPropone02() throws Exception {
 			StringBuilder sb = new StringBuilder();
 			
-			if (this.perdidaDerechoAlCobro.intValue()==0) {
+			if (this.perdidaDerechoAlCobro.floatValue()==0) {
 				
-				sb.append("SEGUNDO.- Procede un segundo pago por importe de ");
-				sb.append(formatCurrency(getResultadoLiquidacion()));
-				sb.append(" €, lo que implica una minoración del pago sobre el inicialmente previsto de ");
-				sb.append(formatCurrency(getPerdidaDerechoAlCobro()));
-				sb.append("€.");
-				sb.append("\n\nTERCERO.- Conceder a la entidad beneficiaria un plazo de QUINCE DÍAS para formular las alegaciones ");
+				sb.append("SEGUNDO.- Conceder a la entidad beneficiaria un plazo de QUINCE DÍAS para formular las alegaciones ");
 				sb.append("y aportar cuantos documentos y justificaciones estime convenientes, de conformidad con el artículo 82.2 ");
 				sb.append("de la Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas.");
 				
@@ -1417,10 +1412,8 @@ public void setParrafoNotificacion() {
 		setGradoMinoracionTemporal(gradoMinoracionTemporalBigDecimal);
 		//System.out.println("Y desde el getter: "+getGradoMinoracionTemporal());
 		
-		BigDecimal costeEjecutablePersonalSinRedondeo = getCostePersonal().multiply(getGradoMinoracionTemporal().multiply(dividePorCien));
-		setCosteEjecutablePersonal(costeEjecutablePersonalSinRedondeo.setScale(2, BigDecimal.ROUND_HALF_EVEN));
-		BigDecimal costeEjecutableDietasSinRedondeo = getCosteDietas().multiply(getGradoMinoracionTemporal().multiply(dividePorCien));
-		setCosteEjecutableDietas(costeEjecutableDietasSinRedondeo.setScale(2, BigDecimal.ROUND_HALF_EVEN));
+		setCosteEjecutablePersonal(getCostePersonal().multiply(getGradoMinoracionTemporal().multiply(dividePorCien)));
+		setCosteEjecutableDietas(getCosteDietas().multiply(getGradoMinoracionTemporal().multiply(dividePorCien)));
 		setCosteEjecutableTotal(getCosteEjecutablePersonal().add(getCosteEjecutableDietas()));
 		setSubvencionEjecutableTotal(getCosteEjecutableTotal().multiply(getGradoFinanciacion().multiply(dividePorCien)));
 		setFinanciacionPropiaEjecutable(getCosteEjecutableTotal().subtract(getSubvencionEjecutableTotal()));
@@ -1431,12 +1424,9 @@ public void setParrafoNotificacion() {
 		
 		setGradoMinoracionTecnica(getPorcentajeReintegroTecnico(getGradoCumplimientoTecnico()));
 		
-		BigDecimal importeSubvencionProvisionalTotalSinRedondeo =getImporteAceptadoTotal().multiply(getGradoFinanciacion().multiply(dividePorCien));
-		setImporteSubvencionProvisionalTotal(importeSubvencionProvisionalTotalSinRedondeo.setScale(2, BigDecimal.ROUND_HALF_EVEN));
 		
-		BigDecimal importeMinoracionTecnicaSinRedondeo = getImporteSubvencionProvisionalTotal().multiply(getGradoMinoracionTecnica().multiply(dividePorCien));
-		setImporteMinoracionTecnica(importeMinoracionTecnicaSinRedondeo.setScale(2, BigDecimal.ROUND_HALF_EVEN));
-		
+		setImporteSubvencionProvisionalTotal(getImporteAceptadoTotal().multiply(getGradoFinanciacion().multiply(dividePorCien)));
+		setImporteMinoracionTecnica(getImporteSubvencionProvisionalTotal().multiply(getGradoMinoracionTecnica().multiply(dividePorCien)));
     	setImporteSubvencionDefinitivoTotal(getImporteSubvencionProvisionalTotal().subtract(getImporteMinoracionTecnica()));
 		setResultadoLiquidacion(getImporteSubvencionDefinitivoTotal().subtract(importeOJ));
 		BigDecimal diferencia = null;

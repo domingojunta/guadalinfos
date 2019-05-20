@@ -1,6 +1,8 @@
 package es.domingojunta.model;
 
-public class ComunicacionEntradaViewModel {
+
+public class RequerimientoConcesionViewModel {
+	
 	
 	private int idSolicitud;
 	private String yearConvocatoria;
@@ -20,14 +22,16 @@ public class ComunicacionEntradaViewModel {
 	
 	private int idConvocatoria;
 	private String nombreConvocatoria;
-		
+	
+	private String documentacionRequerida;
+	
 	private String parrafoNotificacion;
 	private String parrafoInformacion;
 	private String parrafoNormativa;
 	private String parrafoPlazosYEfectos;
 	private String pieDeFirma;
 	
-	public ComunicacionEntradaViewModel() {
+	public RequerimientoConcesionViewModel() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -154,6 +158,14 @@ public class ComunicacionEntradaViewModel {
 
 	
 	
+	public String getDocumentacionRequerida() {
+		return documentacionRequerida;
+	}
+
+	public void setDocumentacionRequerida(String documentacionRequerida) {
+		this.documentacionRequerida = documentacionRequerida;
+	}
+
 	public void setParrafoNotificacion() {
 		
 		StringBuffer sb = new StringBuffer();
@@ -177,7 +189,7 @@ public class ComunicacionEntradaViewModel {
 		StringBuffer sb = new StringBuffer();
 		sb.append("N/Ref: Desarrollo Tecnológico DO/al\n");
 		sb.append("Fecha: La de la firma\n");
-		sb.append("Asunto: Comunicación Entrada Solicitud\n");
+		sb.append("Asunto: Requerimiento de subsanación de la solicitud\n");
 		sb.append("Expediente: ");
 		sb.append(getExpediente());
 		sb.append(" / ");
@@ -191,14 +203,13 @@ public class ComunicacionEntradaViewModel {
 	public void setParrafoNormativa() {
 		
 		StringBuffer sb = new StringBuffer();
-		sb.append("De conformidad con la obligación establecida en el artículo 21.4 de la Ley 39/2015 ");
-		sb.append("de 1 de octubre, Ley de Procedimiento Administrativo Común de las Administraciones ");
-		sb.append("Públicas (BOE número 236 de 2 de octubre del 2015) y de la ");
-		sb.append(getNombreOrden());
-		sb.append(", se le informa que el pasado ");
+		sb.append("Con fecha ");
 		sb.append(getFechaEntrada());
-		sb.append(" tuvo entrada en el Registro de éste órgano su solicitud de subvención presentada al ");
-		sb.append("amparo de la Orden anteriormente citada, en su convocatoria para el año ");
+		sb.append(", la entidad cordobesa de ");
+		sb.append(getNombreEntidad());
+		sb.append(", presentó solicitud de subvención para un centro de acceso público a internet al amparo de la ");
+		sb.append(getNombreOrden());
+		sb.append(", en su convocatoria para el año ");
 		sb.append(getYearConvocatoria());
 		sb.append(", en virtud de la ");
 		sb.append(getNombreConvocatoria());
@@ -208,20 +219,7 @@ public class ComunicacionEntradaViewModel {
 		
 	}
 	
-	public void setParrafoPlazosYEfectos() {
-		
-		StringBuffer sb = new StringBuffer();
-		sb.append("De conformidad con la citada Orden, la presente solicitud inicia un procedimiento administrativo ");
-		sb.append("que se tramitará y resolverá en régimen de concurrencia no competitiva por esta Delegación Territorial, ");
-		sb.append("siendo el plazo máximo para resolver y notificar de seis meses a computar desde que la solicitud ");
-		sb.append("haya tenido entrada en el registro de esta Delegación Territorial. ");
-		sb.append("Deberá entender desestimada su solicitud al vencer el plazo máximo anteriormente citado, ");
-		sb.append("sin que se hubiese notificado resolución expresa.");
-		
-		this.parrafoPlazosYEfectos = sb.toString();
-		
-				
-	}
+	
 	
 	public void setPieDeFirma() {
 		this.pieDeFirma= "EL JEFE DE SERVICIO DE COOPERACIÓN ECONÓMICA Y DESARROLLO TECNOLÓGICO\nFdo.: Domingo José Orta Pacheco";

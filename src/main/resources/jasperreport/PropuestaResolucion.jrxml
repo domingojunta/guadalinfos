@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<!-- Created with Jaspersoft Studio version 6.8.0.final using JasperReports Library version 6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PropuestaResolucion" pageWidth="595" pageHeight="842" columnWidth="469" leftMargin="70" rightMargin="56" topMargin="56" bottomMargin="28" uuid="c5c80c04-435a-4636-a4a9-8bea3518ab5d">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<property name="com.jaspersoft.studio.report.description" value=""/>
@@ -126,9 +126,9 @@
 				<textFieldExpression><![CDATA[$F{propone01}]]></textFieldExpression>
 			</textField>
 		</band>
-		<band height="708">
+		<band height="684">
 			<break>
-				<reportElement x="0" y="700" width="92" height="1" uuid="9b55194a-09bc-4918-8025-b422e9094b70"/>
+				<reportElement x="0" y="670" width="91" height="1" uuid="9b55194a-09bc-4918-8025-b422e9094b70"/>
 			</break>
 			<textField isStretchWithOverflow="true">
 				<reportElement x="0" y="12" width="470" height="18" uuid="bf16ac10-8042-4189-ae30-d20b02c36893"/>
@@ -136,7 +136,7 @@
 				<textFieldExpression><![CDATA["\n"+$F{propone02}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="0" y="30" width="470" height="639" uuid="c494503c-cc1e-49ad-a9ca-0f686e16e349"/>
+				<reportElement positionType="Float" x="0" y="30" width="470" height="630" uuid="c494503c-cc1e-49ad-a9ca-0f686e16e349"/>
 				<textElement textAlignment="Justified"/>
 				<textFieldExpression><![CDATA["\nTERCERO.- La entidad beneficiaria deberá asumir las obligaciones recogidas en el artículo 23 de la Orden reguladora, siendo entre otras las siguientes:"+
 "\n1.- Cumplir el objetivo, ejecutar el proyecto, realizar la actividad o adoptar el comportamiento que fundamenta la concesión de las subvenciones en la forma y plazos establecidos."+
@@ -149,18 +149,19 @@
 "\n8.- La entidad beneficiaria no podrá proceder al traslado del local del Centro sin autorización previa del órgano concedente. La solicitud de autorización se presentará en los términos establecidos en el artículo 22 de la Orden reguladora. En el caso de que dicho traslado sea autorizado, su coste y gestión serán asumidos y financiados al 100% por la entidad beneficiaria."+
 "\n9.- La entidad beneficiaria no podrá proceder al cierre al público del Centro sin autorización previa del órgano concedente, salvo la aparición de causas de fuerza mayor, que deberán ser comunicadas formalmente y de manera inmediata a la aparición de las circunstancias que motiven el cierre. La solicitud de autorización se presentará en los términos establecidos en el artículo 22 de la Orden reguladora. El cierre del Centro motivado por las vacaciones de la persona que se encuentra al frente del Centro, no requiere de una autorización previa por parte del órgano concedente siendo únicamente necesaria la comunicación a dicho órgano.La entidad beneficiaria deberá formalizar con la entidad colaboradora el Plan de Trabajo, donde se determinarán los objetivos a alcanzar y cuyo cumplimiento determinará el grado de ejecución técnica del proyecto. Dichos objetivos estarán alineados con el Plan Estratégico Guadalinfo."+
 "\n10.- La entidad beneficiaria deberá programar las actividades a través de la herramienta que proporcione la entidad colaboradora."+
-"\n11.- Incluir la variable de sexo en las estadísticas, encuestas y recogida de datos que se lleven a cabo."+
-"\n12.- La entidad beneficiaria deberá asegurar que el horario de funcionamiento de su Centro garantice siempre un mínimo de 20 horas semanales en el caso de los municipios del grupo A, y de 35 horas semanales en los de los grupos B y C, tratando de adaptar dicho horario a las necesidades potenciales de las personas usuarias. El horario de funcionamiento deberá ser preferentemente por la tarde."]]></textFieldExpression>
+"\n11.- Incluir la variable de sexo en las estadísticas, encuestas y recogida de datos que se lleven a cabo."]]></textFieldExpression>
 			</textField>
 		</band>
 		<band height="708">
 			<break>
-				<reportElement x="0" y="700" width="90" height="1" uuid="e0d18660-84c3-48e2-b873-d7838933885a"/>
+				<reportElement x="0" y="690" width="89" height="1" uuid="e0d18660-84c3-48e2-b873-d7838933885a"/>
 			</break>
 			<textField isStretchWithOverflow="true">
-				<reportElement x="0" y="20" width="470" height="639" uuid="21b61824-9127-4af3-8216-dce986aa6617"/>
+				<reportElement x="0" y="20" width="470" height="660" uuid="21b61824-9127-4af3-8216-dce986aa6617"/>
 				<textElement textAlignment="Justified"/>
-				<textFieldExpression><![CDATA["\nCUARTO.- El pago de la subvención se efectuará mediante transferencia bancaria a la cuenta que al efecto haya señalado la entidad beneficiaria en la solicitud. Esta cuenta, además, debe estar dada de alta en el sistema GIRO, para lo cual la entidad debe acceder con su certificado digital a la siguiente dirección de Internet:"+
+				<textFieldExpression><![CDATA["\n12.- La entidad beneficiaria deberá asegurar que el horario de funcionamiento de su Centro garantice siempre un mínimo de 20 horas semanales en el caso de los municipios del grupo A, y de 35 horas semanales en los de los grupos B y C, tratando de adaptar dicho horario a las necesidades potenciales de las personas usuarias. El horario de funcionamiento deberá ser preferentemente por la tarde."
++"\n\n"+
+"CUARTO.- El pago de la subvención se efectuará mediante transferencia bancaria a la cuenta que al efecto haya señalado la entidad beneficiaria en la solicitud. Esta cuenta, además, debe estar dada de alta en el sistema GIRO, para lo cual la entidad debe acceder con su certificado digital a la siguiente dirección de Internet:"+
 "\nhttps://www.juntadeandalucia.es/haciendayadministracionpublica/ov/tesoreria/gasos_pagos/ mantenimiento.htm"+
 "\nTal y como se recoge en la Resolución de convocatoria, el pago de la subvención se hará efectivo mediante el abono de:"+
 "\n1.- Un primer pago correspondiente al 75% del importe total de la subvención, tras la firma de la resolución de concesión, que se hará efectivo durante el año corriente sin necesidad de justificación previa."+
@@ -177,8 +178,7 @@
 "\n• Día de inicio de la actividad subvencionada."+
 "\n• Si se ha recibido, no se ha recibido o se tiene previsto recibir para el mismo fin otras subvenciones o ayudas de cualquier Administración o ente público o privado nacional o internacional. En caso afirmativo, se indicará el importe, procedencia y aplicación de tales fondos a la actividad subvencionada."+
 "\n• Que la totalidad de los documentos que han servido de soporte para el reconocimiento de las obligaciones recogidas en el certificado cumplen con los requisitos previstos en la legislación vigente."+
-"\n\nSiempre que se haya alcanzado el objetivo o finalidad perseguidos, si no se justificara debidamente el total de la actividad o la inversión subvencionada, deberá reducirse el importe de la subvención concedida aplicando el porcentaje de financiación sobre la cuantía correspondiente a los justificantes no presentados o no aceptados."+
-"\nPuesto que la actividad subvencionable se compone de varias fases o actuaciones, y se pueden identificar objetos vinculados a cada una de ellas, como criterio de graduación a aplicar a los incumplimientos de las condiciones impuestas con motivo de la concesión de esta subvención, se establece que el importe final de la subvención será proporcional al volumen de las fases o actuaciones de la actividad en las que se hayan conseguido los objetivos previstos."]]></textFieldExpression>
+"\n\nSiempre que se haya alcanzado el objetivo o finalidad perseguidos, si no se justificara debidamente el total de la actividad o la inversión subvencionada, deberá reducirse el importe de la subvención concedida aplicando el porcentaje de financiación sobre la cuantía correspondiente a los justificantes no presentados o no aceptados."]]></textFieldExpression>
 			</textField>
 		</band>
 		<band height="708">
@@ -186,9 +186,12 @@
 				<reportElement x="0" y="698" width="87" height="1" uuid="1537e872-b162-4c47-a35d-0f277306f69d"/>
 			</break>
 			<textField isStretchWithOverflow="true">
-				<reportElement x="0" y="10" width="470" height="559" uuid="055f5a6b-b663-49b2-a119-e479cce4b719"/>
+				<reportElement x="0" y="10" width="470" height="670" uuid="055f5a6b-b663-49b2-a119-e479cce4b719"/>
 				<textElement textAlignment="Justified"/>
-				<textFieldExpression><![CDATA["\nA partir del Informe de Cumplimiento de Objetivos Técnicos, y sin perjuicio de lo dispuesto en el artículo 71.2 del Reglamento de la Ley 38/2003, de 17 de noviembre, aprobado por Real Decreto 887/2006, de 21 de julio, así como en el artículo 25 de la presente Orden, se requerirá el reintegro de las cantidades percibidas y el interés de demora correspondiente, desde el momento del pago de la subvención hasta la fecha en que se acuerde la procedencia del reintegro. A este respecto, se considerará que la entidad beneficiaria se aproxima de modo inequívoco al cumplimiento total y acredita una actuación inequívocamente tendente a la satisfacción de sus compromisos, cuando el grado de cumplimiento de los objetivos determinado en el Informe de Cumplimiento de Objetivos Técnicos emitido por la entidad colaboradora, sea igual o superior al 70%."+
+				<textFieldExpression><![CDATA[
+"\nPuesto que la actividad subvencionable se compone de varias fases o actuaciones, y se pueden identificar objetos vinculados a cada una de ellas, como criterio de graduación a aplicar a los incumplimientos de las condiciones impuestas con motivo de la concesión de esta subvención, se establece que el importe final de la subvención será proporcional al volumen de las fases o actuaciones de la actividad en las que se hayan conseguido los objetivos previstos."+
+"\n\n"+
+"A partir del Informe de Cumplimiento de Objetivos Técnicos, y sin perjuicio de lo dispuesto en el artículo 71.2 del Reglamento de la Ley 38/2003, de 17 de noviembre, aprobado por Real Decreto 887/2006, de 21 de julio, así como en el artículo 25 de la presente Orden, se requerirá el reintegro de las cantidades percibidas y el interés de demora correspondiente, desde el momento del pago de la subvención hasta la fecha en que se acuerde la procedencia del reintegro. A este respecto, se considerará que la entidad beneficiaria se aproxima de modo inequívoco al cumplimiento total y acredita una actuación inequívocamente tendente a la satisfacción de sus compromisos, cuando el grado de cumplimiento de los objetivos determinado en el Informe de Cumplimiento de Objetivos Técnicos emitido por la entidad colaboradora, sea igual o superior al 70%."+
 "\n\nEn estos casos, el porcentaje a reintegrar que corresponde al grado de cumplimiento de los objetivos alcanzados por la entidad beneficiaria que se señala en el Informe de Cumplimiento de Objetivos Técnicos, resultará de la aplicación del siguiente baremo:"+
 "\n"+
 "\nPara un grado de cumplimiento entre el 70 y el 74%, el importe a reintegrar será de un 15%."+
@@ -204,35 +207,36 @@
 "\n1.- De conformidad con el artículo 23.1 de la Orden Reguladora, en sus apartados l) y m):  - Dar publicidad específica de las subvenciones y ayudas percibidas en los términos y condiciones establecidos en la normativa sobre transparencia. - Cumplir con las obligaciones de transparencia y suministro de información en los términos previstos en la normativa sobre transparencia."+
 "\n2.- Para dar cumplimiento a lo estipulado en el artículo 4 de la Ley 1/2014, de 24 de junio, de Transparencia Pública de Andalucía, la entidad beneficiaria estará obligada a suministrar a la Administración de la Junta de Andalucía, a través del órgano concedente, en un plazo de quince días y previo requerimiento al efecto, toda la información necesaria para el cumplimiento de las obligaciones previstas en dicha Ley."]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="0" y="580" width="470" height="50" uuid="b855dfc9-5cd2-48b5-8f01-0c508715868d"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA["Córdoba a fecha de la firma"+
-"\nEL JEFE DEL SERVICIO DE COOPERACIÓN  ECONÓMICA Y DESARROLLO TECNOLÓGICO"+
-"\n\nFdo.: Domingo José Orta Pacheco."]]></textFieldExpression>
-			</textField>
 		</band>
 		<band height="708">
 			<break>
 				<reportElement x="0" y="700" width="85" height="1" uuid="9a8ddb4a-f718-4a4d-9a18-035afdda641d"/>
 			</break>
 			<staticText>
-				<reportElement x="0" y="10" width="470" height="30" uuid="3fba33f5-cee8-4563-b5c7-dc759af89edd"/>
+				<reportElement positionType="Float" x="0" y="80" width="470" height="30" uuid="3fba33f5-cee8-4563-b5c7-dc759af89edd"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[ANEXO]]></text>
 			</staticText>
 			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="0" y="100" width="470" height="30" uuid="e2c3f863-4cd3-4bce-baa4-9a6966b2196f"/>
+				<reportElement positionType="Float" x="0" y="170" width="470" height="30" uuid="e2c3f863-4cd3-4bce-baa4-9a6966b2196f"/>
 				<textElement textAlignment="Justified" markup="html">
 					<font size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA["\n\n\n(1) Incluye la aportación de fondos propios de la entidad solicitante junto con las posibles subvenciones de otras entidades que puedan aplicarse concurrentemente a la que se propone."]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
-				<reportElement x="0" y="60" width="470" height="32" uuid="04848fca-7de9-40f6-bfe4-788d9279d1bf"/>
+				<reportElement x="0" y="130" width="470" height="32" uuid="04848fca-7de9-40f6-bfe4-788d9279d1bf"/>
 				<textFieldExpression><![CDATA[$F{parrafoAnexo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="12" width="470" height="50" uuid="b855dfc9-5cd2-48b5-8f01-0c508715868d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["\n\n"+
+"Córdoba a fecha de la firma"+
+"\nEL JEFE DEL SERVICIO DE COOPERACIÓN  ECONÓMICA Y DESARROLLO TECNOLÓGICO"+
+"\n\nFdo.: Domingo José Orta Pacheco."]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

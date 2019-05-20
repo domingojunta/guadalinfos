@@ -1,10 +1,7 @@
-package es.domingojunta.model;
-
-import javax.xml.bind.annotation.XmlRootElement;
+package es.domingojunta.models.entidad;
 
 import es.domingojunta.entities.Entidad;
 
-@XmlRootElement
 public class EntidadListarViewModel {
 
 	private int idEntidad;

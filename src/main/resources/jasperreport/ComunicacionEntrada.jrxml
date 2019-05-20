@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<!-- Created with Jaspersoft Studio version 6.8.0.final using JasperReports Library version 6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ComunicacionEntrada" pageWidth="595" pageHeight="842" columnWidth="469" leftMargin="70" rightMargin="56" topMargin="56" bottomMargin="28" uuid="c5c80c04-435a-4636-a4a9-8bea3518ab5d">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<queryString>
@@ -48,12 +48,12 @@
 			<textField isStretchWithOverflow="true">
 				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="170" width="470" height="40" uuid="95b50368-e6da-4938-89a1-18ce256fb573"/>
 				<textElement textAlignment="Justified"/>
-				<textFieldExpression><![CDATA[$F{parrafoNormativa}]]></textFieldExpression>
+				<textFieldExpression><![CDATA["\n\n"+$F{parrafoNormativa}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
 				<reportElement positionType="Float" x="0" y="210" width="470" height="130" uuid="9aee2261-cbd7-4b70-9e85-c65c474965b4"/>
 				<textElement textAlignment="Justified"/>
-				<textFieldExpression><![CDATA["\n\n"+
+				<textFieldExpression><![CDATA["\n"+
 "De conformidad con el artículo 9 de la citada Orden, la presente solicitud inicia un procedimiento administrativo que se tramitará y resolverá en régimen de concurrencia no competitiva por esta Delegación Territorial, siendo el plazo máximo para resolver y notificar de seis meses a computar desde que la solicitud haya tenido entrada en el Registro de esta Delegación Terrritorial, ( artículo 19.3 de la Orden)."+
 "\n\n"+
 "De conformidad con el artículo 19.4 de la Orden, deberá entender desestimada su solicitud al vencer el plazo máximo anteriormente citado, sin que se hubiese notificado la resolución expresa."]]></textFieldExpression>
@@ -63,7 +63,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="16" isBold="true"/>
 				</textElement>
-				<text><![CDATA[NOTIFICACIÓN PROPUESTA RESOLUCIÓN LIQUIDACIÓN]]></text>
+				<text><![CDATA[COMUNICACIÓN DE ENTRADA]]></text>
 			</staticText>
 			<textField>
 				<reportElement positionType="Float" x="0" y="360" width="470" height="59" uuid="58b369b5-6d59-49f0-aa52-1b7580cc3178"/>

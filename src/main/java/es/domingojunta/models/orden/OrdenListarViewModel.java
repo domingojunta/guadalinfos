@@ -1,12 +1,10 @@
-package es.domingojunta.model;
+package es.domingojunta.models.orden;
 
 import javax.persistence.Column;
 import javax.validation.constraints.Size;
-import javax.xml.bind.annotation.XmlRootElement;
 
 import es.domingojunta.entities.Orden;
 
-@XmlRootElement
 public class OrdenListarViewModel {
 	
 	private int idOrden;
