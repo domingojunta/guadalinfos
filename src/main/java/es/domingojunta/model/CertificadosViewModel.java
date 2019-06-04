@@ -596,7 +596,8 @@ public class CertificadosViewModel {
 		
 		BigDecimal gradoFinanciacionTantoPorUno = gradoFinanciacion.multiply(dividePorCien);
 		BigDecimal importeCosteDefinitivoTotalSinRedondeo = (getResultadoLiquidacion().add(getImporteOJ())).divide(gradoFinanciacionTantoPorUno, 10, RoundingMode.HALF_DOWN);
-		setImporteCosteDefinitivoTotal(importeCosteDefinitivoTotalSinRedondeo.setScale(2, BigDecimal.ROUND_HALF_EVEN));
+		//setImporteCosteDefinitivoTotal(importeCosteDefinitivoTotalSinRedondeo.setScale(2, BigDecimal.ROUND_HALF_EVEN));
+		setImporteCosteDefinitivoTotal(getImporteAceptadoTotal());
 		setImporteCosteDefinitivoTotalString(formatCurrency(getImporteCosteDefinitivoTotal()));
 		
 		

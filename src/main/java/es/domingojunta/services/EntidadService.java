@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.support.Repositories;
 import org.springframework.stereotype.Service;
 
 import es.domingojunta.entities.Convocatoria;
@@ -49,6 +50,7 @@ public class EntidadService {
 		} catch (Exception e) {
 			return null;
 		}
+		
 		
 		
 	}
@@ -137,4 +139,6 @@ public class EntidadService {
 		
 		return entidad.getNombre();
 	}
+	
+	
 }

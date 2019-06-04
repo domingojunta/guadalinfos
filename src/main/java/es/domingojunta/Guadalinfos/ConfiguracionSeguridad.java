@@ -29,7 +29,12 @@ import org.springframework.web.filter.CorsFilter;
 
 import es.domingojunta.services.ApplicationUserService;
 import es.domingojunta.Guadalinfos.LoginFilter;
-
+/**
+ * 
+ * @author domingo
+ * Esta clase
+ *
+ */
 @Configuration
 @EnableWebSecurity
 @CrossOrigin(origins="*", methods= {RequestMethod.DELETE,RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.OPTIONS})
@@ -75,7 +80,11 @@ public class ConfiguracionSeguridad extends WebSecurityConfigurerAdapter{
 		headers.add("*");
 		List<String> exposedHeaders = new ArrayList<String>();
 		exposedHeaders.add("Access-Control-Allow-Headers");
-		exposedHeaders.add("Authorization, x-xsrf-token, Access-Control-Allow-Headers, Origin, Accept, X-Requested-With,Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
+		exposedHeaders.add("Authorization, x-xsrf-token, "
+				+ "Access-Control-Allow-Headers, Origin, Accept, "
+				+ "X-Requested-With,Content-Type, "
+				+ "Access-Control-Request-Method, "
+				+ "Access-Control-Request-Headers");
 		exposedHeaders.add("Access-Control-Allow-Origin");
 		CorsConfiguration configuration = new CorsConfiguration();
 	    configuration.setAllowCredentials(true);
@@ -84,20 +93,14 @@ public class ConfiguracionSeguridad extends WebSecurityConfigurerAdapter{
 	    configuration.setMaxAge((long) 86400);
 	    configuration.setAllowedHeaders(headers);
 	    configuration.setExposedHeaders(exposedHeaders);
-	    //configuration.setAllowedHeaders(Arrays.asList("X-Requested-With","Origin","Content-Type","Accept","Authorization","Access-Control-Allow-Origin"));
-	    // This allow us to expose the headers
-	    //configuration.setExposedHeaders(Arrays.asList("Access-Control-Allow-Headers", "Authorization, x-xsrf-token, Access-Control-Allow-Headers, Origin, Accept, X-Requested-With, " +
-	    //        "Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers","Access-Control-Allow-Origin"));
 	    
 		final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-		//source.registerCorsConfiguration("/**", new CorsConfiguration().applyPermitDefaultValues());
+		
 		source.registerCorsConfiguration("/**", configuration);
 		
 		return source;
 		
-		/*UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-		source.registerCorsConfiguration("/**", new CorsConfiguration().applyPermitDefaultValues());
-		return source;*/
+		
 		
 		
 	}
