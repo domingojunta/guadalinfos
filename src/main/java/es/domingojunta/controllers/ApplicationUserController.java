@@ -3,6 +3,7 @@ package es.domingojunta.controllers;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -21,11 +22,13 @@ import org.springframework.web.bind.annotation.RestController;
 import es.domingojunta.model.ActivoInactivoApplicationUserViewModel;
 import es.domingojunta.model.ApplicationUserViewModel;
 import es.domingojunta.services.ApplicationUserService;
+import net.sf.jasperreports.data.http.RequestMethod;
 
 @RestController
 @RequestMapping("/api")
 @CrossOrigin(origins="*")
 @PreAuthorize("(hasAuthority('ADMINISTRADOR'))")
+
 public class ApplicationUserController {
 
 	@Autowired

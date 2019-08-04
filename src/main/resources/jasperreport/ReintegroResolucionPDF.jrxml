@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<!-- Created with Jaspersoft Studio version 6.8.0.final using JasperReports Library version 6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReintegroResolucionPDF" pageWidth="595" pageHeight="842" columnWidth="469" leftMargin="70" rightMargin="56" topMargin="56" bottomMargin="28" uuid="c5c80c04-435a-4636-a4a9-8bea3518ab5d">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<property name="com.jaspersoft.studio.report.description" value=""/>
@@ -78,29 +78,29 @@
 				<textFieldExpression><![CDATA["\n\n"+$F{parrafoVista}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement positionType="Float" x="0" y="290" width="470" height="30" uuid="1280a07b-1405-4ff5-a00f-03e61349578d"/>
+				<reportElement positionType="Float" x="0" y="260" width="470" height="30" uuid="1280a07b-1405-4ff5-a00f-03e61349578d"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[ANTECEDENTES DE HECHO]]></text>
 			</staticText>
 			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="0" y="330" width="470" height="36" uuid="456b75e3-4c71-41ae-8322-0d7d30ceddb5"/>
+				<reportElement positionType="Float" x="0" y="310" width="470" height="36" uuid="456b75e3-4c71-41ae-8322-0d7d30ceddb5"/>
 				<textElement textAlignment="Justified"/>
 				<textFieldExpression><![CDATA[$F{antecedente01}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="0" y="370" width="470" height="36" uuid="45f9c5a7-4fa6-4f56-981b-51a79fefb922"/>
+				<reportElement positionType="Float" x="0" y="350" width="470" height="36" uuid="45f9c5a7-4fa6-4f56-981b-51a79fefb922"/>
 				<textElement textAlignment="Justified"/>
 				<textFieldExpression><![CDATA["\n"+$F{antecedente02}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="0" y="410" width="470" height="36" uuid="fdb22cb9-a3d8-45bf-b132-9ff05e8c3fd8"/>
+				<reportElement positionType="Float" x="1" y="390" width="470" height="36" uuid="fdb22cb9-a3d8-45bf-b132-9ff05e8c3fd8"/>
 				<textElement textAlignment="Justified"/>
-				<textFieldExpression><![CDATA["\n"+$F{antecedente03}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{antecedente03}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="0" y="450" width="470" height="40" uuid="8df518e1-3e40-460d-b6a4-c8e8b4a30001"/>
+				<reportElement positionType="Float" x="-1" y="430" width="470" height="40" uuid="8df518e1-3e40-460d-b6a4-c8e8b4a30001"/>
 				<textElement textAlignment="Justified"/>
 				<textFieldExpression><![CDATA["\n"+
 "Cuarto.- Como resultado de la revisión de la documentación justificativa aportada se resume lo siguiente:"]]></textFieldExpression>
@@ -162,37 +162,36 @@ $F{antecedente04RevisionEconomica}]]></textFieldExpression>
 				<reportElement x="0" y="700" width="92" height="1" uuid="9b55194a-09bc-4918-8025-b422e9094b70"/>
 			</break>
 			<textField isStretchWithOverflow="true">
-				<reportElement x="0" y="10" width="470" height="78" uuid="e437759f-20b1-4d35-9ad7-9eb2f3ba86d3"/>
+				<reportElement x="0" y="10" width="470" height="40" uuid="e437759f-20b1-4d35-9ad7-9eb2f3ba86d3"/>
 				<textElement textAlignment="Justified"/>
 				<textFieldExpression><![CDATA["\n"+
 $F{antecedente06}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="0" y="90" width="470" height="40" uuid="ef566bc8-f9a9-48e4-a144-7546810b9d4f"/>
+				<reportElement positionType="Float" x="0" y="50" width="470" height="40" uuid="ef566bc8-f9a9-48e4-a144-7546810b9d4f"/>
 				<textElement textAlignment="Justified"/>
-				<textFieldExpression><![CDATA["\n"+$F{antecedente07}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{antecedente07}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="0" y="170" width="470" height="30" uuid="df4cabf6-3e13-4475-a316-f5b4a8c56af0"/>
+				<reportElement positionType="Float" x="-1" y="130" width="470" height="30" uuid="df4cabf6-3e13-4475-a316-f5b4a8c56af0"/>
 				<textElement textAlignment="Justified"/>
-				<textFieldExpression><![CDATA["\n\n"+
+				<textFieldExpression><![CDATA["\n"+
 "A los anteriores hechos resultan de aplicación los siguientes"+"\n"]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement positionType="Float" x="0" y="200" width="470" height="30" uuid="f1e517a4-97f6-408f-82d4-1984f0fa12b7"/>
+				<reportElement positionType="Float" x="-1" y="170" width="470" height="30" uuid="f1e517a4-97f6-408f-82d4-1984f0fa12b7"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[FUNDAMENTOS DE DERECHO]]></text>
 			</staticText>
 			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="0" y="240" width="470" height="70" uuid="7eb3bc54-5668-4a05-9235-ee732dd9b6f1"/>
+				<reportElement positionType="Float" x="-1" y="210" width="470" height="80" uuid="7eb3bc54-5668-4a05-9235-ee732dd9b6f1"/>
 				<textElement textAlignment="Justified"/>
-				<textFieldExpression><![CDATA["\n"+"PRIMERO.-  Conforme al artículo 19.a) del Decreto 342/2012, de 31 de julio , por el que se regula la organización territorial provincial de la Administración de la Junta de Andalucía, los titulares de las Delegaciones Territoriales de la Junta de Andalucía ostentan las siguientes funciones y competencias en el ámbito de su provincia: a) la representación ordinaria de las Consejerías cuyos servicios periféricos se encuentran adscritos en la Delegación Territorial…"
-]]></textFieldExpression>
+				<textFieldExpression><![CDATA["\n"+"PRIMERO.-  Conforme al artículo 19.a) del Decreto 342/2012, de 31 de julio , por el que se regula la organización territorial provincial de la Administración de la Junta de Andalucía, los titulares de las Delegaciones Territoriales de la Junta de Andalucía ostentan las siguientes funciones y competencias en el ámbito de su provincia: a) la representación ordinaria de las Consejerías cuyos servicios periféricos se encuentran adscritos en la Delegación Territorial…"]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="0" y="130" width="470" height="39" uuid="69219b65-df6c-4648-afa8-9624649e7a62"/>
+				<reportElement positionType="Float" x="0" y="90" width="470" height="39" uuid="69219b65-df6c-4648-afa8-9624649e7a62"/>
 				<textElement textAlignment="Justified"/>
 				<textFieldExpression><![CDATA["\n"+$F{antecedente08}]]></textFieldExpression>
 			</textField>
@@ -202,7 +201,7 @@ $F{antecedente06}]]></textFieldExpression>
 				<reportElement x="0" y="700" width="90" height="1" uuid="e0d18660-84c3-48e2-b873-d7838933885a"/>
 			</break>
 			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="0" y="0" width="470" height="639" uuid="055f5a6b-b663-49b2-a119-e479cce4b719"/>
+				<reportElement positionType="Float" x="0" y="0" width="470" height="680" uuid="055f5a6b-b663-49b2-a119-e479cce4b719"/>
 				<textElement textAlignment="Justified"/>
 				<textFieldExpression><![CDATA["\n"+
 "Según se establece en la Disposición adicional sexta del Decreto señalado en el punto anterior, modificada por el Decreto 32/2019, de 5 de febrero, en cada una de las provincias de la Comunidad Autónoma de Andalucía existirán las siguientes Delegaciones Territoriales de la Junta de Andalucía: Delegación Territorial de Empleo, Formación, Trabajo Autónomo, Economía, Conocimiento, Empresas y Universidad. La Delegación Territorial de Empleo, Formación, Trabajo Autónomo, Economía, Conocimiento, Empresas y Universidad, depende orgánicamente de la Consejería de Empleo, Formación y Trabajo Autónomo."+
@@ -211,7 +210,7 @@ $F{antecedente06}]]></textFieldExpression>
 +"\n\n"+
 "SEGUNDO.- El Decreto 90/1993, de 13 de julio, asigna diversas funciones a determinados Órganos Administrativos de la Junta de Andalucía. En el apartado b) de su artículo 3º atribuye a los Servicios u órganos asimilados la función de Elaborar la propuesta de los actos administrativos que sean competencia del inmediato órgano superior., en su apartado d) Notificar actos a sus destinatarios. "+
 "\n\n"+
-"TERCERO.- El artículo 23.1.b) de la citada Orden establece que Son obligaciones de la entidad beneficiaria (…)Justificar ante el órgano concedente o, en su caso, la entidad colaboradora, el cumplimiento de los requisitos y condiciones, así como la realización de la actividad y el cumplimiento de la finalidad que determinen la concesión o disfrute de la subvención."
+"TERCERO.- El artículo 23.1.b) de la citada Orden establece que son obligaciones de la entidad beneficiaria (…)Justificar ante el órgano concedente o, en su caso, la entidad colaboradora, el cumplimiento de los requisitos y condiciones, así como la realización de la actividad y el cumplimiento de la finalidad que determinen la concesión o disfrute de la subvención."
 +"\n\n"+
 "CUARTO.- El artículo 24.3 de la Orden reguladora establece que: El importe definitivo de la subvención se liquidará aplicando al coste de la "+
 "actividad efectivamente realizada por la entidad beneficiaria, conforme a la justificación presentada y aceptada, el porcentaje de financiación "+
@@ -225,8 +224,13 @@ $F{antecedente06}]]></textFieldExpression>
 "interés de demora correspondiente desde el momento del pago de la subvención hasta la fecha que se acuerde la procedencia del reintegro, "+
 "en el supuesto de incumplimiento de cualquiera de las condiciones fijadas en la resolución de concesión así como en los demás supuestos fijados "+
 "legalmente conforme a los artículos 37 de la Ley 38/2003, de 17 de noviembre, General de Subvenciones y el artículo 125 del Texto Refundido de "+
-"la Ley General de la Hacienda Pública de la Junta de Andalucía, aprobado por Decreto Legislativo 1/2010, de 2 de marzo..."
-]]></textFieldExpression>
+"la Ley General de la Hacienda Pública de la Junta de Andalucía, aprobado por Decreto Legislativo 1/2010, de 2 de marzo..."+
+"\n\n"+
+"SEXTO.- El artículo 34.3 de la Ley 38/2003, de 17 de noviembre, General de Subvenciones establece que se producirá la pérdida del derecho al cobro total o parcial de la subvención en el supuesto de falta de justificación o de concurrencia de alguna de las causas previstas en el artículo 37 de esta Ley."
++
+"\n\n"+
+"SÉPTIMO.- El artículo 37 de la Ley 38/2003 de 17 de noviembre establece las causas de reintegro:"+
+"\n1. También procederá el reintegro de las cantidades percibidas y la exigencia del interés de demora correspondiente desde el momento del pago de la subvención hasta la fecha en que se acuerde la procedencia del reintegro, o la fecha en que el deudor ingrese el reintegro"]]></textFieldExpression>
 			</textField>
 		</band>
 		<band height="708">
@@ -236,11 +240,8 @@ $F{antecedente06}]]></textFieldExpression>
 			<textField isStretchWithOverflow="true">
 				<reportElement positionType="Float" x="0" y="9" width="470" height="680" uuid="d6d45e83-811b-4bdf-91c8-f4b04d687cc4"/>
 				<textElement textAlignment="Justified"/>
-				<textFieldExpression><![CDATA["\n"+
-"SEXTO.- El artículo 34.3 de la Ley 38/2003, de 17 de noviembre, General de Subvenciones establece que se producirá la pérdida del derecho al cobro total o parcial de la subvención en el supuesto de falta de justificación o de concurrencia de alguna de las causas previstas en el artículo 37 de esta Ley."+
-"\n\n"+
-"SÉPTIMO.- El artículo 37 de la Ley 38/2003 de 17 de noviembre establece las causas de reintegro:"+
-"\n1. También procederá el reintegro de las cantidades percibidas y la exigencia del interés de demora correspondiente desde el momento del pago de la subvención hasta la fecha en que se acuerde la procedencia del reintegro, o la fecha en que el deudor ingrese el reintegro si es anterior a ésta, en los siguientes casos:"+
+				<textFieldExpression><![CDATA["\nsi es anterior a ésta, en los siguientes casos:"+
+
 "\na) Obtención de la subvención falseando las condiciones requeridas para ello u ocultando aquéllas que lo hubieran impedido."+
 "\n"+
 "b) Incumplimiento total o parcial del objetivo, de la actividad, del proyecto o la no adopción del comportamiento que fundamentan la concesión de la subvención."+
@@ -255,8 +256,9 @@ $F{antecedente06}]]></textFieldExpression>
 "\n\n2. Cuando el cumplimiento por el beneficiario o, en su caso, entidad colaboradora se aproxime de modo significativo al cumplimiento total y se acredite por éstos una actuación inequívocamente tendente a la satisfacción de sus compromisos, la cantidad a reintegrar vendrá determinada por la aplicación de los criterios enunciados en el párrafo n) del apartado 3 del artículo 17 de esta ley o, en su caso, las establecidas en la normativa autonómica reguladora de la subvención."+
 "\n3. Igualmente, en el supuesto contemplado en el apartado 3 del artículo 19 de esta ley procederá el reintegro del exceso obtenido sobre el coste de la actividad subvencionada, así como la exigencia del interés de demora correspondiente."+
 "\n\n"+
-"OCTAVO.- El artículo 26. de la Orden reguladora establece: … procederá también el reintegro de las cantidades percibidas y la exigencia del interés de demora correspondiente desde el momento del pago de la subvención hasta la fecha en que se acuerde la procedencia del reintegro, en los siguientes casos:"
-]]></textFieldExpression>
+"OCTAVO.- El artículo 26. de la Orden reguladora establece: … procederá también el reintegro de las cantidades percibidas y la exigencia del interés de demora correspondiente desde el momento del pago de la subvención hasta la fecha en que se acuerde"+
+"la procedencia del reintegro, en los siguientes casos:"+
+"\na) Obtención de la subvención falseando las condiciones requeridas para ello u ocultando aquéllas que lo hubieran impedido."]]></textFieldExpression>
 			</textField>
 		</band>
 		<band height="708">
@@ -266,8 +268,7 @@ $F{antecedente06}]]></textFieldExpression>
 			<textField isStretchWithOverflow="true">
 				<reportElement positionType="Float" x="0" y="10" width="470" height="680" uuid="1fcab858-adb5-456c-b1d4-6df8156cdaa2"/>
 				<textElement textAlignment="Justified"/>
-				<textFieldExpression><![CDATA["\na) Obtención de la subvención falseando las condiciones requeridas para ello u ocultando aquéllas que lo hubieran impedido."+
-"\nb) Incumplimiento total o parcial del objetivo, de la actividad, del proyecto o la no adopción del comportamiento que fundamentan la concesión de la subvención."+
+				<textFieldExpression><![CDATA["\nb) Incumplimiento total o parcial del objetivo, de la actividad, del proyecto o la no adopción del comportamiento que fundamentan la concesión de la subvención."+
 "\nc) Incumplimiento de la obligación de justificación o la justificación insuficiente."+
 "\nd) Incumplimiento de la obligación de adoptar las medidas de difusión."+
 "\ne) Resistencia, excusa, obstrucción o negativa a las actuaciones de comprobación y control financiero previstas en los artículos 14 y 15 de la Ley 38/2003, de 17 de noviembre, así como el incumplimiento de las obligaciones contables, registrales o de conservación de documentos cuando de ello se derive la imposibilidad de verificar el empleo dado a los fondos percibidos, el cumplimiento del objetivo, la realidad y regularidad de las actividades subvencionadas, o la concurrencia de subvenciones, ayudas, ingresos o recursos para la misma finalidad, procedentes de cualesquiera Administraciones o entes públicos o privados, nacionales, de la Unión Europea o de organismos internacionales."+
@@ -286,8 +287,7 @@ $F{antecedente06}]]></textFieldExpression>
 "NOVENO.- El artículo 42 de la Ley 38/2003 de 17 de noviembre establece:"+
 "\n1. El procedimiento de reintegro de subvenciones se regirá por las disposiciones generales sobre procedimientos administrativos contenidas en el título VI de la Ley 30/1992, de 26 de noviembre, de Régimen Jurídico de las Administraciones Públicas y del Procedimiento Administrativo Común, sin perjuicio de las especialidades que se establecen en esta ley y en sus disposiciones de desarrollo."+
 "\n2. El procedimiento de reintegro de subvenciones se iniciará de oficio por acuerdo del órgano competente, bien por propia iniciativa, bien como consecuencia de orden superior, a petición razonada de otros órganos o por denuncia. También se iniciará a consecuencia del informe de control financiero emitido por la Intervención General de la Administración del Estado."+
-"\n3. En la tramitación del procedimiento se garantizará, en todo caso, el derecho del interesado a la audiencia."
-]]></textFieldExpression>
+"\n3. En la tramitación del procedimiento se garantizará, en todo caso, el derecho del interesado a la audiencia."]]></textFieldExpression>
 			</textField>
 		</band>
 		<band height="708">
@@ -295,38 +295,37 @@ $F{antecedente06}]]></textFieldExpression>
 				<reportElement x="0" y="700" width="77" height="1" uuid="b4bff184-a2df-41c1-bb4f-0c234519cac7"/>
 			</break>
 			<staticText>
-				<reportElement positionType="Float" x="1" y="180" width="470" height="50" uuid="6de08320-9f87-402a-9fee-79c3f8b91efd"/>
+				<reportElement positionType="Float" x="-1" y="160" width="470" height="30" uuid="6de08320-9f87-402a-9fee-79c3f8b91efd"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="14" isBold="true"/>
 				</textElement>
 				<text><![CDATA[ACUERDA]]></text>
 			</staticText>
 			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="1" y="240" width="470" height="20" uuid="dd6099b8-1623-483c-a1f4-866dbc963898"/>
+				<reportElement positionType="Float" x="0" y="190" width="470" height="20" uuid="dd6099b8-1623-483c-a1f4-866dbc963898"/>
 				<textElement textAlignment="Justified"/>
 				<textFieldExpression><![CDATA["\n"+$F{propone01}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="1" y="370" width="470" height="95" uuid="0c6aa2f0-3ff2-4a76-8071-1fd16dfaf7b7"/>
+				<reportElement positionType="Float" x="0" y="560" width="470" height="40" uuid="0c6aa2f0-3ff2-4a76-8071-1fd16dfaf7b7"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA["Córdoba a fecha de la firma"+
-"\n"+
-"CONSEJERO DE ECONOMÍA, CONOCIMIENTO, EMPRESA Y UNIVERSIDAD"+
-"\n"+
-"POR DELEGACIÓN (Orden 25/1/2016)"+
-"\nEL DELEGADO TERRITORIAL"+
+				<textFieldExpression><![CDATA["CONSEJERO DE ECONOMÍA, CONOCIMIENTO, EMPRESA Y UNIVERSIDAD"+
+"\nP.Delegación (Orden 25/1/2016) EL DELEGADO TERRITORIAL EN CÓRDOBA"+
 "\nFdo.: Ángel Herrador Leiva."]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true">
-				<reportElement positionType="Float" x="1" y="260" width="470" height="99" uuid="d1859c6b-38b0-498d-baca-b103e4ec485b"/>
+				<reportElement positionType="Float" x="0" y="210" width="470" height="350" uuid="d1859c6b-38b0-498d-baca-b103e4ec485b"/>
 				<textElement textAlignment="Justified"/>
-				<textFieldExpression><![CDATA["\n\n"+
-"SEGUNDO.- Notificar al interesado el presente Acuerdo de Inicio de Reintegro ."+
+				<textFieldExpression><![CDATA["\n"+
+"SEGUNDO.- La cantidad a reintegrar tendrá consideración de ingreso de derecho público, resultando de aplicación para su cobro, lo previsto en la Ley General Presupuestaria."+
 "\n\n"+
-"TERCERO.- Conceder a la entidad beneficiaria un plazo de QUINCE DÍAS para formular las alegaciones y aportar cuantos documentos y justificaciones estime convenientes, de conformidad con el artículo 82.2 de la Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas."]]></textFieldExpression>
+"TERCERO.- El ingreso de reintegro deberá efectuarse en el siguiente plazo de ingreso voluntario:\na) Si el acuerdo se notifica entre los días 1 y 15 del mes en curso, desde la fecha de notificación hasta el 20 del mes siguiente o, si este fuera inhábil, el inmediato hábil posterior.\nb)Si el acuerdo se notifica entre los días 16 y último del mes en curso, desde la fecha de notificación hasta el día 5 del segundo mes posterior o, si éste fuera inhabil, el inmediato hábil siguiente. \nTranscurrido dicho plazo sin que se hubiera verificado el cobro del reintegro en periodo voluntario, se dará traslado del expediente a la Consejería de Hacienda, Industria y Energía para que se inicie el correspondiente procedimiento de apremio."+"\n\n"+
+"CUARTO.- El ingreso del reintegro se efectuará a favor de la Tesorería General de la Junta de Andalucía, mediante el modelo 022 que se adjunta, en cualquiera de las Entidades de Crédito y Ahorro colaboradoras de la gestión recaudatoria y se COMUNICARÁ A ESTE ÓRGANO, REMITIÉNDOSE COPIA DEL CITADO MODELO 022 (ejemplar para la Administración) en el plazo de diez días."+
+"\n\n"+
+"QUINTO.- Contra el presente Acuerdo, que pone fin a la vía administrativa, se podrá interponer recurso potestativo de reposición ante esta Delegación Territorial, en el plazo de UN MES contado a partir del día siguiente a aquel en que tenga lugar la notificación o publicación del presente acto, o interponer directamente el recurso contencioso administrativo ante los correspondientes órganos judiciales, en el plazo de DOS MESES contados desde el día siguiente al de la notificación de este acto, todo ello de conformidad con lo establecido con el artículo 115 de la Ley 9/2007, de 22 de octubre, de la Administración de la Junta de Andalucía, artículo 124 de la Ley 39/2015 del Procedimiento Administrativo Común de las Administraciones Públicas, y en el artículo 46.1 de la Ley 29/1998 de 13 de julio, reguladora de la Jurisdicción Contencioso Administrativa."]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="2" y="16" width="468" height="154" uuid="23e4c8c2-c9e4-4835-a8f0-78fde563b268"/>
+				<reportElement x="2" y="16" width="468" height="144" uuid="23e4c8c2-c9e4-4835-a8f0-78fde563b268"/>
 				<textElement textAlignment="Justified"/>
 				<textFieldExpression><![CDATA["\n4. El plazo máximo para resolver y notificar la resolución del procedimiento de reintegro será de 12 meses desde la fecha del acuerdo de iniciación. Dicho plazo podrá suspenderse y ampliarse de acuerdo con lo previsto en los apartados 5 y 6 del artículo 42 de la Ley 30/1992, de 26 de noviembre, de Régimen Jurídico de las Administraciones Públicas y del Procedimiento Administrativo Común. Si transcurre el plazo para resolver sin que se haya notificado resolución expresa, se producirá la caducidad del procedimiento, sin perjuicio de continuar las actuaciones hasta su terminación y sin que se considere interrumpida la prescripción por las actuaciones realizadas hasta la finalización del citado plazo."+
 "\n5. La resolución del procedimiento de reintegro pondrá fin a la vía administrativa."+
@@ -348,7 +347,7 @@ $F{antecedente06}]]></textFieldExpression>
 			<textField isStretchWithOverflow="true">
 				<reportElement positionType="Float" x="0" y="70" width="470" height="59" uuid="e2bce78e-36df-4988-9d05-6c8312fcddef"/>
 				<textElement textAlignment="Justified"/>
-				<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{parrafoAnexoAlegaciones}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

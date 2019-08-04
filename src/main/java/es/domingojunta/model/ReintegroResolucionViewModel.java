@@ -1201,6 +1201,7 @@ public class ReintegroResolucionViewModel {
 		}
 		
 		public void setAntecedente04RevisionTecnica() throws ParseException {
+			BigDecimal cien = new BigDecimal("100");
 			StringBuilder sb = new StringBuilder();
 			sb.append("3.- Resultado de la Revisión Técnica");
 			sb.append("\n");
@@ -1227,9 +1228,11 @@ public class ReintegroResolucionViewModel {
 			sb.append("El grado de cumplimiento de objetivos es del: ");
 			sb.append(getGradoCumplimientoTecnico());
 			sb.append(" %.");
-			sb.append("\n");
-			sb.append("Se adjunta Informe Técnico emitido por la Entidad Colaboradora (CFR) a la presente propuesta ");
-						
+			if (getGradoCumplimientoTecnico().intValue()!=cien.intValue()) {
+				sb.append("\n");
+				sb.append("Se adjunta Informe Técnico emitido por la Entidad Colaboradora (CFR), en el que se ");
+				sb.append("ponen de manifiesto las deficiencias, que desde un punto de vista técnico, se han observado.");
+			}		
 								
 			this.antecedente04RevisionTecnica = sb.toString();
 		}
@@ -1294,7 +1297,7 @@ public class ReintegroResolucionViewModel {
 			StringBuilder sb = new StringBuilder();
 			sb.append("Séptimo.- Con fecha ");
 			sb.append(formatDate(getFechaLiquidacion()));
-			sb.append(" se dicta propuesta de liquidación de la subvención descrita en el encabezado de la presente resolución, ");
+			sb.append(" se dicta Resolución de Liquidación de la subvención descrita en el encabezado de la presente resolución, ");
 			sb.append("debidamente notificada a través de la plataforma telemática.");
 					
 			this.antecedente07 = sb.toString();
@@ -1318,17 +1321,24 @@ public class ReintegroResolucionViewModel {
 		
 		
 		public void setPropone01() throws ParseException {
+			BigDecimal intereses = getImporteModelo022().add(getResultadoLiquidacion());
 			StringBuilder sb = new StringBuilder();
-			sb.append("PRIMERO.- Iniciar el procedimiento administrativo de reintegro de la subvención concedida al ");
+			sb.append("PRIMERO.- Acordar el reintegro de la subvención concedida al/la ");
 			sb.append(getTipoEntidad().toUpperCase());
 			sb.append(" DE ");
 			sb.append(getNombreEntidad().toUpperCase());
 			sb.append(" por un importe de ");
 			sb.append(formatCurrency(getResultadoLiquidacion()));
-			sb.append(" € (el importe negativo indica que es a reintegrar),	mas los intereses de demora devengados desde ");
+			sb.append(" € (el importe negativo indica que es a reintegrar),");
+			sb.append(" mas los intereses de demora devengados desde ");
 			sb.append("la materialización del primer pago ");
 			sb.append(formatDate(getFechaPagoMaterialOJ()));
-			sb.append(" hasta la fecha en la que se acuerde la procedencia del reintegro.");
+			sb.append(" hasta la fecha en la que se acuerde la procedencia del reintegro, ");
+			sb.append("(que ascienden a: ");
+			sb.append(formatCurrency(intereses));
+			sb.append(") ,siendo el total a devolver: ");
+			sb.append(formatCurrency(getImporteModelo022()));
+			sb.append(" euros.");
 					
 			this.propone01 = sb.toString();
 		}

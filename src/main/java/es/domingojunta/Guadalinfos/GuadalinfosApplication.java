@@ -11,16 +11,7 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
-/**
- * 
- * @author domingo
- * Esta es el punto de entrada a mi aplicación
- * Las anotaciones configuran los paquetes de escaneo de mis componentes
- * que mediante inyección de dependencias utilizaré a lo largo de la app.
- * Además voy a utilizar los respositorios automáticos de Spring a partir
- * de sus interfaces.
- *
- */
+
 @EntityScan("es.domingojunta.entities")
 @ComponentScan(basePackages="es.domingojunta")
 @EnableJpaRepositories(basePackages="es.domingojunta.repositories")
@@ -30,4 +21,6 @@ public class GuadalinfosApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(GuadalinfosApplication.class, args);
 	}
+	
+	
 }

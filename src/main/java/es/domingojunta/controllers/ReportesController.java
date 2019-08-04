@@ -384,7 +384,7 @@ public class ReportesController {
 		
 	}
 	
-	@GetMapping("/reporte/resolucionReintegroDoc/{id}")
+	@GetMapping("/reporte/resolucionReintegroPDF/{id}")
 	public void generarReintegroResolucionDoc(@PathVariable("id") int id, HttpServletResponse response) throws Exception {
 		
 		
@@ -403,7 +403,7 @@ public class ReportesController {
 		
 	}
 	
-	@GetMapping("/reporte/resolucionReintegroPDF/{id}")
+	@GetMapping("/reporte/resolucionReintegroDoc/{id}")
 	public void generarResolucionReintegroPDF(@PathVariable("id") int id, HttpServletResponse response) throws Exception {
 		
 		
